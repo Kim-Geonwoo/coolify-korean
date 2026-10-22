@@ -1,0 +1,9 @@
+# 스크린샷 단계(우분투 2, 프로젝트 coolify-ko-screens) 전용 덮어쓰기. docker-compose.yml 뒤에 -f로 붙인다.
+# 업스트림 앱이 집 LAN·tailnet(Weblate :8444 등)·인터넷에 닿지 않게 내부 네트워크로만 두고, 호스트 포트도 열지 않는다.
+# 찍기 컨테이너는 같은 네트워크로 http://coolify:8080에 닿고, DB 질의·Redis 비우기는 exec로 한다(검토 2026-10-18 Important 2).
+services:
+  coolify:
+    ports: !reset []
+networks:
+  default:
+    internal: true

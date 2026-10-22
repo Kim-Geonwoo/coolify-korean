@@ -1,0 +1,27 @@
+{
+  "name": "coolify-ko",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "description": "Coolify 대시보드 한국어판을 만드는 변환·번역 파이프라인",
+  "engines": {
+    "node": ">=24.11"
+  },
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "verify": "node scripts/verify.ts",
+    "extract": "node pipeline/src/cli.ts extract"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^24.19.2",
+    "eslint": "^9.39.5",
+    "playwright": "^1.64.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.71.2",
+    "vitest": "^3.2.7"
+  }
+}

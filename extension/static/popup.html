@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Coolify 한국어 (비공식)</title>
+  <style>
+    body { margin: 0; padding: 12px 14px; width: 300px; font: 13px/1.5 system-ui, sans-serif; color: #1f2328; background: #fff; }
+    h1 { margin: 0 0 8px; font-size: 14px; }
+    p { margin: 6px 0; }
+    .origin { font-family: ui-monospace, monospace; word-break: break-all; }
+    .muted { color: #57606a; }
+    button { margin: 6px 6px 0 0; padding: 5px 10px; font: inherit; cursor: pointer; }
+    hr { border: 0; border-top: 1px solid #d0d7de; margin: 10px 0; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e6edf3; background: #0d1117; }
+      .muted { color: #8d96a0; }
+      hr { border-top-color: #30363d; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Coolify 한국어 (비공식)</h1>
+  <p class="origin" id="origin"></p>
+  <p class="muted" id="state"></p>
+  <button type="button" id="toggle" hidden></button>
+  <p class="muted" id="message"></p>
+  <hr>
+  <p>사전에 없던 영어 문구: <span id="missed-count">0</span>개 <span class="muted">(이 브라우저에만 저장)</span></p>
+  <button type="button" id="save-missed" disabled>누락 목록 받기</button>
+  <button type="button" id="clear-missed" disabled>비우기</button>
+  <script src="popup.js"></script>
+</body>
+</html>

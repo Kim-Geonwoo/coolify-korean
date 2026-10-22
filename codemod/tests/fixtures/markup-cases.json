@@ -1,0 +1,20 @@
+{
+  "about": "번역문의 번호 태그가 유효한지에 대한 공용 사례. PHP 헬퍼(coolify_ko_render_markup)와 TS 하드 검사(tag-structure)가 둘 다 이 파일을 읽어 같은 판정을 내는지 본다. valid=false면 PHP는 영어 원문으로 그리고 TS는 하드 검사에서 거른다.",
+  "cases": [
+    { "source": "Use <0>this link</0> to learn more.", "translation": "<0>이 링크</0>로 더 알아보세요.", "valid": true },
+    { "source": "Line one<0/>Line two", "translation": "첫 줄<0/>둘째 줄", "valid": true },
+    { "source": "Read <0>docs</0> and <1>guide</1>.", "translation": "<1>안내서</1>와(과) <0>문서</0>를 읽으세요.", "valid": true },
+    { "source": "Hi :name", "translation": ":name 님 안녕하세요", "valid": true },
+    { "source": "<0>a <1>b</1></0>", "translation": "<0>가 <1>나</1></0>", "valid": true },
+    { "source": "Use <0>this link</0>.", "translation": "<0>이 링크를 쓰세요.", "valid": false },
+    { "source": "Line one<0/>Line two", "translation": "첫 줄<0></0>둘째 줄", "valid": false },
+    { "source": "Use <0>this link</0>.", "translation": "<0/>이 링크를 쓰세요.", "valid": false },
+    { "source": "<0>a <1>b</1></0>", "translation": "<0>가 <1>나</0></1>", "valid": false },
+    { "source": "<0>a</0>", "translation": "<0>가</0><0>나</0>", "valid": false },
+    { "source": "<0>a</0>", "translation": "<2>가</2>", "valid": false },
+    { "source": "a<0/>b", "translation": "가나", "valid": false },
+    { "source": "a<0/>b", "translation": "가<0/>나<0/>", "valid": false },
+    { "source": "Read <0>docs</0> and <1>guide</1>.", "translation": "<0>문서</0>를 읽으세요.", "valid": false },
+    { "source": "x<0/>y", "translation": "가</0/>나", "valid": false }
+  ]
+}

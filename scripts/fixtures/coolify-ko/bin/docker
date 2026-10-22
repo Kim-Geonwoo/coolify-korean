@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# 시험용 가짜 docker: 인자를 기록하고, 결과는 FAKE_* 환경 변수로 정한다
+set -u
+printf 'docker %s\n' "$*" >>"${FAKE_DOCKER_LOG:?}"
+case "${1:-}" in
+  manifest)
+    if [ "${FAKE_MANIFEST_STATUS:-0}" != 0 ]; then
+      echo 'no such manifest' >&2
+      exit "$FAKE_MANIFEST_STATUS"
+    fi
+    echo '{}'
+    ;;
+  exec)
+    echo "${FAKE_PSQL_OUTPUT-0}"
+    exit "${FAKE_PSQL_STATUS:-0}"
+    ;;
+  pull) exit "${FAKE_PULL_STATUS:-0}" ;;
+  compose) exit "${FAKE_COMPOSE_STATUS:-0}" ;;
+  inspect) echo "${FAKE_RUNNING_IMAGE:-docker.io/coollabsio/coolify:4.4.6}" ;;
+  *)
+    echo "fake docker: unexpected command: $*" >&2
+    exit 99
+    ;;
+esac

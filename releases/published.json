@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "versions": {
+    "4.4.6": {
+      "kind": "ko",
+      "index": "sha256:6e012ea16c559b70ec24ae962fb82475376382bc451cf9315ed9d6b128861198",
+      "commit": "369f4a2763df24df45fdf28d28eab65c0ca00344",
+      "publishedAt": "2026-10-20T06:23:04.148Z"
+    }
+  }
+}

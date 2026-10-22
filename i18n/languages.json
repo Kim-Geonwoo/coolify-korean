@@ -1,0 +1,5 @@
+{
+  "languages": [
+    { "code": "ko", "name": "한국어", "enabled": true, "rules": "ko" }
+  ]
+}

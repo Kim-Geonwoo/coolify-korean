@@ -1,0 +1,28 @@
+{
+    "coolify": {
+        "v4": {
+            "version": "4.4.6"
+        },
+        "nightly": {
+            "version": "4.5.0"
+        },
+        "helper": {
+            "version": "1.0.17"
+        },
+        "realtime": {
+            "version": "1.0.13"
+        },
+        "sentinel": {
+            "version": "1.0.2"
+        }
+    },
+    "traefik": {
+        "v3.6": "3.6.1"
+    },
+    "coolify-ko": {
+        "schema": 1,
+        "upstream": "4.4.6",
+        "upstreamSeenAt": "2026-10-09T00:00:00Z",
+        "refreshedAt": "2026-10-18T00:00:00Z"
+    }
+}

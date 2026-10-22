@@ -1,0 +1,26 @@
+[
+  {
+    "file": "resources/views/components/server/caddy-image-outdated-callout.blade.php",
+    "kind": "rich",
+    "originalSha256": "62fb19f6496cc9b8d2367dd7aaa27f2a6fc9dbb71b13deb6eeaa6f478fe627e5",
+    "line": 6,
+    "error": "ERROR:Error: Class \"Server\" not found",
+    "reason": "조각만 평가하면 파일 맨 위 @php use App\\Models\\Server; 가 없어 양쪽 다 실패한다. 변환 뒤에도 use 문은 그대로이고, 문장·태그·식(e($image), e(Server::RECOMMENDED_CADDY_PROXY_IMAGE))을 사람이 대조했다(4.4.6)."
+  },
+  {
+    "file": "resources/views/livewire/analytics.blade.php",
+    "kind": "text",
+    "originalSha256": "ebe235e41b63fc429cc9597330650841c0422be4909f4aaf9de560e4c649500e",
+    "line": 214,
+    "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
+    "reason": "number_format에 대역 객체가 들어가 양쪽 다 실패한다. {{ number_format(...) }} ms → {{ __(':latency_p95 ms', ['latency_p95' => number_format(...)]) }}로 같은 식을 같은 이스케이프로 출력함을 사람이 대조했다(4.4.6)."
+  },
+  {
+    "file": "resources/views/livewire/project/application/analytics.blade.php",
+    "kind": "text",
+    "originalSha256": "ebe235e41b63fc429cc9597330650841c0422be4909f4aaf9de560e4c649500e",
+    "line": 131,
+    "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
+    "reason": "위와 같은 number_format 조각이다. 사람이 대조했다(4.4.6)."
+  }
+]

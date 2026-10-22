@@ -1,0 +1,12 @@
+.git
+node_modules
+.work
+.local
+.claude
+CLAUDE.md
+coverage
+dist
+codemod/vendor
+codemod/.phpunit.cache
+.env
+.env.*

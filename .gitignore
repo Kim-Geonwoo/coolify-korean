@@ -1,0 +1,23 @@
+# AI 산출물·로컬 작업물: 레포에 넣지 않는다
+/.local/
+/.work/
+/CLAUDE.md
+/.claude/
+/memory/
+/docs/design/
+/docs/superpowers/
+.superpowers/
+/.screenshots/
+
+# 의존성·빌드 산출물
+node_modules/
+codemod/vendor/
+dist/
+coverage/
+.phpunit.cache/
+*.log
+
+# 비밀값
+.env
+.env.*
+!.env.example

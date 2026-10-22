@@ -1,0 +1,412 @@
+{
+  "terms": [
+    {
+      "en": "Server",
+      "ko": "서버"
+    },
+    {
+      "en": "Application",
+      "ko": "애플리케이션"
+    },
+    {
+      "en": "Database",
+      "ko": "데이터베이스"
+    },
+    {
+      "en": "Service",
+      "ko": "서비스"
+    },
+    {
+      "en": "Container",
+      "ko": "컨테이너"
+    },
+    {
+      "en": "Volume",
+      "ko": "볼륨"
+    },
+    {
+      "en": "Image",
+      "ko": "이미지"
+    },
+    {
+      "en": "Network",
+      "ko": "네트워크"
+    },
+    {
+      "en": "Deploy",
+      "ko": "배포",
+      "forms": [
+        "deploys",
+        "deploying",
+        "deployed",
+        "deployment",
+        "deployments"
+      ]
+    },
+    {
+      "en": "Redeploy",
+      "ko": "재배포",
+      "forms": [
+        "redeploying",
+        "redeployment"
+      ]
+    },
+    {
+      "en": "Preview Deployment",
+      "ko": "미리보기 배포",
+      "forms": [
+        "preview deployments"
+      ]
+    },
+    {
+      "en": "Run",
+      "ko": "실행",
+      "forms": [
+        "runs",
+        "running"
+      ]
+    },
+    {
+      "en": "Build",
+      "ko": "빌드",
+      "forms": [
+        "builds",
+        "building"
+      ]
+    },
+    {
+      "en": "Build Pack",
+      "ko": "빌드팩",
+      "forms": [
+        "buildpack",
+        "buildpacks",
+        "build packs"
+      ]
+    },
+    {
+      "en": "Proxy",
+      "ko": "프록시"
+    },
+    {
+      "en": "Domain",
+      "ko": "도메인"
+    },
+    {
+      "en": "Environment",
+      "ko": "환경"
+    },
+    {
+      "en": "Environment Variables",
+      "ko": "환경 변수",
+      "forms": [
+        "environment variable"
+      ]
+    },
+    {
+      "en": "Shared Variables",
+      "ko": "공유 변수",
+      "forms": [
+        "shared variable"
+      ]
+    },
+    {
+      "en": "Variable",
+      "ko": "변수"
+    },
+    {
+      "en": "Persistent Storage",
+      "ko": "영구 스토리지",
+      "forms": [
+        "persistent storages"
+      ]
+    },
+    {
+      "en": "Storage",
+      "ko": "스토리지"
+    },
+    {
+      "en": "Backup",
+      "ko": "백업"
+    },
+    {
+      "en": "Restore",
+      "ko": "복원",
+      "forms": [
+        "restores",
+        "restoring"
+      ]
+    },
+    {
+      "en": "Rollback",
+      "ko": "롤백"
+    },
+    {
+      "en": "Resource",
+      "ko": "리소스"
+    },
+    {
+      "en": "Destination",
+      "ko": "배포 대상",
+      "note": "Coolify에서 리소스를 배포하는 서버 안 Docker 네트워크"
+    },
+    {
+      "en": "Health check",
+      "ko": "헬스 체크",
+      "forms": [
+        "healthcheck",
+        "healthchecks",
+        "health checks"
+      ]
+    },
+    {
+      "en": "Private Key",
+      "ko": "프라이빗 키"
+    },
+    {
+      "en": "Scheduled Task",
+      "ko": "예약 작업"
+    },
+    {
+      "en": "Webhook",
+      "ko": "웹훅"
+    },
+    {
+      "en": "Settings",
+      "ko": "설정",
+      "forms": [
+        "setting"
+      ]
+    },
+    {
+      "en": "Configuration",
+      "ko": "구성"
+    },
+    {
+      "en": "Repository",
+      "ko": "저장소",
+      "forms": [
+        "repositories"
+      ]
+    },
+    {
+      "en": "Branch",
+      "ko": "브랜치",
+      "forms": [
+        "branches"
+      ]
+    },
+    {
+      "en": "Commit",
+      "ko": "커밋"
+    },
+    {
+      "en": "Project",
+      "ko": "프로젝트"
+    },
+    {
+      "en": "Team",
+      "ko": "팀"
+    },
+    {
+      "en": "Member",
+      "ko": "구성원"
+    },
+    {
+      "en": "Token",
+      "ko": "토큰"
+    },
+    {
+      "en": "Tag",
+      "ko": "태그"
+    },
+    {
+      "en": "Log",
+      "ko": "로그"
+    },
+    {
+      "en": "Port",
+      "ko": "포트"
+    },
+    {
+      "en": "Instance",
+      "ko": "인스턴스"
+    },
+    {
+      "en": "Source",
+      "ko": "소스"
+    },
+    {
+      "en": "Registry",
+      "ko": "레지스트리",
+      "forms": [
+        "registries"
+      ]
+    },
+    {
+      "en": "Notification",
+      "ko": "알림"
+    },
+    {
+      "en": "Email",
+      "ko": "이메일"
+    },
+    {
+      "en": "Password",
+      "ko": "비밀번호"
+    },
+    {
+      "en": "Dashboard",
+      "ko": "대시보드"
+    },
+    {
+      "en": "Terminal",
+      "ko": "터미널"
+    },
+    {
+      "en": "Metrics",
+      "ko": "메트릭",
+      "forms": [
+        "metric"
+      ]
+    },
+    {
+      "en": "Analytics",
+      "ko": "분석"
+    },
+    {
+      "en": "Danger Zone",
+      "ko": "위험 구역"
+    },
+    {
+      "en": "Endpoint",
+      "ko": "엔드포인트"
+    },
+    {
+      "en": "Certificate",
+      "ko": "인증서"
+    },
+    {
+      "en": "Cleanup",
+      "ko": "정리",
+      "forms": [
+        "clean up"
+      ]
+    },
+    {
+      "en": "Disk",
+      "ko": "디스크"
+    },
+    {
+      "en": "Memory",
+      "ko": "메모리"
+    },
+    {
+      "en": "Secret",
+      "ko": "시크릿"
+    },
+    {
+      "en": "Subscription",
+      "ko": "구독"
+    },
+    {
+      "en": "Invitation",
+      "ko": "초대",
+      "forms": [
+        "invite",
+        "invites",
+        "invitations"
+      ]
+    },
+    {
+      "en": "Upgrade",
+      "ko": "업그레이드"
+    },
+    {
+      "en": "Update",
+      "ko": "업데이트"
+    },
+    {
+      "en": "Onboarding",
+      "ko": "온보딩"
+    }
+  ],
+  "brands": [
+    "Coolify",
+    "Coolify Cloud",
+    "Docker",
+    "Docker Compose",
+    "Docker Swarm",
+    "Dockerfile",
+    "Swarm",
+    "GitHub",
+    "GitHub App",
+    "GitLab",
+    "Bitbucket",
+    "Gitea",
+    "Git",
+    "Traefik",
+    "Caddy",
+    "Nginx",
+    "Nixpacks",
+    "Railpack",
+    "Sentinel",
+    "Horizon",
+    "Reverb",
+    "Hetzner",
+    "DigitalOcean",
+    "Vultr",
+    "Cloudflare",
+    "Cloudflare Tunnel",
+    "AWS",
+    "S3",
+    "SSH",
+    "SSL",
+    "TLS",
+    "DNS",
+    "API",
+    "OAuth",
+    "SSO",
+    "OIDC",
+    "SMTP",
+    "HTTP",
+    "HTTPS",
+    "URL",
+    "FQDN",
+    "IP",
+    "Laravel",
+    "Livewire",
+    "Discord",
+    "Slack",
+    "Telegram",
+    "Pushover",
+    "Resend",
+    "Mattermost",
+    "Microsoft Teams",
+    "PostgreSQL",
+    "Postgres",
+    "MySQL",
+    "MariaDB",
+    "MongoDB",
+    "Redis",
+    "KeyDB",
+    "DragonFly",
+    "ClickHouse",
+    "Authentik",
+    "Zitadel",
+    "Infomaniak",
+    "Clerk",
+    "Azure",
+    "Google",
+    "Microsoft",
+    "Stripe",
+    "Let's Encrypt",
+    "Ubuntu",
+    "Debian",
+    "Alpine",
+    "Linux",
+    "Windows",
+    "macOS",
+    "PHP",
+    "Node.js"
+  ]
+}

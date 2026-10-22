@@ -1,0 +1,13 @@
+coolify-ko
+Copyright 2026 Kim-Geonwoo
+
+This product includes work derived from Coolify
+(https://github.com/coollabsio/coolify), Copyright 2025 Andras Bacsai,
+licensed under the Apache License, Version 2.0.
+
+- The coolify-ko container images contain Coolify files modified by coolify-ko.
+  Each modified file starts with a notice saying that it was changed.
+- The English source strings in i18n/ are extracted from Coolify.
+
+The name "Coolify" belongs to coolLabs Solutions Kft. coolify-ko is an
+unofficial project. It is not affiliated with or endorsed by coolLabs.

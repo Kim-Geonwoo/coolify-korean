@@ -1,0 +1,81 @@
+# coolify-ko 시험 인스턴스. 업스트림 docker-compose.windows.yml을 바탕으로 안전하게 줄였다.
+# 이 PC의 smoke와 우분투 2 밤 작업의 스크린샷 단계(rootless Docker, 프로젝트 coolify-ko-screens)가 쓴다.
+# - testing-host(이 PC의 docker.sock을 쥠)를 빼서 Coolify가 이 PC의 이미지 정리·Traefik 기동을 못 하게 한다.
+# - 이미지는 미리 만든 태그만 쓴다(pull_policy: never). 자동 업데이트·스케줄러·Horizon은 끈다.
+# - 앱 포트는 127.0.0.1에만 연다. .env는 pipeline의 test-instance prepare가 무작위 비밀값으로 만든다.
+name: coolify-ko-test
+
+services:
+  coolify:
+    image: "${COOLIFY_TEST_IMAGE:?COOLIFY_TEST_IMAGE가 필요합니다}"
+    pull_policy: never
+    working_dir: /var/www/html
+    volumes:
+      - type: bind
+        source: .env
+        target: /var/www/html/.env
+        read_only: true
+      - ./lang-runtime:/var/www/html/lang-runtime:ro
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=production
+      - SSL_MODE=off
+      - AUTOUPDATE=false
+      - SELF_HOSTED=true
+      - SSH_MUX_ENABLED=false
+      - IS_WINDOWS_DOCKER_DESKTOP=true
+      - PHP_PM_CONTROL=dynamic
+      - PHP_PM_START_SERVERS=1
+      - PHP_PM_MIN_SPARE_SERVERS=1
+      - PHP_PM_MAX_SPARE_SERVERS=10
+      - COOLIFY_LOCALE=${COOLIFY_LOCALE:-en}
+      - COOLIFY_LANG_PATH=/var/www/html/lang-runtime
+    ports:
+      - "127.0.0.1:${APP_PORT:-18080}:8080"
+    healthcheck:
+      test: curl --fail http://localhost:8080/api/health || exit 1
+      interval: 5s
+      retries: 60
+      timeout: 2s
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:15-alpine@sha256:f7d23353e1b15400d22ebe31189f4d314b87a4c129cc400c8c2d8d4ca127bf81
+    pull_policy: missing
+    networks:
+      default:
+        aliases: [coolify-db]
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_DATABASE:-coolify}"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d ${DB_DATABASE:-coolify}"]
+      interval: 5s
+      retries: 20
+      timeout: 2s
+
+  redis:
+    image: redis:7-alpine@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    pull_policy: missing
+    networks:
+      default:
+        aliases: [coolify-redis]
+    command: redis-server --save "" --loglevel warning --requirepass ${REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a ${REDIS_PASSWORD} --no-auth-warning ping | grep -q PONG"]
+      interval: 5s
+      retries: 20
+      timeout: 2s
+
+volumes:
+  db:

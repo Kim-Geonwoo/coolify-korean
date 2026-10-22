@@ -1,0 +1,59 @@
+{
+  "2026-10-17-index-9b": {
+    "build": "b11700-23f7aabc1",
+    "engine": "index-9b",
+    "glossary": "0960f9d36d058017",
+    "model": "Index-Translate-9B.Q5_K_M.gguf",
+    "prompt": "feedb69e7012b573",
+    "promptVersion": 1,
+    "revision": "IndexTeam/Index-Translate-9B-GGUF@645939fbab839a656f1bc39975a872bc8ad749f8",
+    "sampling": {
+      "max_tokens": 4096,
+      "seed": 20261017,
+      "temperature": 0
+    }
+  },
+  "2026-10-17-opus5.5-confirm-fix": {
+    "engine": "claude-opus-5.5 (세션 수정, 확인 문구 원문 유지 2)",
+    "glossary": "0960f9d36d058017",
+    "input": "ed48a339f307b250",
+    "prompt": "2d0a41c2f1fe273b"
+  },
+  "2026-10-17-sonnet5.5": {
+    "engine": "claude-sonnet-5.5 (Claude Code 서브에이전트 ×2, 어려운 키 466)",
+    "glossary": "0960f9d36d058017",
+    "input": "f9e592c50b646936",
+    "prompt": "f1cfd68dfcd0bf41"
+  },
+  "2026-10-17-sonnet5.5-r2": {
+    "engine": "claude-sonnet-5.5 (Claude Code 서브에이전트, 분류·숫자 단위 고친 재번역 62)",
+    "glossary": "0960f9d36d058017",
+    "input": "f9e592c50b646936",
+    "prompt": "6ccd259485d5a259"
+  },
+  "2026-10-17-sonnet5.5-recheck": {
+    "engine": "claude-sonnet-5.5 (Claude Code 서브에이전트, 설명→요청문 재점검 320 중 129 수정)",
+    "glossary": "0960f9d36d058017",
+    "input": "ed48a339f307b250",
+    "prompt": "678f1d662644f256"
+  },
+  "2026-10-18-index-9b": {
+    "build": "b11700-23f7aabc1",
+    "engine": "index-9b",
+    "glossary": "0960f9d36d058017",
+    "model": "Index-Translate-9B.Q5_K_M.gguf",
+    "prompt": "feedb69e7012b573",
+    "promptVersion": 1,
+    "revision": "IndexTeam/Index-Translate-9B-GGUF@645939fbab839a656f1bc39975a872bc8ad749f8",
+    "sampling": {
+      "max_tokens": 4096,
+      "seed": 20261017,
+      "temperature": 0
+    }
+  },
+  "2026-10-18-memory": {
+    "engine": "memory",
+    "glossary": "0960f9d36d058017",
+    "prompt": "-"
+  }
+}

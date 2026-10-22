@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# 시험용 가짜 curl: 인자를 기록하고 FAKE_CURL_BODY 파일 내용을 돌려준다
+set -u
+printf 'curl %s\n' "$*" >>"${FAKE_DOCKER_LOG:?}"
+if [ "${FAKE_CURL_STATUS:-0}" != 0 ]; then
+  echo 'curl: (7) Failed to connect' >&2
+  exit "$FAKE_CURL_STATUS"
+fi
+cat "${FAKE_CURL_BODY:?}"

@@ -1,0 +1,3 @@
+networks:
+  coolify:
+    external: true

@@ -1,0 +1,35 @@
+{
+  "$2.70 per additional server, billed annually.": {
+    "sourceHash": "62177defbdd9a99b"
+  },
+  "$3 per additional server, billed monthly.": {
+    "sourceHash": "433b17817c6e0e9e"
+  },
+  "+ Add": {
+    "sourceHash": "c007258c23b0c011"
+  },
+  "+ Add GitHub App": {
+    "sourceHash": "a0af3a6256064d00"
+  },
+  "+ Add GitLab App": {
+    "sourceHash": "94dc576f63a19750"
+  },
+  "+:additional_domain_count more :value": {
+    "sourceHash": "f70dffe595933a92"
+  },
+  "0 0 * * * or daily": {
+    "sourceHash": "596de4ab75ea7061"
+  },
+  "1 domain set.": {
+    "sourceHash": "9f9862273b072ff0"
+  },
+  "1 server can start collecting traffic analytics": {
+    "sourceHash": "8c18ae15663a0ef3"
+  },
+  "24 hours": {
+    "sourceHash": "f0514e8df84107f4"
+  },
+  "30 days": {
+    "sourceHash": "ffd7280513ce285e"
+  }
+}

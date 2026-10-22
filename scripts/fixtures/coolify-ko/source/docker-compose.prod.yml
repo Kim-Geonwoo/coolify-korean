@@ -1,0 +1,6 @@
+# 시험용 대역
+services:
+  coolify:
+    image: "${REGISTRY_URL:-docker.io}/coollabsio/coolify:${LATEST_IMAGE:-latest}"
+    env_file:
+      - /data/coolify/source/.env

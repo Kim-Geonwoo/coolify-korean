@@ -1,0 +1,13 @@
+{
+  "$2.70 per additional server, billed annually.": "추가 서버당 연간 $2.70가 청구됩니다.",
+  "$3 per additional server, billed monthly.": "추가 서버당 월 $3가 청구됩니다.",
+  "+ Add": "+ 추가",
+  "+ Add GitHub App": "+ GitHub App 추가",
+  "+ Add GitLab App": "+ GitLab 앱 추가",
+  "+:additional_domain_count more :value": "+:additional_domain_count개 :value 더",
+  "0 0 * * * or daily": "0 0 * * * 또는 매일",
+  "1 domain set.": "도메인 1개 설정됨.",
+  "1 server can start collecting traffic analytics": "1개의 서버에서 트래픽 분석을 수집할 수 있습니다",
+  "24 hours": "24시간",
+  "30 days": "30일"
+}

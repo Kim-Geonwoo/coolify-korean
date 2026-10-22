@@ -1,0 +1,22 @@
+{
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "coolify-ko@unofficial",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      },
+      "update_url": "https://coolify-ko.geonwoo.dev/extension/updates.json"
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}

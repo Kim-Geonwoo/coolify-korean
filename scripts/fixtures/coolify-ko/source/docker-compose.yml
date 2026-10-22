@@ -1,0 +1,8 @@
+# 시험용 대역: 스크립트는 파일이 있는지만 본다(가짜 docker가 compose를 받는다)
+services:
+  coolify:
+    container_name: coolify
+  postgres:
+    container_name: coolify-db
+  redis:
+    container_name: coolify-redis
