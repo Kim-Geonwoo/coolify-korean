@@ -5,7 +5,7 @@
 # coolify-ko
 
 **자체 호스팅 Coolify를 한국어로.**<br>
-공식 이미지 위에 번역만 얹는 비공식 한국어판입니다.
+공식 이미지 위에 번역만 더한 비공식 한국어 지원 프로젝트입니다.
 
 [![Chrome 웹 스토어](https://img.shields.io/chrome-web-store/v/hjfmiecbkiimkbnhoedjicaccmdaihni?label=Chrome&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/coolify-%ED%95%9C%EA%B5%AD%EC%96%B4-%EB%B9%84%EA%B3%B5%EC%8B%9D/hjfmiecbkiimkbnhoedjicaccmdaihni)
 [![Firefox](https://img.shields.io/badge/Firefox-.xpi-FF7139?logo=firefoxbrowser&logoColor=white)](https://coolify-ko.geonwoo.dev)
@@ -19,84 +19,81 @@
 </div>
 
 > [!NOTE]
-> Coolify를 만든 coolLabs와 관계없는 비공식 프로젝트입니다. Coolify는 coolLabs의 Apache-2.0 프로젝트입니다.
+> 본 프로젝트는 Coolify 개발사인 coolLabs와 무관한 비공식 프로젝트입니다. Coolify는 coolLabs의 Apache-2.0 라이선스 오픈소스 프로젝트입니다.
 
 ## 특징
 
-- **번역만 얹습니다.** 공식 이미지에 번역 파일만 덮고, 업데이트는 공식 `upgrade.sh`로 그대로 합니다.
-- **한 줄로 되돌립니다.** 공식 후크 두 개(`docker-compose.custom.yml`의 이미지, `.env`의 `VERSIONS_URL`)만 바꿉니다.
-- **서명된 이미지.** amd64·arm64 이미지를 cosign으로 서명해 냅니다.
-- **서버를 건드리기 어렵다면** 브라우저 확장으로 내 화면만 바꿀 수 있습니다.
+- **번역만 적용합니다.** 공식 이미지 위에 번역 파일만 덮어씌우며, 업데이트는 공식 `upgrade.sh`를 그대로 사용합니다.
+- **한 줄 명령어로 원상 복구:** 공식 훅(Hook) 두 곳(`docker-compose.custom.yml`의 이미지 설정, `.env`의 `VERSIONS_URL`)만 변경하므로 언제든 깔끔하게 되돌릴 수 있습니다.
+- **서명된 안전한 이미지:** amd64 및 arm64 이미지를 cosign으로 서명하여 신뢰할 수 있는 빌드를 배포합니다.
+- **서버 수정 없이 사용 가능:** 서버 설정을 직접 변경하기 어려운 환경이라면, 브라우저 확장 프로그램을 통해 내 브라우저 화면에만 한국어를 적용할 수 있습니다.
 
 ## 로드맵
 
-- [x] Coolify 최신본 자동 번역 및 배포
+- [x] Coolify 최신 버전 자동 번역 및 배포
 - [x] AI 번역 및 번역 검수 파이프라인 구축
 - [ ] Safari 확장 프로그램 출시
-- [ ] 번역 검수 파이프라인 외부 참여 오픈
+- [ ] 번역 검수 파이프라인 커뮤니티 개방
 - [ ] coolify-korean 프로젝트를 자체 호스팅에서 무료 호스팅으로 전환
 
 ## 현재 서버에 적용(추천)
 
-Coolify를 이미 쓰고 있다면 이 방법을 권합니다. 그 서버의 모든 사용자가 한국어 화면을 봅니다.
+이미 Coolify를 사용하고 계신 서버라면 이 방법을 권장합니다. 해당 서버에 접속하는 모든 사용자가 한국어 화면을 이용할 수 있습니다.
 
 ```bash
-# 1. 스크립트를 받고 해시를 확인합니다 (coolify-ko.sh: OK)
+# 1. 스크립트를 다운로드하고 해시를 검증합니다 (결과: coolify-ko.sh: OK)
 curl -fsSLo coolify-ko.sh https://coolify-ko.geonwoo.dev/coolify-ko.sh
 curl -fsSL https://coolify-ko.geonwoo.dev/coolify-ko.sh.sha256 | sha256sum -c -
 
-# 2. 설치합니다
+# 2. 한국어 패치를 설치합니다
 sudo bash coolify-ko.sh install
 ```
 
-되돌릴 때는 한 줄이면 됩니다.
+원래대로 되돌릴 때도 명령어 한 줄이면 충분합니다.
 
 ```bash
 sudo bash /data/coolify/source/coolify-ko.sh uninstall
 ```
 
-> [!IMPORTANT]
-> 스크립트는 root로 돕니다. 받은 뒤 내용을 읽고 실행하세요. `curl … | bash` 꼴로 바로 실행하지 마세요.
-
-`docker-compose.custom.yml`에 `coolify` 서비스를 이미 둔 서버는 [설치 상세](docs/install.md#방법-a-지금-서버에-얹기)를 보세요.
+`docker-compose.custom.yml`에 이미 `coolify` 서비스 설정을 추가해 둔 서버는 [설치 상세](docs/install.md#방법-a-지금-서버에-얹기)를 참고하세요.
 
 ## 번역된 이미지로 새로 설치
 
-새 서버라면 공식 설치 전에 준비해 두세요. 첫 부팅부터 한국어로 뜹니다. 위와 같이 스크립트를 받아 확인한 뒤 실행합니다.
+새 서버를 구축하는 중이라면 공식 설치를 진행하기 전에 미리 준비해 둘 수 있습니다. 첫 부팅 시점부터 한국어로 시작됩니다. 위 안내대로 스크립트를 다운로드하고 검증한 뒤 실행합니다.
 
 ```bash
 sudo bash coolify-ko.sh preinstall
 ```
 
-`preinstall`이 공식 설치 명령을 출력합니다. 그 명령을 그대로 실행하면 됩니다. 순서와 주의점은 [새로 설치 상세](docs/install.md#방법-b-새로-설치)에 있습니다.
+`preinstall` 명령을 실행하면 공식 설치 명령이 출력됩니다. 출력된 명령을 그대로 실행하시면 됩니다. 구체적인 순서와 주의사항은 [새로 설치 상세](docs/install.md#방법-b-새로-설치)에서 확인하실 수 있습니다.
 
 ## 브라우저 확장
 
-서버는 그대로 두고 내 브라우저에서만 Coolify 화면을 한국어로 바꿉니다.
+서버 설정은 전혀 건드리지 않고, 내 웹 브라우저에서만 Coolify 화면을 한국어로 표시합니다.
 
 | 브라우저 | 설치 |
 |---|---|
 | Chrome | [Chrome 웹 스토어](https://chromewebstore.google.com/detail/coolify-%ED%95%9C%EA%B5%AD%EC%96%B4-%EB%B9%84%EA%B3%B5%EC%8B%9D/hjfmiecbkiimkbnhoedjicaccmdaihni) |
-| Firefox | [coolify-ko.geonwoo.dev](https://coolify-ko.geonwoo.dev)에서 `.xpi`를 받습니다(버전·SHA-256 함께 표시, 새 판은 자동 갱신) |
+| Firefox | [coolify-ko.geonwoo.dev](https://coolify-ko.geonwoo.dev)에서 서명된 `.xpi` 파일을 내려받습니다 (버전 및 SHA-256 해시 제공, 새 버전 자동 업데이트 지원) |
 
-확장은 내가 켠 Coolify 주소에서만 동작하고, 화면 글을 밖으로 보내지 않습니다. 자세한 내용은 [확장 상세](docs/install.md#방법-c-브라우저-확장)와 [개인정보 처리방침](https://coolify-ko.geonwoo.dev/privacy)에 있습니다.
+확장 프로그램은 사용자가 지정한 Coolify 주소에서만 동작하며, 화면의 텍스트나 데이터를 외부로 전송하지 않습니다. 자세한 내용은 [확장 상세](docs/install.md#방법-c-브라우저-확장)와 [개인정보 처리방침](https://coolify-ko.geonwoo.dev/privacy)을 참고하세요.
 
 ## 문서
 
 | 문서 | 내용 |
 |---|---|
-| [설치와 되돌리기](docs/install.md) | 설치 방법별 상세, 되돌리기, 이미지 서명 확인(cosign) |
-| [동작 원리와 보안](docs/how-it-works.md) | 공식 후크 두 개, 보안 모델, 한계, 종료 정책 |
-| [개발](docs/development.md) | 만드는 방식, 개발 환경, 변환과 검증, 시험 인스턴스 |
-| [번역 범위](reports/coverage.md) | 4.4.6 기준 변환 결과 |
+| [설치와 되돌리기](docs/install.md) | 설치 방법별 상세 안내, 공식 버전 복구, 이미지 서명 확인(cosign) |
+| [동작 원리와 보안](docs/how-it-works.md) | 공식 훅 활용 방식, 보안 모델, 제약 사항, 프로젝트 종료 정책 |
+| [개발](docs/development.md) | 빌드 및 변환 파이프라인, 개발 환경, 검증 절차, 로컬 테스트 인스턴스 |
+| [번역 범위](reports/coverage.md) | Coolify 4.4.6 기준 변환 및 번역 현황 |
 
-공개 주소: https://coolify-ko.geonwoo.dev · 이미지: `ghcr.io/kim-geonwoo/coolify-ko`
+공식 웹사이트: https://coolify-ko.geonwoo.dev · 컨테이너 이미지: `ghcr.io/kim-geonwoo/coolify-ko`
 
 ## 라이선스와 상표
 
-- 이 레포는 [Apache License 2.0](LICENSE)을 따릅니다. Coolify와 같은 라이선스입니다.
-- 오버레이 이미지 속 수정 파일과 `i18n/`의 영어 원문은 Coolify에서 왔습니다. 출처와 저작권은 [NOTICE](NOTICE)에 적었고 수정한 파일마다 맨 위에 수정 고지가 있습니다.
-- "Coolify" 이름과 로고는 coolLabs Solutions Kft.의 것입니다. 이 프로젝트는 비공식이며 coolLabs와 제휴하거나 보증받지 않았습니다. Coolify 로고를 이 프로젝트의 표지로 쓰지 않습니다.
+- 본 저장소는 Coolify와 동일하게 [Apache License 2.0](LICENSE)을 따릅니다.
+- 오버레이 이미지 속 수정된 파일과 `i18n/`의 영어 원문은 Coolify 프로젝트의 소스코드에서 유래했습니다. 상세 출처와 저작권 정보는 [NOTICE](NOTICE)에 명시되어 있으며, 수정한 파일마다 상단에 라이선스 및 변경 고지가 포함되어 있습니다.
+- "Coolify" 명칭과 로고는 coolLabs Solutions Kft.의 등록 상표입니다. 본 프로젝트는 비공식 프로젝트이며 coolLabs와 어떠한 제휴나 공식적인 보증 관계도 없습니다. Coolify 공식 로고를 본 프로젝트의 대표 이미지로 사용하지 않습니다.
 
 ## 문의
 

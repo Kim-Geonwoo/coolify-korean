@@ -32,16 +32,16 @@ const say = (text: string): void => {
 async function enable(origin: string): Promise<void> {
   const granted = await api.permissions.request({ origins: [originPattern(origin, firefox)] });
   if (!granted) {
-    say('권한을 허락하지 않아 켜지 않았습니다.');
+    say('권한이 허용되지 않아 활성화하지 않았습니다.');
     return;
   }
   const answer = await api.runtime.sendMessage({ type: 'enable', origin });
-  say(typeof answer === 'object' && answer !== null && (answer as { ok?: unknown }).ok === true ? '켰습니다. 탭을 새로고침하면 적용됩니다.' : '켜지 못했습니다.');
+  say(typeof answer === 'object' && answer !== null && (answer as { ok?: unknown }).ok === true ? '활성화되었습니다. 탭을 새로고침하면 적용됩니다.' : '활성화하지 못했습니다.');
 }
 
 async function disable(origin: string): Promise<void> {
   await api.runtime.sendMessage({ type: 'disable', origin });
-  say('껐습니다. 탭을 새로고침하면 영어로 돌아갑니다.');
+  say('비활성화되었습니다. 탭을 새로고침하면 영문 원본으로 표시됩니다.');
 }
 
 async function saveMissed(): Promise<void> {
@@ -65,14 +65,14 @@ async function render(): Promise<void> {
   const missed = Array.isArray(stored['missed']) ? stored['missed'].length : 0;
   const on = origin !== null && origins.includes(origin);
   const toggle = buttonById('toggle');
-  byId('origin').textContent = origin ?? '이 탭은 http(s) 주소가 아닙니다.';
-  byId('state').textContent = origin === null ? '' : on ? '이 주소에서 켜져 있습니다.' : '이 주소에서는 꺼져 있습니다.';
+  byId('origin').textContent = origin ?? '현재 탭은 HTTP(S) 주소가 아닙니다.';
+  byId('state').textContent = origin === null ? '' : on ? '현재 주소에서 활성화되어 있습니다.' : '현재 주소에서 비활성화되어 있습니다.';
   toggle.hidden = origin === null;
-  toggle.textContent = on ? '이 주소에서 끄기' : '이 주소에서 켜기';
+  toggle.textContent = on ? '이 주소에서 비활성화' : '이 주소에서 활성화';
   toggle.onclick = (): void => {
     if (origin !== null) {
       (on ? disable(origin) : enable(origin)).then(render).catch(() => {
-        say('처리하지 못했습니다.');
+        say('요청을 처리하지 못했습니다.');
       });
     }
   };
@@ -83,7 +83,7 @@ async function render(): Promise<void> {
 
 byId('save-missed').addEventListener('click', () => {
   saveMissed().catch(() => {
-    say('목록을 받지 못했습니다.');
+    say('누락 목록을 다운로드하지 못했습니다.');
   });
 });
 byId('clear-missed').addEventListener('click', () => {
@@ -93,5 +93,5 @@ byId('clear-missed').addEventListener('click', () => {
     .catch(() => undefined);
 });
 render().catch(() => {
-  say('주소를 읽지 못했습니다.');
+  say('현재 탭의 주소를 읽어오지 못했습니다.');
 });
