@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { originPattern, parseOrigin } from './origins.ts';
+import { NOT_WEB_TAB, originPattern, parseOrigin } from './origins.ts';
+
+// 2026-10-23 사용자: chrome://extensions에서 "HTTP(S) 주소가 아닙니다"를 보고 http가 안 되는 줄 알았다
+describe('NOT_WEB_TAB', () => {
+  it('says that both http and https addresses work', () => {
+    expect(NOT_WEB_TAB).toContain('http://');
+    expect(NOT_WEB_TAB).toContain('https://');
+    expect(NOT_WEB_TAB).not.toContain('HTTP(S)');
+  });
+});
 
 describe('parseOrigin', () => {
   it('keeps scheme, host and port of http(s) pages and drops the rest', () => {

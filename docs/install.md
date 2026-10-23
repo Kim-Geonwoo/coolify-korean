@@ -78,7 +78,7 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash -s <출력된 
 - Chrome: [Chrome 웹 스토어](https://chromewebstore.google.com/detail/coolify-%ED%95%9C%EA%B5%AD%EC%96%B4-%EB%B9%84%EA%B3%B5%EC%8B%9D/hjfmiecbkiimkbnhoedjicaccmdaihni)에서 설치합니다.
 - Firefox: https://coolify-ko.geonwoo.dev 메인 페이지에서 서명된 설치 파일(.xpi)을 내려받습니다. 파일 옆에 안내된 SHA-256 해시와 다운로드한 파일의 해시가 일치하는지 확인할 수 있으며(`sha256sum coolify-ko-*.xpi`, Windows는 `Get-FileHash`), 새로운 버전 출시 시 자동으로 업데이트됩니다.
 
-확장 프로그램은 사용자가 직접 활성화한 Coolify 주소에서만 동작합니다. 번역되지 않은 누락 문구는 브라우저 로컬 저장소에만 보관되며 외부로 전송되지 않습니다. 실시간 화면 갱신 시점에 일시적으로 영어가 보였다가 한국어로 전환될 수 있습니다.
+확장 프로그램은 사용자가 직접 활성화한 Coolify 주소에서만 동작합니다(`http://서버IP:8000` 같은 http 주소와 https 주소 모두 지원). 번역되지 않은 누락 문구는 브라우저 로컬 저장소에만 보관되며 외부로 전송되지 않습니다. 실시간 화면 갱신 시점에 일시적으로 영어가 보였다가 한국어로 전환될 수 있습니다.
 
 ## 되돌리기
 

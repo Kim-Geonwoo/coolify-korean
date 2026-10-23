@@ -1,4 +1,4 @@
-import { originPattern, parseOrigin } from './origins.ts';
+import { NOT_WEB_TAB, originPattern, parseOrigin } from './origins.ts';
 
 /**
  * popup: 지금 탭의 주소를 보여 주고, 그 주소에서 켜기·끄기, 누락 목록 받기·비우기.
@@ -65,7 +65,8 @@ async function render(): Promise<void> {
   const missed = Array.isArray(stored['missed']) ? stored['missed'].length : 0;
   const on = origin !== null && origins.includes(origin);
   const toggle = buttonById('toggle');
-  byId('origin').textContent = origin ?? '현재 탭은 HTTP(S) 주소가 아닙니다.';
+  byId('origin').textContent = origin ?? NOT_WEB_TAB;
+  byId('origin').classList.toggle('note', origin === null);
   byId('state').textContent = origin === null ? '' : on ? '현재 주소에서 활성화되어 있습니다.' : '현재 주소에서 비활성화되어 있습니다.';
   toggle.hidden = origin === null;
   toggle.textContent = on ? '이 주소에서 비활성화' : '이 주소에서 활성화';
