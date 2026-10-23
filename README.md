@@ -43,7 +43,7 @@
 ```bash
 # 1. 스크립트를 다운로드하고 해시를 검증합니다 (결과: coolify-ko.sh: OK)
 curl -fsSLo coolify-ko.sh https://coolify-ko.geonwoo.dev/coolify-ko.sh
-curl -fsSL https://coolify-ko.geonwoo.dev/coolify-ko.sh.sha256 | sha256sum -c -
+curl -fsSL https://raw.githubusercontent.com/Kim-Geonwoo/coolify-korean/main/scripts/coolify-ko.sh.sha256 | sha256sum -c -
 
 # 2. 한국어 패치를 설치합니다
 sudo bash coolify-ko.sh install

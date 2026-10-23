@@ -10,6 +10,8 @@ export interface MirrorStatus {
   readonly lastSuccess?: string;
   /** 이번 연속 실패를 알렸는지(성공하면 지운다) */
   readonly notified?: boolean;
+  /** 마지막으로 알린 태그 불일치(같은 불일치는 다시 알리지 않는다. 성공하면 지운다) */
+  readonly alert?: string;
 }
 
 export interface MirrorJobDeps {
@@ -21,6 +23,8 @@ export interface MirrorJobDeps {
   readonly siteReady: () => boolean;
   /** 작업 레포 origin/dev의 releases/published.json */
   readonly published: () => PublishedLedger;
+  /** 레지스트리에서 그 버전 태그가 지금 가리키는 index 다이제스트(태그가 없으면 undefined, 확인 못 하면 던짐) */
+  readonly registry: (version: string) => Promise<string | undefined>;
   readonly cdn: () => Promise<unknown>;
   readonly refresh: (input: { readonly cdn: unknown; readonly published: PublishedLedger; readonly now: Date }) => { readonly changed: boolean; readonly issues: readonly string[] };
   /** versions.json을 커밋해 main에 push한다. 앞서간 커밋이 있으면 rejected */
@@ -35,6 +39,24 @@ export interface MirrorJobDeps {
 export type MirrorOutcome = 'skipped' | 'unchanged' | 'pushed' | 'failed';
 
 const NOTIFY_AFTER = 3;
+
+class TagMismatch extends Error {}
+
+const short = (digest: string): string => digest.slice('sha256:'.length, 'sha256:'.length + 12);
+
+/** 발행 기록의 모든 태그가 레지스트리에서 기록한 index 그대로인지. 다르거나 없으면 TagMismatch */
+async function checkTags(published: PublishedLedger, registry: MirrorJobDeps['registry']): Promise<void> {
+  const mismatches: string[] = [];
+  for (const [version, entry] of Object.entries(published.versions)) {
+    const actual = await registry(version);
+    if (actual !== entry.index) {
+      mismatches.push(`${version}: ${actual === undefined ? '태그 없음' : `기록 ${short(entry.index)} ≠ 레지스트리 ${short(actual)}`}`);
+    }
+  }
+  if (mismatches.length > 0) {
+    throw new TagMismatch(mismatches.join(', '));
+  }
+}
 
 export async function runMirrorJob(deps: MirrorJobDeps): Promise<MirrorOutcome> {
   const before = deps.readStatus();
@@ -54,6 +76,7 @@ export async function runMirrorJob(deps: MirrorJobDeps): Promise<MirrorOutcome> 
 
       return succeed('skipped');
     }
+    await checkTags(published, deps.registry);
     const cdn = await deps.cdn();
     const attempt = async (): Promise<'unchanged' | 'pushed' | 'rejected'> => {
       const result = deps.refresh({ cdn, published, now: deps.now() });
@@ -91,6 +114,15 @@ export async function runMirrorJob(deps: MirrorJobDeps): Promise<MirrorOutcome> 
   } catch (error: unknown) {
     const reason = (error instanceof Error ? error.message : String(error)).slice(0, 200);
     deps.log(`미러 갱신 실패: ${reason}`);
+    if (error instanceof TagMismatch) {
+      // 공급망 신호라 세 번을 기다리지 않는다. versions.json은 바꾸지 않았다
+      if (before.alert !== reason) {
+        await deps.notify(`coolify-ko 보안: 발행한 이미지 태그가 발행 기록과 다릅니다. 미러 갱신을 멈췄습니다(사용자 서버는 직전 versions.json을 씁니다). ${reason}`);
+      }
+      deps.writeStatus({ ...failing, notified: true, alert: reason });
+
+      return 'failed';
+    }
     if (failing.failures >= NOTIFY_AFTER && failing.notified !== true) {
       await deps.notify(`coolify-ko 미러 갱신이 ${String(failing.failures)}번 이어서 실패했습니다(사용자 서버는 직전 versions.json을 씁니다): ${reason}`);
       deps.writeStatus({ ...failing, notified: true });

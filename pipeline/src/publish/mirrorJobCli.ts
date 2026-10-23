@@ -5,7 +5,8 @@ import { canonicalJson } from '../i18n/integrity.ts';
 import { postDiscord } from '../sync/discord.ts';
 import { parsePublished } from './ledger.ts';
 import { runMirrorJob, type MirrorStatus } from './mirrorJob.ts';
-import { ASSETS_DIR, refreshVersions, SITE_URL, versionsPath } from './site.ts';
+import { registryDigest } from './registry.ts';
+import { ASSETS_DIR, IMAGE_REPO, refreshVersions, SITE_URL, versionsPath } from './site.ts';
 
 /**
  * 서버 진입점: coolify-ko-mirror.service(6시간 타이머)가 부른다. 작업 레포(밤 작업 작업 사본)는 fetch만 하고 바꾸지 않는다.
@@ -77,6 +78,7 @@ async function main(): Promise<void> {
 
       return parsePublished(JSON.parse(must(WORK, ['show', `origin/${BRANCH}:releases/published.json`])) as unknown);
     },
+    registry: (version) => registryDigest(IMAGE_REPO, version, fetch),
     cdn: async () => {
       const response = await fetch('https://cdn.coollabs.io/coolify/versions.json', { signal: AbortSignal.timeout(TIMEOUT_MS), headers: { 'user-agent': 'coolify-ko-mirror', accept: 'application/json' } });
       if (!response.ok) {

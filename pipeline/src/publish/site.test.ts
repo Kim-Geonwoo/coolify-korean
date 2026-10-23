@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { repoDictionary, zip } from '../extension/pack.ts';
 import type { PublishedLedger } from './ledger.ts';
-import { buildSite, CHROME_STORE_URL, CONTACT_EMAIL, DEMO_PHRASES, refreshVersions, SITE_URL, SOURCE_REPO, writeSite, type SiteFiles, type SiteInput } from './site.ts';
+import { buildSite, CHROME_STORE_URL, CONTACT_EMAIL, DEMO_PHRASES, PINNED_RAW, refreshVersions, SITE_URL, SOURCE_REPO, writeSite, type SiteFiles, type SiteInput } from './site.ts';
 
 const cdn = JSON.parse(readFileSync(join(import.meta.dirname, 'fixtures', 'versions.json'), 'utf8')) as Record<string, unknown>;
 const published: PublishedLedger = { schema: 1, versions: { '4.4.6': { kind: 'ko', index: `sha256:${'a'.repeat(64)}`, commit: 'b'.repeat(40), publishedAt: '2026-10-19T00:00:00.000Z' } } };
@@ -109,6 +109,17 @@ describe('buildSite', () => {
     expect(files.get('public/coolify-ko.sh.sha256')).toBe(`${sha(input.script)}  coolify-ko.sh\n`);
   });
 
+  // 2026-10-22 보안 점검 4: 사이트가 뚫리면 스크립트·해시·키를 한꺼번에 바꿀 수 있다. 해시·키는 서버가 쓸 수 없는 공개 레포에서 받는다
+  it('points the script hash and the signing key at the public GitHub repository, not at this site', () => {
+    const page = text(buildSite(input), 'public/index.html');
+
+    expect(PINNED_RAW).toBe('https://raw.githubusercontent.com/Kim-Geonwoo/coolify-korean/main');
+    expect(page).toContain(`curl -fsSL ${PINNED_RAW}/scripts/coolify-ko.sh.sha256 | sha256sum -c -`);
+    expect(page).toContain(`cosign verify --key ${PINNED_RAW}/releases/cosign.pub`);
+    expect(page).not.toContain(`${SITE_URL}/coolify-ko.sh.sha256 |`);
+    expect(page).not.toContain(`--key ${SITE_URL}/cosign.pub`);
+  });
+
   it('allows cross-origin reads and marks the extension package type', () => {
     const headers = text(buildSite(input), 'public/_headers');
 
@@ -121,7 +132,7 @@ describe('buildSite', () => {
 
     expect(page).toContain(`curl -fsSL ${SITE_URL}/coolify-ko.sh`);
     expect(page).toContain('sudo bash /data/coolify/source/coolify-ko.sh uninstall');
-    expect(page).toContain(`cosign verify --key ${SITE_URL}/cosign.pub`);
+    expect(page).toContain(`cosign verify --key ${PINNED_RAW}/releases/cosign.pub`);
     expect(page).toContain(SOURCE_REPO);
     expect(page).toContain('href="privacy.html"');
     expect(page).toContain(`mailto:${CONTACT_EMAIL}`);

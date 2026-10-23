@@ -13,10 +13,10 @@ curl -fsSLo coolify-ko.sh https://coolify-ko.geonwoo.dev/coolify-ko.sh
 ```
 
 ```bash
-curl -fsSL https://coolify-ko.geonwoo.dev/coolify-ko.sh.sha256 | sha256sum -c -
+curl -fsSL https://raw.githubusercontent.com/Kim-Geonwoo/coolify-korean/main/scripts/coolify-ko.sh.sha256 | sha256sum -c -
 ```
 
-출력 결과로 `coolify-ko.sh: OK`가 나타나는지 확인합니다.
+출력 결과로 `coolify-ko.sh: OK`가 나타나는지 확인합니다. 해시는 스크립트를 내려받은 사이트가 아니라 GitHub 공개 레포에서 받으므로, 한쪽이 바뀌어도 대조에서 드러납니다.
 
 ## 방법 A: 지금 서버에 얹기
 
@@ -107,5 +107,5 @@ cd /data/coolify/source && sudo docker compose --env-file .env -f docker-compose
 배포되는 컨테이너 이미지에는 cosign 디지털 서명과 빌드 출처 증명(Attestation)이 첨부되어 있습니다. 아래 명령으로 이미지 서명을 검증할 수 있습니다. 구체적인 서명 방식과 발행 절차는 [보안 모델](how-it-works.md#보안-모델)을 참고하세요.
 
 ```bash
-cosign verify --key https://coolify-ko.geonwoo.dev/cosign.pub ghcr.io/kim-geonwoo/coolify-ko:<버전>
+cosign verify --key https://raw.githubusercontent.com/Kim-Geonwoo/coolify-korean/main/releases/cosign.pub ghcr.io/kim-geonwoo/coolify-ko:<버전>
 ```

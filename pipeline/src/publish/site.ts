@@ -12,6 +12,8 @@ import { buildMirror, mirrorIssues } from './mirror.ts';
  */
 export const SITE_URL = 'https://coolify-ko.geonwoo.dev';
 export const SOURCE_REPO = 'https://github.com/Kim-Geonwoo/coolify-korean';
+/** 스크립트 해시·서명 공개 키를 받는 곳: 서버가 쓸 수 없는 공개 레포(사이트가 뚫려도 바뀌지 않는다, 보안 점검 4) */
+export const PINNED_RAW = 'https://raw.githubusercontent.com/Kim-Geonwoo/coolify-korean/main';
 export const IMAGE_REPO = 'ghcr.io/kim-geonwoo/coolify-ko';
 /** 미러 레포에서 사이트로 내는 폴더. .git과 wrangler 설정은 이 밖에 둔다(2026-10-20: 레포 루트를 내자 .git이 공개됐다) */
 export const ASSETS_DIR = 'public';
@@ -147,12 +149,12 @@ function indexHtml(version: string, xpi: FirefoxFile | undefined): string {
 <p>An unofficial Korean build of self-hosted Coolify. It keeps the official image and only adds translation files.</p>
 <h2>설치(이미 설치한 Coolify 서버에서)</h2>
 <pre>curl -fsSL ${SITE_URL}/coolify-ko.sh -o coolify-ko.sh
-curl -fsSL ${SITE_URL}/coolify-ko.sh.sha256 | sha256sum -c -
+curl -fsSL ${PINNED_RAW}/scripts/coolify-ko.sh.sha256 | sha256sum -c -
 sudo bash coolify-ko.sh install</pre>
 <h2>공식판으로 되돌리기</h2>
 <pre>sudo bash /data/coolify/source/coolify-ko.sh uninstall</pre>
 <h2>서명 확인</h2>
-<pre>cosign verify --key ${SITE_URL}/cosign.pub ${IMAGE_REPO}:${version}</pre>
+<pre>cosign verify --key ${PINNED_RAW}/releases/cosign.pub ${IMAGE_REPO}:${version}</pre>
 <h2>브라우저 확장</h2>
 <p>서버를 바꾸지 않고 브라우저에서 화면만 한국어로 볼 수도 있습니다. 확장은 사용자가 켠 주소에서만 동작합니다. <a href="demo.html">시험 쪽</a>에서 먼저 확인해 볼 수 있습니다.</p>
 <ul>
