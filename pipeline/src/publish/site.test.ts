@@ -31,6 +31,17 @@ const signedXpi = (version: string): Buffer =>
     ['manifest.json', Buffer.from(JSON.stringify({ manifest_version: 3, version, browser_specific_settings: { gecko: { id: 'coolify-ko@unofficial' } } }))],
     ['META-INF/cose.sig', Buffer.from('sig')],
   ]);
+const popupLabels = (): { enable: string; disable: string; clear: string } => {
+  const script = readFileSync(join(import.meta.dirname, '..', '..', '..', 'extension', 'src', 'popup.ts'), 'utf8');
+  const html = readFileSync(join(import.meta.dirname, '..', '..', '..', 'extension', 'static', 'popup.html'), 'utf8');
+  const toggle = /toggle\.textContent = on \? '([^']+)' : '([^']+)';/.exec(script);
+  const clear = /id="clear-missed"[^>]*>([^<]+)</.exec(html);
+  if (toggle?.[1] === undefined || toggle[2] === undefined || clear?.[1] === undefined) {
+    throw new Error('팝업 단추 이름을 찾지 못함');
+  }
+
+  return { disable: toggle[1], enable: toggle[2], clear: clear[1] };
+};
 
 describe('buildSite', () => {
   it('lays out the mirror site', () => {
@@ -183,6 +194,11 @@ describe('privacy page', () => {
     expect(page).toContain(`${String(longest)}자 이하`);
   });
 
+  it('names the popup buttons as the extension shows them', () => {
+    expect(page).toContain(`"${popupLabels().clear}"`);
+    expect(page).toContain(`"${popupLabels().disable}"`);
+  });
+
   it('carries an English summary for store reviewers and no scripts', () => {
     expect(page).toContain('does not sell');
     expect(page).not.toMatch(/<script/i);
@@ -210,7 +226,8 @@ describe('demo page', () => {
       expect(exact[phrase], phrase).toBeTypeOf('string');
       expect(page).toContain(phrase.replaceAll('&', '&amp;'));
     }
-    expect(page).toContain('이 주소에서 켜기');
+    expect(page).toContain(popupLabels().enable);
+    expect(page).toContain(popupLabels().disable);
     expect(page).not.toMatch(/<script/i);
   });
 });

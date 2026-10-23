@@ -246,7 +246,7 @@ const PRIVACY = `<!doctype html>
 <ul>
 <li>운영자는 개인정보를 따로 저장하지 않습니다.</li>
 <li>Cloudflare의 요청 기록은 3항의 기간이 지나면 자동으로 지워집니다.</li>
-<li>확장 정보 중 누락 문구 목록은 확장 창의 "비우기" 버튼으로, 켠 주소는 "이 주소에서 끄기"로 지웁니다. 확장을 삭제하면 브라우저가 모두 지웁니다.</li>
+<li>확장 정보 중 누락 문구 목록은 확장 창의 "목록 비우기" 버튼으로, 켠 주소는 "이 주소에서 비활성화"로 지웁니다. 확장을 삭제하면 브라우저가 모두 지웁니다.</li>
 </ul>
 
 <h2>7. 이용자의 권리와 행사 방법</h2>
@@ -311,13 +311,13 @@ const DEMO = `<!doctype html>
 <p>Coolify 대시보드 없이 「Coolify 한국어 (비공식)」 확장을 시험하는 쪽입니다. 아래 상자의 영어 문구는 Coolify 화면에 실제로 나오는 글입니다.</p>
 <ol>
 <li>브라우저 도구 막대의 확장 아이콘을 누릅니다.</li>
-<li>"이 주소에서 켜기"를 누르고, 브라우저가 묻는 이 사이트 접근 권한을 허락합니다.</li>
-<li>이 쪽을 새로고침하면 아래 문구가 한국어로 바뀝니다. 끄려면 같은 창에서 "이 주소에서 끄기"를 누릅니다.</li>
+<li>"이 주소에서 활성화"를 누르고, 브라우저가 묻는 이 사이트 접근 권한을 허락합니다.</li>
+<li>이 쪽을 새로고침하면 아래 문구가 한국어로 바뀝니다. 끄려면 같은 창에서 "이 주소에서 비활성화"를 누릅니다.</li>
 </ol>
 <ul class="demo">
 ${DEMO_PHRASES.map((phrase) => `<li>${escapeHtml(phrase)}</li>`).join('\n')}
 </ul>
-<p>Test page for the "Coolify 한국어 (비공식)" extension: click the extension icon, choose "이 주소에서 켜기" (enable on this address), allow access, then reload. The English Coolify phrases above turn into Korean.</p>
+<p>Test page for the "Coolify 한국어 (비공식)" extension: click the extension icon, choose "이 주소에서 활성화" (enable on this address), allow access, then reload. The English Coolify phrases above turn into Korean.</p>
 </body>
 </html>
 `;

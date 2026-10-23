@@ -1,10 +1,9 @@
 {
   "$2.70 per additional server, billed annually.": {
     "review": {
-      "fix": "추가 서버당 연간 $2.70가 청구됩니다.",
-      "reason": "숫자 뒤의 조사가 자연스럽게 읽히도록 하려면 '$2.70가'보다는 '$2.70가'도 가능하나 '$2.70가'는 크게 어색하지 않습니다.",
+      "reason": "",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "62177defbdd9a99b",
@@ -12,10 +11,9 @@
   },
   "$3 per additional server, billed monthly.": {
     "review": {
-      "fix": "추가 서버당 월 $3가 청구됩니다.",
-      "reason": "'$3가'는 구어체에 가깝고 '$3가'보다는 '$3가'가 통용되므로 허용 가능합니다.",
+      "reason": "",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "433b17817c6e0e9e",
@@ -43,10 +41,9 @@
   },
   "+ Add GitLab App": {
     "review": {
-      "fix": "+ GitLab App 추가",
-      "reason": "GitHub App과 일관되게 App을 유지하거나 서비스명 표기를 맞춥니다.",
+      "reason": "",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "94dc576f63a19750",
@@ -54,8 +51,8 @@
   },
   "+:additional_domain_count more :value": {
     "review": {
-      "fix": "+:additional_domain_count개의 :value 더 보기",
-      "reason": "영어 어순을 직역하여 어색하므로 자연스럽게 다듬습니다.",
+      "fix": "+:additional_domain_count개의 추가 :value",
+      "reason": "어순과 조사가 부자연스러워 더 명확하게 수정했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "minor"
     },
@@ -165,16 +162,20 @@
   },
   "95% of requests completed within this response time": {
     "review": {
-      "fix": "요청의 95%가 이 응답 시간 내에 완료되었습니다.",
-      "reason": "문장 형태의 툴팁에 마침표를 누락했습니다.",
+      "reason": "",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2b3a541982f49584",
     "via": "mt"
   },
   ":backup_count backup schedule(s) will stop saving to S3. Existing objects in this storage will not be deleted.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "0f556fb74553f410",
     "via": "mt"
@@ -247,6 +248,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e26cf9cc1ffa47b9",
     "via": "mt"
@@ -259,6 +265,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8bf5982426d41f79",
     "via": "mt"
@@ -271,6 +282,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "fc424050a49ebe6a",
     "via": "mt"
@@ -283,6 +299,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "6cb752bfb56a7459",
     "via": "mt"
@@ -295,6 +316,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d5e6106a746cf9ee",
     "via": "mt"
@@ -307,6 +333,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "0c9d19d5d4ac7460",
     "via": "mt"
@@ -319,6 +350,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "69e92fc0dacf863a",
     "via": "mt"
@@ -331,6 +367,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "96bf8a19f54b99d6",
     "via": "mt"
@@ -343,6 +384,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e27dbef61ff73bf1",
     "via": "mt"
@@ -355,6 +401,12 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "fix": ":members 중 :count명이 2단계 인증을 활성화하지 않았습니다.",
+      "reason": "자연스러운 한국어 문장 구조로 수정합니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ac332d6e40c5278e",
     "via": "mt"
@@ -367,6 +419,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "6b9df9f4a37328d6",
     "via": "mt"
@@ -396,6 +453,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "77a76bf336ad41d2",
     "via": "mt"
@@ -408,6 +470,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "fbac1ec1f499c5ea",
     "via": "mt"
@@ -420,6 +487,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b6686f57eb7e7fec",
     "via": "mt"
@@ -432,6 +504,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "08c300c98e8bf3a4",
     "via": "mt"
@@ -444,6 +521,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "57fb8c2d6128d896",
     "via": "mt"
@@ -456,6 +538,11 @@
         "rule": "plural-single"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "78efcf91b36398b7",
     "via": "mt"
@@ -472,7 +559,7 @@
   },
   ":frequency schedule": {
     "review": {
-      "reason": "원문의 의미를 자연스럽게 명사형으로 잘 전달했습니다.",
+      "reason": "원문의 의미를 알맞게 반영했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -492,7 +579,7 @@
   },
   ":key is not a valid variable name.": {
     "review": {
-      "reason": "글로스 및 조사 규칙, 문장 종결 스타일을 준수했습니다.",
+      "reason": "용어 규칙 및 플레이스홀더 조사를 올바르게 사용했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -501,23 +588,39 @@
     "via": "mt"
   },
   ":label URL (internal)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b08b442e58e5f21c",
     "via": "mt"
   },
   ":label URL (public)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ba65a47470fed4a2",
     "via": "mt"
   },
   ":label topic ID": {
+    "review": {
+      "fix": ":label 토픽 ID",
+      "reason": "알림 관련 topic은 주로 '토픽'으로 표기하는 것이 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "789ec86822ca1a70",
     "via": "mt"
   },
   ":latency_p95 ms": {
     "review": {
-      "reason": "단위와 플레이스홀더를 정확하게 유지했습니다.",
+      "reason": "수치와 단위를 정확하게 표기했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -527,7 +630,7 @@
   },
   ":managed_records_count managed :value": {
     "review": {
-      "reason": "어순을 한국어에 맞게 자연스럽게 조정했습니다.",
+      "reason": "자연스러운 한국어 어순으로 잘 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -536,13 +639,18 @@
     "via": "mt"
   },
   ":match_count matches": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d77e9fac95edaea6",
     "via": "mt"
   },
   ":name Resources": {
     "review": {
-      "reason": "글로스 규칙을 준수하여 정확하게 번역했습니다.",
+      "reason": "글로시리를 준수하여 올바르게 번역했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -551,13 +659,18 @@
     "via": "mt"
   },
   ":name icon": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "bfa82b09f489e086",
     "via": "mt"
   },
   ":name is not functional, so its container logs cannot be loaded.": {
     "review": {
-      "reason": "글로스 및 조사 규칙, 문장 종결 스타일을 준수했습니다.",
+      "reason": "글로시리와 정중체 문장 형식을 잘 지켰습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -567,7 +680,7 @@
   },
   ":newer_traefik_branch_available is available (latest patch: :latest_newer_traefik_version). Review the Traefik changelog for breaking changes before upgrading.": {
     "review": {
-      "reason": "요청 종결 어미 및 고유명사 표기를 정확하게 준수했습니다.",
+      "reason": "글로시리 및 요청 스타일(~하세요)을 올바르게 준수했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -577,7 +690,7 @@
   },
   ":provider_label account": {
     "review": {
-      "reason": "적절한 명사형 번역입니다.",
+      "reason": "명사형 라벨로 적절하게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -587,7 +700,7 @@
   },
   ":provider_label token": {
     "review": {
-      "reason": "글로스 규칙을 준수한 적절한 번역입니다.",
+      "reason": "글로시리를 준수하여 적절하게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -597,7 +710,7 @@
   },
   ":provider_name token": {
     "review": {
-      "reason": "글로스 규칙을 준수한 적절한 번역입니다.",
+      "reason": "글로시리를 준수하여 적절하게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -607,7 +720,7 @@
   },
   ":provider_name token is invalid or has insufficient permissions.": {
     "review": {
-      "reason": "글로스 및 문장 종결 스타일을 준수했습니다.",
+      "reason": "글로시리 및 정중체 문장 형식을 잘 지켰습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -617,7 +730,7 @@
   },
   ":provider_name token is valid and working.": {
     "review": {
-      "reason": "글로스 및 문장 종결 스타일을 준수했습니다.",
+      "reason": "글로시리 및 정중체 문장 형식을 잘 지켰습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -627,7 +740,7 @@
   },
   ":provider_name token updated successfully.": {
     "review": {
-      "reason": "글로스 및 문장 종결 스타일을 준수했습니다.",
+      "reason": "글로시리 및 완료 토스트 메시지 스타일을 잘 지켰습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -637,7 +750,7 @@
   },
   ":rate_limit_remaining requests remain. The limit resets at :rate_limit_reset UTC.": {
     "review": {
-      "reason": "원문의 의미와 문장 스타일을 잘 살린 번역입니다.",
+      "reason": "문장 형식을 올바르게 준수했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -647,7 +760,7 @@
   },
   ":rate_limit_remaining requests remaining": {
     "review": {
-      "reason": "원문의 의미를 자연스럽게 간결한 명사구로 번역했습니다.",
+      "reason": "짧은 텍스트 표현으로 적절합니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -657,10 +770,9 @@
   },
   ":resource_count :value use this tag.": {
     "review": {
-      "fix": ":resource_count개의 :value이(가) 이 태그를 사용합니다.",
-      "reason": "수량 뒤에 조사 '개의'를 붙여 문맥을 더 자연스럽게 개선합니다.",
+      "reason": "글로시리 및 플레이스홀더 조사를 잘 적용했습니다.",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "4a49349e92076631",
@@ -668,10 +780,9 @@
   },
   ":resource_count :value will be cloned.": {
     "review": {
-      "fix": ":resource_count개의 :value이(가) 복제됩니다.",
-      "reason": "수량 뒤에 조사 '개의'를 붙여 문맥을 더 자연스럽게 개선합니다.",
+      "reason": "문장 형식을 올바르게 준수했습니다.",
       "run": "2026-10-17-flash",
-      "verdict": "minor"
+      "verdict": "ok"
     },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "f2ba1b927fbb04cd",
@@ -679,7 +790,7 @@
   },
   ":target_name backup": {
     "review": {
-      "reason": "글로스 규칙을 준수한 명사형 번역입니다.",
+      "reason": "글로시리를 준수하여 적절하게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -689,7 +800,7 @@
   },
   ":target_type identifier": {
     "review": {
-      "reason": "적절한 명사형 번역입니다.",
+      "reason": "명사형으로 올바르게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -698,13 +809,18 @@
     "via": "mt"
   },
   ":url (not configured yet)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8dfc40d6b30c8c0a",
     "via": "mt"
   },
   ":zone_count accessible :value": {
     "review": {
-      "reason": "한국어 어순에 맞게 자연스럽게 번역했습니다.",
+      "reason": "자연스러운 한국어 어순으로 잘 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -714,7 +830,7 @@
   },
   "<0/> uses Sanctum bearer tokens from Security → API Tokens.": {
     "review": {
-      "reason": "UI 경로 및 글로스, 태그와 조사를 잘 유지했습니다.",
+      "reason": "글로시리, 태그, 메뉴 경로 등을 올바르게 번역했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -734,7 +850,7 @@
   },
   "<0>:domain</0> is used by": {
     "review": {
-      "reason": "플레이스홀더 및 태그, 조사를 적절히 번역했습니다.",
+      "reason": "의미와 태그를 올바르게 유지했습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -744,7 +860,7 @@
   },
   "<0>:name</0> <1>at :mount_path</1>": {
     "review": {
-      "reason": "태그와 플레이스홀더를 유지하며 간결하게 번역했습니다.",
+      "reason": "위치를 나타내는 서식으로 적절하게 번역되었습니다.",
       "run": "2026-10-17-flash",
       "verdict": "ok"
     },
@@ -753,546 +869,1104 @@
     "via": "mt"
   },
   "<0>:name</0> <1>in its compose file</1>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "52b078eb50624f20",
     "via": "mt"
   },
   "<0><1><2>All supported proxies:</2> Traefik and Caddy labels are both generated, so switching the proxy keeps routing working.</1><3><4>Active proxy only:</4> generates fewer labels, but all resources must be redeployed to become accessible again after each proxy switch.</3></0>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "d6bbcf9f7604cced",
     "via": "mt"
   },
   "<0>Elapsed time</0> <1/>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "7bf916694ad329c7",
     "via": "mt"
   },
   "<0>Examples</0><1/>For Public repositories, use <2>https://...</2>.<3/>For Private repositories, use <4>git@...</4>.<5/><6/>https://github.com/coollabsio/coolify-examples <7>main</7> branch will be selected<8/>https://github.com/coollabsio/coolify-examples/tree/nodejs-fastify <9>nodejs-fastify</9> branch will be selected.<10/>https://gitea.com/sedlav/expressjs.git <11>main</11> branch will be selected.<12/>https://gitlab.com/andrasbacsai/nodejs-example.git <13>main</13> branch will be selected.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "a078352a51e8489a",
     "via": "mt"
   },
   "<0>Generated pattern</0> <1/>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "f8a27b50f3b2205c",
     "via": "mt"
   },
   "<0>Last error:</0> <1/>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "a6e1f79071f2426b",
     "via": "mt"
   },
   "<0>Network</0> <1/>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "9cf92ebcf58a5175",
     "via": "mt"
   },
   "<0>Not your account?</0> <1>Back to login</1>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "f23dae7867104037",
     "via": "mt"
   },
   "<0>Note:</0> This is the localhost server where Coolify runs. During proxy restart, the connection may be temporarily lost. If logs stop updating, please refresh the browser after a few minutes.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "45cb3b87a033de84",
     "via": "mt"
   },
   "<0>Open Sentinel logs</0> and review recent connection or push errors.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "1f508e8124616c1b",
     "via": "mt"
   },
   "<0>Remember your password?</0> <1>Back to login</1>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "1d1942cddaac5096",
     "via": "mt"
   },
   "<0>Save changes</0> <1/>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "942a67774e1516ed",
     "via": "mt"
   },
   "<0>Subscription Error.</0> Something went wrong. Please try again or <1>contact support</1>.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "e81f1f458fb3516c",
     "via": "mt"
   },
   "<0>Team <1>:name</1> invited you as :role.</0> <2> Review invitation </2>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "77a75cdfc8f0d858",
     "via": "mt"
   },
   "<0>View the default KeyDB configuration</0>": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "8ce5ef476731c90b",
     "via": "mt"
   },
   "<0>WARNING:</0> The number of active servers exceeds the limit covered by your payment. If not resolved, some of your servers <1>will be deactivated</1>. Visit <2>/subscription</2> to update your subscription or remove some servers.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "2732995be555d135",
     "via": "mt"
   },
   "<0>WARNING:</0> Your subscription is in over-due. If your latest payment is not paid within a week, all automations <1>will be deactivated</1>. Visit <2>/subscription</2> to check your subscription status or pay your invoice (or check your email for the invoice).": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "9eac8e0cf8ec1de7",
     "via": "mt"
   },
   "<0>·</0> PR #:pull_request_id": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "a4ac1499a72f2c71",
     "via": "mt"
   },
   "A comma separated list of custom network aliases you would like to add for container in Docker network.<0/><1/><2>Example:</2><3/>api.internal,api.local": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "2f69386bd8fbecc4",
     "via": "mt"
   },
   "A comma separated list of ports you would like to map to the host system. Useful when you do not want to use domains.<0/><1/><2>Format:</2> host:container<3/><4/><5>Example:</5> 3000:3000,3002:3002<6/><7/>Rolling update is not supported if you have a port mapped to the host.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "98896036ed8f4bcf",
     "via": "mt"
   },
   "A cron expression or preset such as hourly, daily, weekly, monthly, or yearly.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a8bd1ba9ab10daed",
     "via": "mt"
   },
   "A failing probe marks the database unhealthy. Review the healthcheck guide before enabling it.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ccdc508709da3920",
     "via": "mt"
   },
   "A friendly name shown in Coolify.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a31b0529ed7a75af",
     "via": "mt"
   },
   "A job that runs longer is stopped.": {
+    "review": {
+      "fix": "이보다 오래 실행되는 작업은 중지됩니다.",
+      "reason": "설정 옵션에 대한 일반 설명문인데 과거형 완료 시제로 번역되어 의미가 왜곡되었습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "56a5af9ed09b1d52",
     "via": "mt"
   },
   "A job that waits longer for a free runner is dropped.": {
+    "review": {
+      "fix": "가용 러너를 이보다 오래 대기하는 작업은 취소됩니다.",
+      "reason": "타임아웃 설정 설명문인데 과거 완료형으로 번역되어 의미가 왜곡되었습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1fa6badb5d93052f",
     "via": "mt"
   },
   "A private key is required": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "be2cff8f51034dc1",
     "via": "mt"
   },
   "A private key is required.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5e82af0327accd4b",
     "via": "mt"
   },
   "A production environment will be created automatically.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e808f6cc03b6d3d9",
     "via": "mt"
   },
   "A recognizable name for this reusable script.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "34189470bf375904",
     "via": "mt"
   },
   "A resolvable server IP is required before autoconfiguring DNS. Set a public IP on the server (or instance settings for localhost).": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "fed23d7e185804e8",
     "via": "mt"
   },
   "A runner that gets no job in this time is removed.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ad57f364529168d1",
     "via": "mt"
   },
   "A running workflow job fails.": {
+    "review": {
+      "fix": "실행 중인 워크플로 작업이 실패할 때.",
+      "reason": "이벤트 트리거 설명이므로 조건/상황에 어울리게 다듬는 것이 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "609f58a45e133971",
     "via": "mt"
   },
   "A script with this filename already exists.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0a37d8ec7dc28dbd",
     "via": "mt"
   },
   "A server with this IP/Domain already exists.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5957d231d903b9b2",
     "via": "mt"
   },
   "A service is required for compose domains.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9fb0337a7905aaf6",
     "via": "mt"
   },
   "A service is required.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f90243ac5a2b3889",
     "via": "mt"
   },
   "A short project description": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "05916829549adb9e",
     "via": "mt"
   },
   "A short summary of your feedback": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a78ca018a0981f6a",
     "via": "mt"
   },
   "A six-digit verification code will be sent to the new address.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b16dbc939cbb0209",
     "via": "mt"
   },
   "A valid subscription or payment is required to continue.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "200b5ef0276a5600",
     "via": "mt"
   },
   "A variable with the key :key already exists.": {
+    "review": {
+      "fix": "키가 :key인 변수가 이미 존재합니다.",
+      "reason": "더 자연스러운 한국어 표현으로 수정하고 '존재합니다'로 통일합니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "b0d56b2a3d98d1c2",
     "via": "mt"
   },
   "AMD only": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "24db7e3f14387f14",
     "via": "mt"
   },
   "API Tokens": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "674d6510aabb8a07",
     "via": "mt"
   },
   "API access": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "923fd4348d29ec63",
     "via": "mt"
   },
   "API access is open to every source": {
+    "review": {
+      "fix": "모든 소스에 대해 API 액세스가 열려 있습니다.",
+      "reason": "용어 '액세스' 일관성을 유지하고 문장을 더 자연스럽게 다듬습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5f584c81a2df09c7",
     "via": "mt"
   },
   "API access is turned off": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "82f00f0629976fdd",
     "via": "mt"
   },
   "API and MCP": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e0baeb526d93715e",
     "via": "mt"
   },
   "API disabled": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "295c330c88ba7874",
     "via": "mt"
   },
   "API key": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "16f0ee47f993d627",
     "via": "mt"
   },
   "API token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "63a6d0f611449678",
     "via": "mt"
   },
   "API token is required.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b6818900e86ac485",
     "via": "mt"
   },
   "ARM only": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "51ca313cf5070428",
     "via": "mt"
   },
   "About remote servers": {
+    "review": {
+      "fix": "원격 서버 정보",
+      "reason": "속성 텍스트나 레이블 문맥에서 '~에 대해'보다 명사형 어구가 더 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "abcb591b57fb3794",
     "via": "mt"
   },
   "About this machine": {
+    "review": {
+      "fix": "이 머신 정보",
+      "reason": "속성 텍스트나 레이블 문맥에서 명사형 어구가 더 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "92c6d5090b598271",
     "via": "mt"
   },
   "About unconfigured healthchecks": {
+    "review": {
+      "fix": "구성되지 않은 헬스 체크 정보",
+      "reason": "레이블이나 안내 링크에서 '~에 관하여'보다 명사형 어구가 더 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0a8aa65f677d98b4",
     "via": "mt"
   },
   "Accept and close": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9e7b714dfb454fe6",
     "via": "mt"
   },
   "Accept invitation": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7e17aadc3039da77",
     "via": "mt"
   },
   "Accepted units are <0/>, <1/>, <2/>, and <3/>.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "2ae582d1ef506d5a",
     "via": "mt"
   },
   "Accepts JSON or form-urlencoded webhook payloads.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1adf4fc76585d808",
     "via": "mt"
   },
   "Access": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ec5ba0abb717da87",
     "via": "mt"
   },
   "Access Key": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "176f1c109e28fa68",
     "via": "mt"
   },
   "Access key": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8663b0d42ef0c511",
     "via": "mt"
   },
   "Account": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7e1b0d5641f2640c",
     "via": "mt"
   },
   "Account menu for :user_name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d788ff41ab26be3f",
     "via": "mt"
   },
   "Acknowledge & disable": {
+    "review": {
+      "fix": "확인 및 비활성화",
+      "reason": "주의사항 등을 인지하고 진행하는 UI 버튼에서는 '승인'보다 '확인'이 더 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f235093b7abf364f",
     "via": "mt"
   },
   "Action": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "64cff1319d2fd2cb",
     "via": "mt"
   },
   "Action Required": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9346491a4a850397",
     "via": "mt"
   },
   "Actions": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ff8059dc6752afdd",
     "via": "mt"
   },
   "Active": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "92340695899bd2d8",
     "via": "mt"
   },
   "Active and recent deployment activity": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3bfce4307eb58145",
     "via": "mt"
   },
   "Active deployments": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1fb57f0af05ec743",
     "via": "mt"
   },
   "Active labels": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a6f643bc11737b2b",
     "via": "mt"
   },
   "Active servers:": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "36bf25f0c395956a",
     "via": "mt"
   },
   "Active subscribers": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4cb867898cb28557",
     "via": "mt"
   },
   "Activity": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "38da1505ca837328",
     "via": "mt"
   },
   "Activity from the last 90 days for the current team.": {
+    "review": {
+      "fix": "현재 팀의 최근 90일 동안의 활동 내역입니다.",
+      "reason": "설명문은 완전한 종결 어미('~합니다/입니다') 형태의 문장으로 끝내는 것이 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7764478cee02f541",
     "via": "mt"
   },
   "Actor": {
+    "review": {
+      "fix": "수행자",
+      "reason": "감사 로그에서 작업을 수행한 주체를 뜻하므로 '수행자'가 더 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "449995c4fe8fab38",
     "via": "mt"
   },
   "Actual backup files are not changed.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8b173030e020f88f",
     "via": "mt"
   },
   "Add": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9fd728c66c9a256b",
     "via": "mt"
   },
   "Add :provider_label Token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "3b08eb7bf968ac71",
     "via": "mt"
   },
   "Add :provider_name Token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "2774758cd768e746",
     "via": "mt"
   },
   "Add <0></0> variables →": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "eb47ccc06b84021b",
     "via": "mt"
   },
   "Add Private Key Manually": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "378d98219e442321",
     "via": "mt"
   },
   "Add a Docker network endpoint to choose where your resources are deployed.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f9f325045a876aa4",
     "via": "mt"
   },
   "Add a Doppler, Infisical, or HashiCorp Vault token under Keys & Tokens > Integration Tokens first.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "175e8206a933c0bc",
     "via": "mt"
   },
   "Add a SQL file to run during the first PostgreSQL initialization.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c9fa15162a0eb42e",
     "via": "mt"
   },
   "Add a configuration file to extend the proxy at runtime.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b82adb06bb4bffa7",
     "via": "mt"
   },
   "Add a database, persistent volume, or directory backup schedule to protect service data.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d5fe335e808bd972",
     "via": "mt"
   },
   "Add a destination or scan the server for existing Docker networks.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f2748ac8d3e4adfb",
     "via": "mt"
   },
   "Add a domain or generate one with the server wildcard domain.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "790aa72106f2c541",
     "via": "mt"
   },
   "Add a note to document what this environment variable is used for.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3761ae644fe83186",
     "via": "mt"
   },
   "Add a persistent volume or directory backup schedule to protect application data.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9fc559a08b3f50e0",
     "via": "mt"
   },
   "Add a persistent volume or directory mount before configuring a backup.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f132c2140fafbf79",
     "via": "mt"
   },
   "Add a provider token to connect a third-party integration.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "812852c3aad2faba",
     "via": "mt"
   },
   "Add a provider token to provision new cloud servers.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c6b8d4bd1288f13c",
     "via": "mt"
   },
   "Add a server": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8667e211a74781a8",
     "via": "mt"
   },
   "Add a server before creating server-wide variables.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "bb54a06a25ed14c3",
     "via": "mt"
   },
   "Add a server to deploy applications, databases, and services.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "be9faefd040b76b3",
     "via": "mt"
   },
   "Add a server to manage its Docker registry logins.": {
+    "review": {
+      "fix": "서버의 Docker 레지스트리 로그인을 관리하려면 서버를 추가하세요.",
+      "reason": "영어 'its'의 직역인 '이 서버의'가 문맥상 어색하고 불필요합니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f6945959682def61",
     "via": "mt"
   },
   "Add a tag above or select one from your team's available tags.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0019b415916fede0",
     "via": "mt"
   },
   "Add a time-based one-time password to protect your account.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "60731e666c864f61",
     "via": "mt"
   },
   "Add a token to manage this server through :provider_name.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "243554441d934205",
     "via": "mt"
   },
   "Add a usable build server before you set this server to deployments only.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d294dd06f825d3cf",
     "via": "mt"
   },
   "Add a variable to make it available to resources in this scope.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "767b3c7dd0861954",
     "via": "mt"
   },
   "Add a volume, file, or directory mount to preserve data between deployments.": {
+    "review": {
+      "fix": "배포 간에 데이터를 보존하려면 볼륨, 파일 또는 디렉터리 마운트를 추가하세요.",
+      "reason": "사용자 행동을 안내하는 설명 문구이므로 요청형(…하세요)으로 표현하는 것이 자연스럽습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "960cd66d714ed6c8",
     "via": "mt"
   },
   "Add an API token to continue provisioning.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7570063af05c5443",
     "via": "mt"
   },
   "Add an S3-compatible destination to store backups outside your servers.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "63590d20f8c47f69",
     "via": "mt"
   },
   "Add an SSH private key before connecting your first server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b0fed5eab29cb675",
     "via": "mt"
   },
   "Add an application domain": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "dd3d04c150bfeee8",
     "via": "mt"
@@ -1305,21 +1979,41 @@
         "rule": "imperative"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fcfd3f0173d47d5f",
     "via": "mt"
   },
   "Add an environment to start organizing this project's resources.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "dfece94b17b947d5",
     "via": "mt"
   },
   "Add an existing Linux server using its SSH connection details.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "4489418359ba64e5",
     "via": "mt"
   },
   "Add and test an S3-compatible storage under Storages before selecting it here.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "57491253f78703e6",
     "via": "mt"
@@ -1332,1681 +2026,3392 @@
         "rule": "imperative"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d6de87816f176ac6",
     "via": "mt"
   },
   "Add another private key from Keys & Tokens before switching.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e6322b380ddf7779",
     "via": "mt"
   },
   "Add another server": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6a725253c29870b5",
     "via": "mt"
   },
   "Add as variable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4ebaa850acb16656",
     "via": "mt"
   },
   "Add at least one domain before configuring DNS on Cloudflare.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8438ab6886cdac2a",
     "via": "mt"
   },
   "Add backup": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9c04c04d0257ffa6",
     "via": "mt"
   },
   "Add cloud-init script": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ddb03f3dd464e6be",
     "via": "mt"
   },
   "Add database": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "127750b1a7ab97bc",
     "via": "mt"
   },
   "Add destination": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "48b7df13ccd63d55",
     "via": "mt"
   },
   "Add directory": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5c8be5066c93d8c8",
     "via": "mt"
   },
   "Add directory mount": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a1cd25ab32c82572",
     "via": "mt"
   },
   "Add domain": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d86476ae6cc9e4a5",
     "via": "mt"
   },
   "Add file": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2c83c00f0e83b39c",
     "via": "mt"
   },
   "Add file mount": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fefdac5a97603670",
     "via": "mt"
   },
   "Add host file": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1b9b55f748e5f33a",
     "via": "mt"
   },
   "Add host file mount": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "185a7891d91633bf",
     "via": "mt"
   },
   "Add manually": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c1bc31e43240f88c",
     "via": "mt"
   },
   "Add mount": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a57c65988c9a1cf6",
     "via": "mt"
   },
   "Add newly-created OAuth users to the Root team as members without creating a personal team.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "ed7e84e4f6a77a9e",
     "via": "mt"
   },
   "Add one or more database names. Leave empty to include the default database.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "df55615a356cb8a4",
     "via": "mt"
   },
   "Add or generate a private key to connect to this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ae2a7f46a9a16968",
     "via": "mt"
   },
   "Add private key": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f99fe4e5c52e2d6b",
     "via": "mt"
   },
   "Add resource": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "03cf099b1925e8ea",
     "via": "mt"
   },
   "Add resource to :name": {
+    "review": {
+      "fix": ":name에(게) 리소스 추가",
+      "reason": "플레이스홀더 뒤에 양방향 조사 '에(게)'를 사용해야 합니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "aff3d1875989f896",
     "via": "mt"
   },
   "Add schedule": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "79218735c2968a6e",
     "via": "mt"
   },
   "Add script": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6d2d701e64977e75",
     "via": "mt"
   },
   "Add server": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1099b2a9965f4c54",
     "via": "mt"
   },
   "Add suffix": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "558a8c5362d802b7",
     "via": "mt"
   },
   "Add supported docker run options used when the container starts. Unsupported options can interfere with Coolify automation.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "cd5506363a163297",
     "via": "mt"
   },
   "Add tags": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9c29db454e3dd0f5",
     "via": "mt"
   },
   "Add task": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ba423a46403c80e1",
     "via": "mt"
   },
   "Add the bot to your chat, then enter that chat ID.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "cf9a1107c2786768",
     "via": "mt"
   },
   "Add the public key to your server's <0/> file.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "c72c2f34a135a4e9",
     "via": "mt"
   },
   "Add the volume to the compose file of :compose_application_name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "31b8af18f5caf922",
     "via": "mt"
   },
   "Add these lines to the service that uses the database, then redeploy. Start this database first: Docker Compose does not create external volumes.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "5e2e57af25e6c4ed",
     "via": "mt"
   },
   "Add this tag to an application or service to see it here.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d149fd1dca887a24",
     "via": "mt"
   },
   "Add token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "91b90670613febc4",
     "via": "mt"
   },
   "Add variable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e10f539e38e1a105",
     "via": "mt"
   },
   "Add volume": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "329618bac0f3848e",
     "via": "mt"
   },
   "Add volume mount": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "545ca6b69f9a4f20",
     "via": "mt"
   },
   "Add with :credential": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-17-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "9eec110dc187e2cc",
     "via": "mt"
   },
   "Add your first domain with the Add domain button above, or generate one with the server wildcard domain.": {
+    "review": {
+      "fix": "위의 '도메인 추가' 버튼으로 첫 도메인을 추가하거나 서버 와일드카드 도메인으로 도메인을 생성하세요.",
+      "reason": "UI 버튼 이름('Add domain')을 명확히 구분해주고 어색한 표현을 다듬습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "8da0ff3abab1858c",
     "via": "mt"
   },
   "Add your first domain with the Add domain button above. Choose which service application receives it.": {
+    "review": {
+      "fix": "위의 '도메인 추가' 버튼으로 첫 도메인을 추가하세요. 해당 도메인을 받을 서비스 애플리케이션을 선택하세요.",
+      "reason": "UI 버튼 이름('Add domain')을 명확히 구분해주고 어순을 자연스럽게 다듬습니다.",
+      "run": "2026-10-17-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "ce9481899053427a",
     "via": "mt"
   },
   "Add your first domain with the Add domain button above. Choose which service receives it.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "5869a3c39eded13d",
     "via": "mt"
   },
   "Add your first variable with the + Add button above.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d272b4c3a178eb2c",
     "via": "mt"
   },
   "Added :key as {{vault.:key}}.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "74495842dfe92531",
     "via": "mt"
   },
   "Adding DNS record for :hostname.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "1703a76a8009f6fe",
     "via": "mt"
   },
   "Additional servers": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b89b9f818c1535b9",
     "via": "mt"
   },
   "Additional servers are unavailable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c35ad1130a77e98c",
     "via": "mt"
   },
   "Address used for outgoing email.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "01b108999c57a9f2",
     "via": "mt"
   },
   "Adds -pr-N to the storage name or path so each preview uses isolated data. Disabling it shares production data with previews.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "68c00a6197991603",
     "via": "mt"
   },
   "Adds 20% to the provider server price.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d130f1b921ae59ff",
     "via": "mt"
   },
   "Adjust server limit": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "08eb453cd5c04fa2",
     "via": "mt"
   },
   "Admin": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c1c224b03cd9bc7b",
     "via": "mt"
   },
   "Admin View": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f2e815badf37c78d",
     "via": "mt"
   },
   "Adopt running resources": {
+    "review": {
+      "fix": "실행 중인 리소스 가져오기",
+      "reason": "서버 이전/가져오기 맥락에서 adopt는 '가져오기' 또는 '등록하기'가 더 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "03ccc6cc89fcb6ee",
     "via": "mt"
   },
   "Advanced": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9f088dbebd6c3c70",
     "via": "mt"
   },
   "Advanced / self-hosted": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b4f0848d16f3f6a3",
     "via": "mt"
   },
   "Advanced Settings": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "22d4f6088b718aa4",
     "via": "mt"
   },
   "Advanced behavior for compose-based deployments.": {
+    "review": {
+      "fix": "compose 기반 배포를 위한 고급 동작입니다.",
+      "reason": "설명문은 명사형 종결 대신 '~합니다/입니다' 형태의 정중한 평서문으로 번역합니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a6b1dfb9bd9668a5",
     "via": "mt"
   },
   "Advanced cleanup": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "358e4e2f1475c8ba",
     "via": "mt"
   },
   "Advanced options": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9443ff69463ef46b",
     "via": "mt"
   },
   "Advanced settings": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7b0bd218a84eef9a",
     "via": "mt"
   },
   "Aggregate request volume for the selected filters and range.": {
+    "review": {
+      "fix": "선택한 필터 및 범위에 대한 총 요청량입니다.",
+      "reason": "여기서 'volume'은 스토리지 볼륨이 아닌 양/트래픽 볼륨을 의미하며, 기능 설명 명사절을 자연스러운 서술문으로 다듬었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "892bbf2a8d8c06e7",
     "via": "mt"
   },
   "All": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a52ace420f2175d0",
     "via": "mt"
   },
   "All Environments inside the project will be deleted as well.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e34d81baf90f6274",
     "via": "mt"
   },
   "All accessible repositories when empty": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "34abaae36503e18d",
     "via": "mt"
   },
   "All categories": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9d5097a837102a17",
     "via": "mt"
   },
   "All configuration will move with the resource.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "451959a33df128f0",
     "via": "mt"
   },
   "All containers for this preview deployment will be stopped and permanently deleted.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "141350b972fd6ae6",
     "via": "mt"
   },
   "All data and configurations live on your infrastructure. Works offline except for external integrations.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e669581f2aa797ab",
     "via": "mt"
   },
   "All databases": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "76c10219010f0c2a",
     "via": "mt"
   },
   "All detected Docker containers are managed by Coolify.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2d29f692016906ad",
     "via": "mt"
   },
   "All files in this directory will be permanently deleted and an empty file will be created in its place.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "62951e2ac2a18a05",
     "via": "mt"
   },
   "All members have two-factor authentication enabled.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "20b7d8213b3ecbb8",
     "via": "mt"
   },
   "All non-persistent data of this application will be deleted.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "f4fb84383741878a",
     "via": "mt"
   },
   "All non-persistent preview data will be removed.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ae00d54033b65252",
     "via": "mt"
   },
   "All packages will be updated to their latest available versions.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "9735e8ae215d8d2a",
     "via": "mt"
   },
   "All paths outside the top paths that Sentinel tracks": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "abe28e0d032e2b42",
     "via": "mt"
   },
   "All resources": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "dd036462e6ce556d",
     "via": "mt"
   },
   "All resources hosted on Coolify will be unavailable during the restart.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "86b9952dd37914f9",
     "via": "mt"
   },
   "All resources hosted on Coolify will be unavailable.": {
+    "review": {
+      "fix": "Coolify에 호스팅된 모든 리소스를 사용할 수 없게 됩니다.",
+      "reason": "'모든 리소스가 사용할 수 없게 됩니다'보다 '모든 리소스를 사용할 수 없게 됩니다'가 더 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "f2a602244c98fb4c",
     "via": "mt"
   },
   "All resources with this tag will be redeployed.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "319d4eb536b4f868",
     "via": "mt"
   },
   "All roles": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "78f133afd3ec55cd",
     "via": "mt"
   },
   "All servers": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3205261a65371c8a",
     "via": "mt"
   },
   "All servers will be deactivated.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8b895f2f7e6079f7",
     "via": "mt"
   },
   "All sources": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "08e774c5bacc362a",
     "via": "mt"
   },
   "All unused SSH keys (marked with unused) are permanently deleted.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "7d9e7d96ed17fc71",
     "via": "mt"
   },
   "All users": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "f7898130e55771fc",
     "via": "mt"
   },
   "All values are in minutes.": {
+    "review": {
+      "fix": "모든 값은 분 단위입니다.",
+      "reason": "불필요한 '표시됩니다' 대신 '분 단위입니다'가 더 간결하고 정확합니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "01e2445b9bec179a",
     "via": "mt"
   },
   "All your custom proxy labels will be lost.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "17a7e2955c940bc8",
     "via": "mt"
   },
   "Allow Git LFS during the build process.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "84d43e6a9f87bbc1",
     "via": "mt"
   },
   "Allow Git submodules during the build process.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8028b3116d22ec5a",
     "via": "mt"
   },
   "Allow OIDC user creation": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9cd5ed87614540ed",
     "via": "mt"
   },
   "Allow a successful OIDC login to create a user when password registration is disabled.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "66afb700ab5ff488",
     "via": "mt"
   },
   "Allow authenticated requests to the Coolify REST API.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e2b83d6bfd149fbc",
     "via": "mt"
   },
   "Allow password registration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "15fb35fbb97eaa35",
     "via": "mt"
   },
   "Allow users to create their own account. When disabled, only administrators can create accounts.": {
+    "review": {
+      "fix": "사용자가 직접 계정을 생성할 수 있도록 허용합니다. 비활성화하면 관리자만 계정을 생성할 수 있습니다.",
+      "reason": "'자체 계정'보다 '직접 계정을 생성할 수 있도록'이 더 자연스러운 한국어 표현입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6e6c90c96bdf89d6",
     "via": "mt"
   },
   "Allowed": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1bb201d188352e9b",
     "via": "mt"
   },
   "Allowed API IPs": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a23b4c990e07ed2a",
     "via": "mt"
   },
   "Allowed internal targets": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4e2f195ff2776557",
     "via": "mt"
   },
   "Alphabetical": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a49d631f8c6cf6fb",
     "via": "mt"
   },
   "Already have an account?": {
+    "review": {
+      "fix": "이미 계정이 있으신가요?",
+      "reason": "로그인 안내 문구로 '이미 계정이 있으신가요?' 또는 '이미 계정이 있습니까?'에서 더 친근하고 표준적인 '이미 계정이 있으신가요?' 또는 규칙 1의 질문형 종결에 맞추는 것이 좋습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "e77fea936d3e0118",
     "via": "mt"
   },
   "Also build applications": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "0aad2c2bcf21a517",
     "via": "mt"
   },
   "Also delete the DNS record created by Coolify, if present.": {
+    "review": {
+      "fix": "Coolify가 생성한 DNS 레코드가 있는 경우 함께 삭제합니다.",
+      "reason": "DNS record는 기술 용어로 통상 'DNS 레코드'라고 씁니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ba9e0efb3700e2c9",
     "via": "mt"
   },
   "Also permanently delete the Docker volume and all its data.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "965776202c3c1de9",
     "via": "mt"
   },
   "Alternative names": {
+    "review": {
+      "reason": "적절한 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "eb98cffd4e7b7206",
     "via": "mt"
   },
   "An admin can click \"Keep current data\" to use this volume as the data volume. The previous data volume is not used anymore, but stays on the server. It can contain data from before the file mount was added.": {
+    "review": {
+      "reason": "원문의 의미를 충실하고 자연스럽게 반영했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "804584b95fe8d4fd",
     "via": "mt"
   },
   "An incomplete setup can make the server unreachable.": {
+    "review": {
+      "fix": "설정이 불완전하면 서버에 연결할 수 없게 될 수 있습니다.",
+      "reason": "부자연스러운 번역투 표현을 자연스러운 한국어 문장으로 다듬었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "627762b6719ccf2b",
     "via": "mt"
   },
   "An optional script or command to execute in the existing container before the deployment begins.<0/>It is always executed with 'sh -c', so you do not need add it manually.": {
+    "review": {
+      "reason": "용어와 태그를 올바르게 유지했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "d10c6e871e016a13",
     "via": "mt"
   },
   "An optional script or command to execute in the newly built container after the deployment completes.<0/>It is always executed with 'sh -c', so you do not need add it manually.": {
+    "review": {
+      "reason": "용어와 태그를 올바르게 유지했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "55b29dd36e07a18e",
     "via": "mt"
   },
   "Analytics": {
+    "review": {
+      "reason": "글로사리에 맞게 번역되었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "94c116ee118a7299",
     "via": "mt"
   },
   "Anonymized (/24 IPv4, /48 IPv6)": {
+    "review": {
+      "reason": "적절한 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "3f0b8b60a6f58f6e",
     "via": "mt"
   },
   "Anonymous telemetry": {
+    "review": {
+      "reason": "적절한 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "84813ae1a2524a54",
     "via": "mt"
   },
   "Anonymous volumes may become eligible for Docker cleanup.": {
+    "review": {
+      "reason": "글로사리를 잘 준수했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8a30aebfbed3614e",
     "via": "mt"
   },
   "Any SSH-accessible server, including cloud VPS, bare metal, and self-hosted infrastructure.": {
+    "review": {
+      "reason": "적절한 명사구 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "14966398a85f057f",
     "via": "mt"
   },
   "Any deployments running during the update process will fail.": {
+    "review": {
+      "reason": "용어 규칙을 준수했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "709804739e643354",
     "via": "mt"
   },
   "Any directory inside the application container. The database files (:sqlite_databases) will be available there.": {
+    "review": {
+      "fix": "애플리케이션 컨테이너 내부의 임의 디렉터리입니다. 데이터베이스 파일(:sqlite_databases)을 해당 위치에서 사용할 수 있습니다.",
+      "reason": "'아무 디렉터리'를 '임의 디렉터리'로 다듬어 더욱 격식 있고 자연스럽게 표현했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "dcb9d04e83368674",
     "via": "mt"
   },
   "Anyone can register": {
+    "review": {
+      "fix": "누구나 등록 허용",
+      "reason": "설정 옵션의 레이블이므로 서술형 문장 대신 명사형으로 간결하게 표현하는 것이 좋습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "38d19e6a750b33fb",
     "via": "mt"
   },
   "App ID": {
+    "review": {
+      "fix": "App ID",
+      "reason": "GitHub App 설정 관련 필드이므로 다음 문자열의 'App ID'와 일관되게 App ID로 유지하는 것이 좋습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3c2f1e20ab373892",
     "via": "mt"
   },
   "App ID is required before synchronizing the GitHub App name.": {
+    "review": {
+      "reason": "용어 규칙과 안내 스타일을 준수했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "eb6f91e78c8a8278",
     "via": "mt"
   },
   "App name": {
+    "review": {
+      "reason": "적절한 레이블 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e6ad399685374164",
     "via": "mt"
   },
   "Appearance": {
+    "review": {
+      "fix": "화면 설정",
+      "reason": "UI 설정 메뉴의 Appearance는 '외형'보다 '화면 설정' 또는 '테마'가 훨씬 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3907fa7f80722a6f",
     "via": "mt"
   },
   "Application": {
+    "review": {
+      "reason": "글로사리에 맞게 번역되었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e7ad522ea327e5ba",
     "via": "mt"
   },
   "Application / service": {
+    "review": {
+      "reason": "글로사리에 맞게 번역되었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "cc4ef1900a9c4507",
     "via": "mt"
   },
   "Application ID": {
+    "review": {
+      "reason": "적절한 레이블 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "77e90b89c04007a0",
     "via": "mt"
   },
   "Application URL": {
+    "review": {
+      "reason": "적절한 레이블 번역입니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "96884337d874b359",
     "via": "mt"
   },
   "Application builds": {
+    "review": {
+      "reason": "글로사리에 맞게 번역되었습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "03d48afac6fe639d",
     "via": "mt"
   },
   "Application credentials from your GitLab OAuth application.": {
+    "review": {
+      "reason": "설명문 규칙을 준수했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2397a908918558b5",
     "via": "mt"
   },
   "Application deleted from Coolify. The server does not respond, so its container is removed when the service starts again.": {
+    "review": {
+      "reason": "원문의 의미와 스타일 규칙을 잘 반영했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "0d7bf2d7e5a7141b",
     "via": "mt"
   },
   "Application deleted.": {
+    "review": {
+      "reason": "토스트 메시지 스타일과 용어를 잘 준수했습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "00a4ef331da89e07",
     "via": "mt"
   },
   "Application details": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d9094d538a44973b",
     "via": "mt"
   },
   "Application images": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "933ab32ef60475f0",
     "via": "mt"
   },
   "Application is in degraded state across multiple servers.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0ce03465f78c9445",
     "via": "mt"
   },
   "Application secret": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "57e96de91f79c2e5",
     "via": "mt"
   },
   "Application settings updated!": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "77ef658f3cb3da9e",
     "via": "mt"
   },
   "Application source updated!": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2f38e7ecbfffbfe6",
     "via": "mt"
   },
   "Application status": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ccde872daa06edb7",
     "via": "mt"
   },
   "Application traffic may be interrupted while Sentinel and the proxy restart.": {
+    "review": {
+      "fix": "Sentinel과 프록시가 재시작되는 동안 애플리케이션 트래픽이 중단될 수 있습니다.",
+      "reason": "프록시 및 Sentinel이 재시작되는 피동형 표현이 더 자연스럽습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9ced02c0b985a81e",
     "via": "mt"
   },
   "Application unlinked. Redeploy it to apply the change.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6ecf8bbd3db22401",
     "via": "mt"
   },
   "Application: :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "2020be2364fa30b2",
     "via": "mt"
   },
   "Applications": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "98e33b0f3104fcf1",
     "via": "mt"
   },
   "Applications & services": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0a4b44132628002c",
     "via": "mt"
   },
   "Applications and databases defined in this service.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e4daed7ca872bc7e",
     "via": "mt"
   },
   "Applications and services ranked by request volume. Open one for its analytics.": {
+    "review": {
+      "fix": "요청량순으로 정렬된 애플리케이션 및 서비스입니다. 분석을 보려면 하나를 여세요.",
+      "reason": "'request volume'은 저장소 '볼륨'이 아닌 요청 건수/트래픽 양을 의미하므로 '요청량'으로 번역하는 것이 적절합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0049b7169af3795e",
     "via": "mt"
   },
   "Applications currently using this GitHub App.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8a52318176aa7f77",
     "via": "mt"
   },
   "Applications currently using this GitLab App.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ac74a8cb82d37d47",
     "via": "mt"
   },
   "Applications use these databases by mounting the data volume.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "267a7ece32a5ad9e",
     "via": "mt"
   },
   "Applications will appear here after this GitHub App is selected as their source.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "61800db10dce820e",
     "via": "mt"
   },
   "Applications will appear here after this GitLab App is selected as their source.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7fef628d2f3c5c06",
     "via": "mt"
   },
   "Applications, databases, and services connected to this Docker network.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b03995c5a5b3bae2",
     "via": "mt"
   },
   "Applications, databases, and services on this network": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "06707d4332e50b12",
     "via": "mt"
   },
   "Applies to all domains for this service application.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ee45a1c9ce028221",
     "via": "mt"
   },
   "Apply and restart": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c90ac9d4a4cb4147",
     "via": "mt"
   },
   "Architecture": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "cd74053c54816e47",
     "via": "mt"
   },
   "Archive": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "66f4804ee23ddc09",
     "via": "mt"
   },
   "Archive backups: drops matching tables, functions, types, and other PostgreSQL objects before restoring them. SQL backups: recreates the database before the restore.": {
+    "review": {
+      "reason": "정확하고 자연스러운 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "f1923009e137380e",
     "via": "mt"
   },
   "Archive backups: restores object owners and GRANTs from the backup. Leave this off for backups from another server (for example Amazon RDS): its roles usually do not exist here, and the whole restore would be rolled back.": {
+    "review": {
+      "reason": "요청 종결어미 및 기술 용어가 적절하게 번역되었습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "e45fd544dd7b384a",
     "via": "mt"
   },
   "Archive behavior": {
+    "review": {
+      "reason": "간결하고 명확한 명사형 레이블입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a5ac144e1a082fb9",
     "via": "mt"
   },
   "Archives created while the application writes to this storage can be inconsistent. Stopping containers during the archive is safer, but briefly interrupts the application.": {
+    "review": {
+      "reason": "문체와 용어가 모두 규칙에 부합합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "91cae74e817dce92",
     "via": "mt"
   },
   "Are you sure?": {
+    "review": {
+      "fix": "정말 진행하시겠습니까?",
+      "reason": "확인 모달의 질문은 규칙에 따라 '…하시겠습니까?' 형태로 자연스럽게 표현해야 합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "f0762c4f3bfcd695",
     "via": "mt"
   },
   "Assign an existing team tag with one click.": {
+    "review": {
+      "reason": "설명문 스타일에 맞게 잘 번역되었습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "a4daa5583768679b",
     "via": "mt"
   },
   "Assigned tags": {
+    "review": {
+      "reason": "간결하고 명확한 명사형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "211e416f8aeb6be2",
     "via": "mt"
   },
   "Attach another available server and network as a deployment destination.": {
+    "review": {
+      "reason": "글로시 용어(서버, 네트워크, 배포 대상)를 잘 반영한 설명문입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "a601ca7815c41087",
     "via": "mt"
   },
   "Attached private key": {
+    "review": {
+      "reason": "글로시 용어(프라이빗 키)를 준수했습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9e12351e827ac443",
     "via": "mt"
   },
   "Attention required": {
+    "review": {
+      "reason": "상태 표시에 적절한 명사형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "030439767d89a499",
     "via": "mt"
   },
   "Audit log": {
+    "review": {
+      "reason": "글로시 용어(로그)를 준수한 올바른 명사형입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e4d36f9a4e22d3a2",
     "via": "mt"
   },
   "Authentication": {
+    "review": {
+      "reason": "정확한 명사형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "66880d2d8216260d",
     "via": "mt"
   },
   "Authentication is managed through labels": {
+    "review": {
+      "reason": "설정 설명에 알맞은 서술형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "59cd1d4ca65a4d7a",
     "via": "mt"
   },
   "Authentication is managed via manual proxy labels. Switch label management back to Coolify to configure it here.": {
+    "review": {
+      "fix": "인증은 수동 프록시 레이블로 관리됩니다. 여기서 구성하려면 레이블 관리를 다시 Coolify로 전환하세요.",
+      "reason": "앞선 번역('레이블')과의 일관성을 위해 '라벨'을 '레이블'로 통일하는 것이 좋습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "42aee449ccd2681e",
     "via": "mt"
   },
   "Authentication settings updated successfully!": {
+    "review": {
+      "reason": "토스트 메시지 규칙에 부합합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2b5bf8297210da12",
     "via": "mt"
   },
   "Authentication token used by Sentinel.": {
+    "review": {
+      "fix": "Sentinel에서 사용하는 인증 토큰입니다.",
+      "reason": "설명 텍스트는 명사형 종결 대신 '합니다/습니다' 문장 종결을 사용하는 것이 자연스럽습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "64f5016e2c41da50",
     "via": "mt"
   },
   "Authorize Coolify with your GitLab instance. The redirect URI must match the Callback URL configured in GitLab.": {
+    "review": {
+      "reason": "요청형 및 서술형 종결어미가 규칙에 맞게 작성되었습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "70248152ab07061b",
     "via": "mt"
   },
   "Auto DNS": {
+    "review": {
+      "reason": "올바른 명사형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6226d8914a54efc6",
     "via": "mt"
   },
   "Auto deploy": {
+    "review": {
+      "reason": "글로시 용어(배포)를 준수한 올바른 레이블입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8385eb4b017139a6",
     "via": "mt"
   },
   "Auto-collapse sidebar": {
+    "review": {
+      "reason": "적절한 메뉴/옵션 명사형 번역입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ce8cb9f6c393ea0b",
     "via": "mt"
   },
   "Auto-join new users to Root team": {
+    "review": {
+      "reason": "글로시 용어(팀)를 준수한 명사형 레이블입니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "eb530c959702e204",
     "via": "mt"
   },
   "Automate database backups and track the latest execution for each schedule.": {
+    "review": {
+      "reason": "글로시 용어(데이터베이스, 백업)를 준수했습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f05c2d0c01a874d8",
     "via": "mt"
   },
   "Automated Cloudflare DNS (Domain Connect) stays hidden until a private key is set.": {
+    "review": {
+      "reason": "기술 용어 및 프라이빗 키 표기가 올바릅니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9c4d6d716dfe5280",
     "via": "mt"
   },
   "Automated DNS configuration is only available on Coolify Cloud when Domain Connect is configured.": {
+    "review": {
+      "reason": "글로시 용어 및 고유명사를 올바르게 유지했습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "43515880c937e673",
     "via": "mt"
   },
   "Automated DNS configuration is only available on Coolify Cloud when a Domain Connect private key is configured.": {
+    "review": {
+      "fix": "자동 DNS 구성은 Domain Connect 프라이빗 키가 구성된 경우에만 Coolify Cloud에서 사용할 수 있습니다.",
+      "reason": "'configured'를 앞 문장과 일관되게 '구성된 경우에만'으로 맞추어 자연스럽게 다듬었습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "865aa6d376b75ee0",
     "via": "mt"
   },
   "Automated configuration requires a validated server, a Cloudflare token, and an SSH domain. You can also": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "bc33955dbcd740f0",
     "via": "mt"
   },
   "Automated installation": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "abd47d600989bde6",
     "via": "mt"
   },
   "Automated package discovery currently supports apk, apt, dnf, pacman, and zypper. Weekly status notifications can be managed from <0>notification settings</0>.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "0d88a49456930bf5",
     "via": "mt"
   },
   "Automated setup": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "775bb80980c03a33",
     "via": "mt"
   },
   "Automatic deployments from Git webhooks.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f38a7b2e0b139b24",
     "via": "mt"
   },
   "Automatic pull request deployments and who can trigger them.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7e2d8276b91a552e",
     "via": "mt"
   },
   "Automatic updates": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "147b1b68c7444769",
     "via": "mt"
   },
   "Automatically configure DNS": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d83f2c4614764005",
     "via": "mt"
   },
   "Automatically deploy new commits based on Git webhooks.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e6284c1d78e30977",
     "via": "mt"
   },
   "Automation": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d909750b1bbb71a3",
     "via": "mt"
   },
   "Automations for this server will be disabled on this instance.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "5dc99404354d3a8b",
     "via": "mt"
   },
   "Availability": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "12f67f8539c46701",
     "via": "mt"
   },
   "Available": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e674447337e83c13",
     "via": "mt"
   },
   "Available during build": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1bb58dc4c169b11b",
     "via": "mt"
   },
   "Available images": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "076c68d9969ea077",
     "via": "mt"
   },
   "Available in the container": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "2ab4e2fc167a62d5",
     "via": "mt"
   },
   "Available operating system updates for this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1aa912f71f281296",
     "via": "mt"
   },
   "Available tags": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0bb840b90edb4f3d",
     "via": "mt"
   },
   "Available to every resource owned by this team.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a5031ecf86454e5c",
     "via": "mt"
   },
   "Available to resources deployed on one server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f5772febaf78890c",
     "via": "mt"
   },
   "Axiom": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "59d466820d86172a",
     "via": "mt"
   },
   "Back": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "76900f1bfd16c8d4",
     "via": "mt"
   },
   "Back to backups": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6cbabae206a967e9",
     "via": "mt"
   },
   "Back to database": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b731254bb356ef33",
     "via": "mt"
   },
   "Back to login": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3e3806ff17302cba",
     "via": "mt"
   },
   "Back to servers": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "dd2b6ed459b28deb",
     "via": "mt"
   },
   "Back to service": {
+    "review": {
+      "reason": "정확한 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "076fdf27678521f4",
     "via": "mt"
   },
   "Back to source Compose": {
+    "review": {
+      "reason": "용어 및 의미가 정확합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "69ce4bdc4406296e",
     "via": "mt"
   },
   "Back up now": {
+    "review": {
+      "reason": "버튼 및 레이블에 적합한 명사형 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "02a2840b598b6b1c",
     "via": "mt"
   },
   "Backup": {
+    "review": {
+      "reason": "글로시리에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "838557924a5cdfb2",
     "via": "mt"
   },
   "Backup Filename": {
+    "review": {
+      "reason": "자연스러운 레이블 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "35841551f7b499f7",
     "via": "mt"
   },
   "Backup compression CPU": {
+    "review": {
+      "reason": "명확하고 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "dde72f2839eeedba",
     "via": "mt"
   },
   "Backup contains all databases": {
+    "review": {
+      "reason": "의미와 문체(합니다 체)가 적절합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "c911affd8ced1eb8",
     "via": "mt"
   },
   "Backup contains one database": {
+    "review": {
+      "reason": "의미와 문체(합니다 체)가 적절합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "6d2e13bd934c9cbf",
     "via": "mt"
   },
   "Backup contents": {
+    "review": {
+      "reason": "자연스러운 명사형 레이블입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "63293d46159c6fd5",
     "via": "mt"
   },
   "Backup deleted.": {
+    "review": {
+      "reason": "토스트 메시지 규칙에 맞습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "32fc95540d114f2e",
     "via": "mt"
   },
   "Backup enabled": {
+    "review": {
+      "reason": "명사형 상태 표현으로 적절합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "29ba0a6fe298091a",
     "via": "mt"
   },
   "Backup execution": {
+    "review": {
+      "reason": "자연스러운 명사형 표현입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "cd4c947a06b7551e",
     "via": "mt"
   },
   "Backup execution not found.": {
+    "review": {
+      "reason": "자연스러운 문맥 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "883bac94fd329099",
     "via": "mt"
   },
   "Backup failure": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "cf8e27bc4e489ad3",
     "via": "mt"
   },
   "Backup is not configured": {
+    "review": {
+      "reason": "형식에 맞는 서술문입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0edbd7a3e710686c",
     "via": "mt"
   },
   "Backup moved.": {
+    "review": {
+      "reason": "토스트 메시지 규칙에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "775d0c06824b7fca",
     "via": "mt"
   },
   "Backup path": {
+    "review": {
+      "reason": "자연스러운 레이블 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "39dd8dad85e0fad0",
     "via": "mt"
   },
   "Backup path: :filename": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ec1a0ede9508f093",
     "via": "mt"
   },
   "Backup queued.": {
+    "review": {
+      "reason": "토스트 메시지 규칙에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a0fbb43649afdbe3",
     "via": "mt"
   },
   "Backup queued. It will be available in a few minutes.": {
+    "review": {
+      "fix": "백업이 대기열에 추가되었습니다. 몇 분 내로 사용할 수 있습니다.",
+      "reason": "'큐' 대신 앞선 항목들과 일관되게 '대기열'로 표현하는 것이 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a3a56b3042d159e5",
     "via": "mt"
   },
   "Backup recovery queued.": {
+    "review": {
+      "reason": "토스트 메시지 규칙에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "93bc11ba69b75ac2",
     "via": "mt"
   },
   "Backup schedule": {
+    "review": {
+      "reason": "자연스러운 레이블 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "64fa16ca3c1e494f",
     "via": "mt"
   },
   "Backup schedules": {
+    "review": {
+      "reason": "자연스러운 레이블 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5e03d13213c68e31",
     "via": "mt"
   },
   "Backup sections": {
+    "review": {
+      "fix": "백업 섹션",
+      "reason": "동사구가 아닌 '백업 섹션들'을 뜻하는 명사형 속성이므로 어순이 잘못되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f20b84bc5d358e10",
     "via": "mt"
   },
   "Backup settings": {
+    "review": {
+      "reason": "글로시리에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "365a77287e0ba840",
     "via": "mt"
   },
   "Backup source": {
+    "review": {
+      "reason": "글로시리에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8c7780bd7b8f7a8d",
     "via": "mt"
   },
   "Backup success": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b20ee152d79d00d3",
     "via": "mt"
   },
   "Backup target": {
+    "review": {
+      "reason": "자연스러운 레이블 번역입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4b474c3bc19d59fb",
     "via": "mt"
   },
   "Backup updated successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b226421328656013",
     "via": "mt"
   },
   "Backup updated.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ea235728f3840e34",
     "via": "mt"
   },
   "Backups": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3334fee2c77fef82",
     "via": "mt"
   },
   "Backups are saved to S3": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "36812b9bf6c2702b",
     "via": "mt"
   },
   "Backups are stored locally only": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "14747dca9d5d9be8",
     "via": "mt"
   },
   "Backups from this schedule will no longer be uploaded to S3.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "eef33fbed0a58b9c",
     "via": "mt"
   },
   "Backups to keep": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "30d4c8f0409d73bb",
     "via": "mt"
   },
   "Bad request": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "917ef22f94f46014",
     "via": "mt"
   },
   "Balanced (50%)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "a7eb6d787873afb0",
     "via": "mt"
   },
   "Bandwidth": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "bec749e6fb9e5981",
     "via": "mt"
   },
   "Base URL": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "70589413a3c97933",
     "via": "mt"
   },
   "Base URL of the other Coolify instance (no trailing path).": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e8a473782afafffe",
     "via": "mt"
   },
   "Base directory": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3bffb54db0eae7cb",
     "via": "mt"
   },
   "Base price": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "29a6d6be38114513",
     "via": "mt"
   },
   "Because of a bug in older Coolify versions, a file mount removed the data volume. This database keeps its current data in the unnamed Docker volume <0/>. Starting or restarting it is blocked, because it would use the data volume and the current data would seem lost.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "55837f19202bfaa1",
     "via": "mt"
   },
   "Before you can delete your account:": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "31ba9bb5a81fea29",
     "via": "mt"
   },
   "Before you continue, disable this server on every other Coolify instance. Two active instances can cause conflicting deployments, proxy changes, backups, and restarts.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "3b60c30597929109",
     "via": "mt"
   },
   "Beta": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "703390318bd55aef",
     "via": "mt"
   },
   "Bind a directory from the host system into the container.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c7abfdfd385f32a2",
     "via": "mt"
   },
   "Bind an existing host file into the container. Coolify will not modify or delete the source file.": {
+    "review": {
+      "fix": "기존 호스트 파일을 컨테이너에 바인딩합니다. Coolify는 소스 파일을 수정하거나 삭제하지 않습니다.",
+      "reason": "앞선 항목과의 용어 일관성을 위해 '바인드합니다'를 '바인딩합니다'로 통일하는 것이 자연스럽습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "63bb3d0acb3efda4",
     "via": "mt"
   },
   "Blocked": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "18f2a0947f9d6523",
     "via": "mt"
   },
   "Bot API token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6bb2d6bfcc457e6a",
     "via": "mt"
   },
   "Both pull request id and docker tag are required.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c80f49f91d1ec234",
     "via": "mt"
   },
   "Both www and non-www": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "67dcc1edba6da98e",
     "via": "mt"
   },
   "Branch": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "52656e8104eef3fd",
     "via": "mt"
   },
   "Bright surfaces and dark text.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fc0bc95ebc537928",
     "via": "mt"
   },
   "Bring your own servers from any cloud provider or supported Linux machine. Prices exclude applicable taxes.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "dba6996a2f7a6063",
     "via": "mt"
   },
   "Browse keys": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "af657a5549febad9",
     "via": "mt"
   },
   "Browse…": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "93c6b664dce6c207",
     "via": "mt"
   },
   "Bucket": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c83b65791b5b42ce",
     "via": "mt"
   },
   "Build": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "bdd254b65baac169",
     "via": "mt"
   },
   "Build arguments": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4d527a37d4df26dc",
     "via": "mt"
   },
   "Build cache": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b6e6f3dd12882dcb",
     "via": "mt"
   },
   "Build command": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "28822a39fb8160cb",
     "via": "mt"
   },
   "Build configuration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f36d773a7db4d664",
     "via": "mt"
   },
   "Build on the deployment server": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "617926020a500687",
     "via": "mt"
   },
   "Build pack": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2babccf52622d03d",
     "via": "mt"
   },
   "Build pipeline": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6352f27dd62715ac",
     "via": "mt"
   },
   "Build secrets": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "594f73d22b12a630",
     "via": "mt"
   },
   "Build server fallback": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f63d7efdebca54ba",
     "via": "mt"
   },
   "Build strategy": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c8ecd2fdf9c33e12",
     "via": "mt"
   },
   "Build time": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8e28a482e6fe72ef",
     "via": "mt"
   },
   "Build-only servers cannot host resources.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e5f17520656fe774",
     "via": "mt"
   },
   "Builder selection": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ebcdd0c4e4a849c8",
     "via": "mt"
   },
   "Building coolify-helper::version...": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "1e30000a0eeb7d8c",
     "via": "mt"
   },
   "Building helper image is only available in development mode.": {
+    "review": {
+      "fix": "도우미 이미지 빌드는 개발 모드에서만 사용할 수 있습니다.",
+      "reason": "동명사 'Building helper image'의 자연스러운 명사형 표현으로 다듬었습니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a2a8d6d68ce805f2",
     "via": "mt"
   },
   "Builds": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6a3fe8876b563b46",
     "via": "mt"
   },
   "Builds and runs your resources on this server. Can also run GitHub Actions runners.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "9bb7e4960f891b4c",
     "via": "mt"
   },
   "Builds can use a large amount of CPU and memory. During a build, deployed resources on this server can become slow or unreachable.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "d0bfd319e110f149",
     "via": "mt"
   },
   "Builds can use large amounts of CPU and memory. Deployments on the same server can become slow or unreachable during a build. GitHub Actions runners need the Builds only or the Deployments and builds role.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "3112eeea696c2edf",
     "via": "mt"
   },
   "Builds images for other servers and runs GitHub Actions runners.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "fe634601bfd91a69",
     "via": "mt"
   },
   "Builds only": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "5bf197eb140e6b4f",
     "via": "mt"
   },
   "Buildtime": {
+    "review": {
+      "fix": "빌드 시점",
+      "reason": "환경 변수 컨텍스트에서 'Buildtime'은 빌드에 걸리는 시간보다는 빌드 시점을 의미합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b98dad9da24735ee",
     "via": "mt"
   },
   "Built :created_at <0>·</0> :date": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "8a33bcdb6f759369",
     "via": "mt"
   },
   "Built-in variable, managed by Coolify": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4e596a283cc964f6",
     "via": "mt"
   },
   "Built-in · Read-only": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "df639a575047f421",
     "via": "mt"
   },
   "Bundle file loaded into the form.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "68f9fbef81125658",
     "via": "mt"
   },
   "Buy and create": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c3e931a35cc87240",
     "via": "mt"
   },
   "By default a compose resource only gets its own internal network. Connecting to a Coolify predefined network may require different internal DNS names. More info <0>here</0>.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "bf5fb2691d222cc0",
     "via": "mt"
   },
   "By default, $ (and other characters) is escaped. A $ in a label is saved as $$. Turn this off to use environment variables inside labels.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "22f2db61872d0231",
     "via": "mt"
   },
   "By default, $ (and other chars) is escaped. So if you write $ in the labels, it will be saved as $$.<0/><1/>If you want to use env variables inside the labels, turn this off.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "345abdea0431a972",
     "via": "mt"
   },
   "By default, $ (and other special characters) are escaped: writing $ saves it as $$.<0/><1/>Keep them unescaped if you want to use environment variables inside the labels.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "c20d9c3cd0d43071",
     "via": "mt"
   },
   "CA Certificate": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9fbfb380c6fcd774",
     "via": "mt"
   },
   "CA Certificate Path": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e930da4274b6d2a3",
     "via": "mt"
   },
   "CA Certificate regenerated successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "22c9c7da6e6e6fec",
     "via": "mt"
   },
   "CA Certificate saved successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e0fc9a58b7631f7a",
     "via": "mt"
   },
   "CA certificate": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0259f430e3745194",
     "via": "mt"
   },
   "CI deployment token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "891eb469a3f72d94",
     "via": "mt"
   },
   "CPU cores": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5dbed0bb89279556",
     "via": "mt"
   },
   "CPU limit": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9f8d1fef4e2c3535",
     "via": "mt"
   },
   "CPU set": {
+    "review": {
+      "fix": "CPU 세트",
+      "reason": "Docker/컨테이너 리소스 제한의 'CPU set(cpuset)'은 동사 설정이 아니라 사용할 CPU 코어 집합을 뜻하므로 'CPU 세트'가 더 적절합니다.",
+      "run": "2026-10-20-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7d7d058d7b9c80be",
     "via": "mt"
   },
   "CPU usage": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a10efc436db2cc6d",
     "via": "mt"
   },
   "CPU weight": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5bb3bb880d40b215",
     "via": "mt"
   },
   "CREATE DATABASE test;": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "edd3a0b08d1442f6",
     "via": "mt"
   },
   "Caddy configuration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "aced195be2bd4138",
     "via": "mt"
   },
   "Caddy proxy image is outdated": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-20-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0e8df257da8124dc",
     "via": "mt"
   },
   "Calculate Price": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "be681333af4fda54",
     "via": "mt"
   },
   "Cancel": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "19766ed6ccb2f4a3",
     "via": "mt"
   },
   "Cancel Immediately": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1b3240f38d2cc286",
     "via": "mt"
   },
   "Cancel Immediately?": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "442274139eef6774",
     "via": "mt"
   },
   "Cancel Runner": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "988bdb1ae9cf13a1",
     "via": "mt"
   },
   "Cancel at End of Billing Period?": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c8f87566117ca590",
     "via": "mt"
   },
   "Cancel at Period End": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6d097f3ffa7aee48",
     "via": "mt"
   },
   "Cancel deployment": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4aacb9b4d9213ba0",
     "via": "mt"
   },
   "Cancel subscription": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3f85967f7f8aa24f",
     "via": "mt"
   },
   "Cancel this runner?": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "26fbc81f3b861695",
     "via": "mt"
   },
   "Cancel your <0>subscription</0> before deleting this team.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "bd43b50504022cda",
     "via": "mt"
   },
   "Cancelling at end of period": {
+    "review": {
+      "fix": "기간 종료 시 취소 예정",
+      "reason": "'취소 중'보다 미래의 해지 예정을 나타내는 '취소 예정'이 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8b327080c7f1aa7e",
     "via": "mt"
   },
   "Cancels on <0>:next_billing_date</0>": {
+    "review": {
+      "fix": "<0>:next_billing_date</0>에 취소 예정",
+      "reason": "미래 시점에 구독이 해지된다는 의미이므로 '취소됨'보다 '취소 예정'이 적절합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "e97823c5a8500c82",
     "via": "mt"
   },
   "Cannot connect to real-time service": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a3414dc2e80a1727",
     "via": "mt"
   },
   "Cannot delete Caddyfile.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "84ced06254ec2480",
     "via": "mt"
   },
   "Cannot delete this token. It is currently used by :server_count server(s). Please reassign those servers to a different token first.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "688f5d67bd629fc7",
     "via": "mt"
   },
   "Cannot fetch permissions. Please set the following required fields first: :fields_list": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "01dd14a828dd2c72",
     "via": "mt"
   },
   "Cannot revalidate": {
+    "review": {
+      "fix": "다시 검증할 수 없습니다",
+      "reason": "'재유효화'보다 '다시 검증'이 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fcf0b2ecb7980ff7",
     "via": "mt"
   },
   "Capabilities": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9460f16ac9b5171e",
     "via": "mt"
   },
   "Capability: Secrets (read-only)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f1c8a4ccff0e40ae",
     "via": "mt"
   },
   "Caution": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2e178e6c65f95e64",
     "via": "mt"
   },
   "Centered": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "739dee74b4dc70aa",
     "via": "mt"
   },
   "Certificate content": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "faf5efcdd860496a",
     "via": "mt"
   },
   "Certificate hidden": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6f895264ec171549",
     "via": "mt"
   },
   "Change": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c0bf75bd78bf9572",
     "via": "mt"
@@ -3019,206 +5424,421 @@
         "rule": "particle"
       }
     ],
+    "review": {
+      "fix": "Git 소스를 :name(으)로 변경",
+      "reason": "버튼이나 모달 헤딩/라벨로 사용되는 문구이므로 명사형으로 끝나야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "4ff52b7937cd7ed6",
     "via": "mt"
   },
   "Change Git source?": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c230ce37c626e7fd",
     "via": "mt"
   },
   "Change email": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ff2ec2618b91b367",
     "via": "mt"
   },
   "Change method": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "242f0ebbd6229ae5",
     "via": "mt"
   },
   "Change password": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3f9c991f63a9a376",
     "via": "mt"
   },
   "Changelog fetch initiated! Check back in a few moments.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8c7be08db5f478ce",
     "via": "mt"
   },
   "Changes pending": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "98a0481ae4d5ba31",
     "via": "mt"
   },
   "Changing values here does not update MariaDB. Update MariaDB first, then synchronize the values here so backups and other automations continue working.": {
+    "review": {
+      "fix": "여기서 값을 변경해도 MariaDB는 업데이트되지 않습니다. 먼저 MariaDB를 업데이트한 다음 백업과 기타 자동화가 계속 작동하도록 여기의 값을 동기화하세요.",
+      "reason": "문장을 더 자연스럽게 연결하고 다른 동일 패턴 번역과 일관성을 맞춥니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "489a20c477fd9fb8",
     "via": "mt"
   },
   "Changing values here does not update MongoDB. Update MongoDB first, then synchronize the values here so backups and other automations continue working.": {
+    "review": {
+      "fix": "여기서 값을 변경해도 MongoDB는 업데이트되지 않습니다. 먼저 MongoDB를 업데이트한 다음 백업과 기타 자동화가 계속 작동하도록 여기의 값을 동기화하세요.",
+      "reason": "문장을 더 자연스럽게 연결하고 다른 동일 패턴 번역과 일관성을 맞춥니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "00d9edb50af47f2c",
     "via": "mt"
   },
   "Changing values here does not update MySQL. Update MySQL first, then synchronize the values here so backups and other automations continue working.": {
+    "review": {
+      "fix": "여기서 값을 변경해도 MySQL은 업데이트되지 않습니다. 먼저 MySQL을 업데이트한 다음 백업과 기타 자동화가 계속 작동하도록 여기의 값을 동기화하세요.",
+      "reason": "문장을 더 자연스럽게 연결하고 다른 동일 패턴 번역과 일관성을 맞춥니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "2d7976717796286d",
     "via": "mt"
   },
   "Changing values here does not update PostgreSQL. Update PostgreSQL first, then synchronize the values here so backups and other automations continue working.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "d98f879dfa2d1b12",
     "via": "mt"
   },
   "Changing values here does not update Redis. Update Redis first, then synchronize the values here so automations continue working.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "a2bb95353ea4cfb5",
     "via": "mt"
   },
   "Changing your password signs out every active session.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "91d96513495ed165",
     "via": "mt"
   },
   "Charged immediately to your payment method.": {
+    "review": {
+      "fix": "등록된 결제 수단으로 즉시 청구됩니다.",
+      "reason": "조사 '에서'보다 '으로'가 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "94a793fc16e2d321",
     "via": "mt"
   },
   "Chat ID": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8fd1a38b785b17c9",
     "via": "mt"
   },
   "Check DNS": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "c41c7e1533d183be",
     "via": "mt"
   },
   "Check DNS, TLS certificates, outbound firewall rules, and proxy settings.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "884ae2cfeed396b8",
     "via": "mt"
   },
   "Check again": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fb7099ad8e818d42",
     "via": "mt"
   },
   "Check all DNS": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f2078a3496f8be0e",
     "via": "mt"
   },
   "Check connection": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "be5dff52eeb0fd5b",
     "via": "mt"
   },
   "Check file": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6fd54828d81f2e48",
     "via": "mt"
   },
   "Check for updates": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f26f3275e735bdf6",
     "via": "mt"
   },
   "Check frequency": {
+    "review": {
+      "fix": "확인 주기",
+      "reason": "설정 항목의 레이블로서 검사 주기를 의미하므로 '확인 주기'가 올바릅니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "12e9b9ef6f4b88a7",
     "via": "mt"
   },
   "Check now": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2937cffb37abce97",
     "via": "mt"
   },
   "Check repository": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4b1f76957a583673",
     "via": "mt"
   },
   "Check the logs on the server at <0/>.": {
+    "review": {
+      "reason": "규칙에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "4fa1599f9f07ebb1",
     "via": "mt"
   },
   "Check type": {
+    "review": {
+      "fix": "검사 유형",
+      "reason": "health check의 유형을 뜻하는 명사이므로 동사 '확인'이 아닌 '검사 유형'으로 번역해야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c1430497f55d8227",
     "via": "mt"
   },
   "Check your spam folder or resend it.": {
+    "review": {
+      "reason": "요청문 형식에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1a92e35a1998762f",
     "via": "mt"
   },
   "Checking DNS...": {
+    "review": {
+      "reason": "진행 중 상태를 자연스럽게 번역했습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1f79cae3123df8c4",
     "via": "mt"
   },
   "Checking Sysbox": {
+    "review": {
+      "reason": "원문과 규칙에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "539fb84e5d128032",
     "via": "mt"
   },
   "Checking for updates": {
+    "review": {
+      "reason": "글로스리를 준수하여 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "53b276ad798ce2cd",
     "via": "mt"
   },
   "Checking refund eligibility...": {
+    "review": {
+      "fix": "환불 자격 확인 중...",
+      "reason": "간결한 상태 표시 어조에 맞게 명사형으로 다듬는 것이 좋습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "890da97036817383",
     "via": "mt"
   },
   "Checking…": {
+    "review": {
+      "reason": "원문의 말줄임표와 의미를 올바르게 유지했습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ec963ffc911b8401",
     "via": "mt"
   },
   "Choose GitHub App": {
+    "review": {
+      "reason": "글로스리 및 UI 라벨 규칙에 맞게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3e7056f08e012036",
     "via": "mt"
   },
   "Choose GitLab App": {
+    "review": {
+      "reason": "UI 라벨 형식에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "02e16b3b97518392",
     "via": "mt"
   },
   "Choose Keep retained images to follow each application’s Images to keep setting under Rollback. Delete all old images ignores that setting and keeps only the running image.": {
+    "review": {
+      "reason": "글로스리 및 UI 요소 이름을 문맥에 맞게 잘 반영했습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "130090888f7d1f34",
     "via": "mt"
   },
   "Choose a container to start a session": {
+    "review": {
+      "reason": "글로스리 및 요청문 어미에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e04b52e7fa408686",
     "via": "mt"
   },
   "Choose a destination…": {
+    "review": {
+      "reason": "글로스리와 placeholder/label 형식에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "dd431c112cb06619",
     "via": "mt"
   },
   "Choose a local file or an object stored in S3.": {
+    "review": {
+      "fix": "로컬 파일 또는 S3에 저장된 객체를 선택하세요.",
+      "reason": "사용자에게 파일 선택을 요구하는 안내문이므로 '…하세요' 요청문 형식을 사용해야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "a3f825a2f7e88d33",
     "via": "mt"
   },
   "Choose a plan for Coolify Cloud": {
+    "review": {
+      "reason": "요청문 형식에 맞게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ba80962979fb676a",
     "via": "mt"
   },
   "Choose a plan to continue using Coolify Cloud.": {
+    "review": {
+      "fix": "Coolify Cloud를 계속 사용하려면 요금제를 선택하세요.",
+      "reason": "앞선 항목(요금제)과의 용어 일관성을 위해 '플랜' 대신 '요금제'를 사용하는 것이 자연스럽습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b6eb370575b58611",
     "via": "mt"
@@ -3231,476 +5851,962 @@
         "rule": "imperative"
       }
     ],
+    "review": {
+      "fix": "프로젝트 선택…",
+      "reason": "드롭다운 플레이스홀더 성격의 prop-text이므로 다른 항목들과 통일하여 명사형으로 간결하게 작성하는 것이 좋습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "afb638df1c84862a",
     "via": "mt"
   },
   "Choose a resource": {
+    "review": {
+      "reason": "글로스리 및 라벨 형식에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5198293673e6275d",
     "via": "mt"
   },
   "Choose a server or container": {
+    "review": {
+      "reason": "글로스리 및 명사형 라벨에 부합합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a9b768f383296914",
     "via": "mt"
   },
   "Choose a server…": {
+    "review": {
+      "reason": "글로스리 및 라벨 형식에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a0ce3f2bfe0914ed",
     "via": "mt"
   },
   "Choose a strong new password for your Coolify account.": {
+    "review": {
+      "reason": "글로스리와 요청형 문장 규칙을 준수했습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3daac3da0c1d0cfa",
     "via": "mt"
   },
   "Choose an environment…": {
+    "review": {
+      "reason": "글로스리 및 라벨 형식에 맞게 올바르게 번역되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d5d5dc62fc108424",
     "via": "mt"
   },
   "Choose automated setup to install and configure cloudflared, or confirm that you already configured the tunnel manually.": {
+    "review": {
+      "reason": "문장의 의미와 요청형 종결어미가 올바르게 적용되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "528759357fbe6cfa",
     "via": "mt"
   },
   "Choose how Coolify builds and runs this repository.": {
+    "review": {
+      "fix": "Coolify가 이 저장소를 빌드하고 실행하는 방식을 선택하세요.",
+      "reason": "설정 단계에서 사용자에게 선택을 요구하는 안내문이므로 '…하세요' 종결어미를 써야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5310f1e5747fee5a",
     "via": "mt"
   },
   "Choose how content uses the available browser width.": {
+    "review": {
+      "fix": "콘텐츠가 사용 가능한 브라우저 너비를 활용하는 방식을 선택하세요.",
+      "reason": "테마 컨트롤에서 옵션 선택을 지시하는 안내문이므로 '…하세요' 종결어미를 써야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "2b8db7590075f7a6",
     "via": "mt"
   },
   "Choose repository": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ce5321dbef8d5f06",
     "via": "mt"
   },
   "Choose terminal target": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1d9ac73ecf5b94ea",
     "via": "mt"
   },
   "Choose terminal theme": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "76b31ce98942ea97",
     "via": "mt"
   },
   "Choose the SSH key Coolify uses to connect to this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "489f5b62434f4bec",
     "via": "mt"
   },
   "Choose the SSH key Coolify will use to clone this repository.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a66b4cbe5d0419a5",
     "via": "mt"
   },
   "Choose the branch and build strategy for this application.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c6a2469b14da30c5",
     "via": "mt"
   },
   "Choose the cloud credential Coolify should use for this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "a216708e2e4ca364",
     "via": "mt"
   },
   "Choose the cloud credential used to manage this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "f276ca2ae7adf9d9",
     "via": "mt"
   },
   "Choose the color scheme used in this browser.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "4f1f537aa71045d3",
     "via": "mt"
   },
   "Choose the database that should receive the backup.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "1db816a8a6efa157",
     "via": "mt"
   },
   "Choose the location, hardware, operating system, and Coolify SSH key.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "b9c464f0dfcebc41",
     "via": "mt"
   },
   "Choose the machine that will host this resource.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "55f46e7057f8fd7e",
     "via": "mt"
   },
   "Choose the region, plan, operating system, and Coolify SSH key.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "2c280820919aee1d",
     "via": "mt"
   },
   "Choose the region, size, image, and Coolify SSH key.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "f9628cfb5a93ee2a",
     "via": "mt"
   },
   "Choose the reverse proxy implementation for this server.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "5852a4211bef1808",
     "via": "mt"
   },
   "Choose the server and Docker network that will receive the cloned resources.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d51e37f8a13dc8fa",
     "via": "mt"
   },
   "Choose the team you want to work in. Your choice is remembered for next time.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "ed388a41500646d6",
     "via": "mt"
   },
   "Choose what to back up, when it runs, and how long it may run.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "2353e1b5d3129380",
     "via": "mt"
   },
   "Choose when cleanup runs and whether it should wait for a disk threshold.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "24b17ba7a40de3df",
     "via": "mt"
   },
   "Choose when this storage is archived and how long each backup may run.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "03ec409e160d56b5",
     "via": "mt"
   },
   "Choose where compressed profile pictures and project icons are stored. Use S3 for multi-instance or cloud deployments so every application replica can access the same files.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "29b3aed7ba7a1980",
     "via": "mt"
   },
   "Choose where remote backups are stored and whether local copies are retained.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "dc7383bcb36e8eed",
     "via": "mt"
   },
   "Choose where remote copies are stored and whether local archives are retained.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "cf73112171870fe7",
     "via": "mt"
   },
   "Choose whether destructive actions require password and text confirmation.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a0e48a09e1cb4281",
     "via": "mt"
   },
   "Choose whether preview deployments receive an isolated -pr-N path suffix.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "346b2494118ac917",
     "via": "mt"
   },
   "Choose whether this server runs deployments, application builds, or both. GitHub Actions runners need the Builds only or the Deployments and builds role.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "6260ec3fa058cd4c",
     "via": "mt"
   },
   "Choose which events send a notification on this channel.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "aea191fc1d719342",
     "via": "mt"
   },
   "Choose which repositories this GitHub App can access before using it as a source.": {
+    "review": {
+      "fix": "이 GitHub App을 소스로 사용하기 전에 액세스할 수 있는 저장소를 선택하세요.",
+      "reason": "중복되거나 모호한 '이 애플리케이션이' 표현을 다듬었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "91918b22e8d0d649",
     "via": "mt"
   },
   "Clean deleted entries": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f69037b6d33ddabe",
     "via": "mt"
   },
   "Clean failed backups": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d3192b5ebf178a69",
     "via": "mt"
   },
   "Cleaned up :deleted_count backup entries deleted from local storage.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "83ef349096f6da81",
     "via": "mt"
   },
   "Cleanup Deleted Backup Entries?": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "34dd81c9666080dc",
     "via": "mt"
   },
   "Cleanup configuration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "86559bf7430a5a3b",
     "via": "mt"
   },
   "Cleanup deleted": {
+    "review": {
+      "fix": "삭제된 항목 정리",
+      "reason": "'정리 완료'가 아니라 삭제된(deleted) 백업 실행 항목을 정리(clean up)하는 동작 버튼입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e43521ec1f250f8b",
     "via": "mt"
   },
   "Cleanup failed": {
+    "review": {
+      "fix": "실패한 백업 정리",
+      "reason": "'정리 실패'가 아니라 실패한(failed) 백업 항목을 정리(clean up)하는 동작 버튼입니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "06581d1aa280d9c9",
     "via": "mt"
   },
   "Cleanup frequency": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8eb9597c8aaac11d",
     "via": "mt"
   },
   "Cleanup is currently running": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1e271a22e70140dc",
     "via": "mt"
   },
   "Cleanup runs automatically using the schedule and threshold configured below.": {
+    "review": {
+      "fix": "정리는 아래에 구성된 일정 및 임계값에 따라 자동으로 실행됩니다.",
+      "reason": "원문의 'threshold(임계값)' 번역이 누락되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ca610b7632505edc",
     "via": "mt"
   },
   "Cleanup trigger": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1086c520b730bd3e",
     "via": "mt"
   },
   "Clear": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "83b12c2216efb4fd",
     "via": "mt"
   },
   "Clear debug logging and the development image override.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d5fb46066aeb372a",
     "via": "mt"
   },
   "Clear filters": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7179ea0035fca783",
     "via": "mt"
   },
   "Clear request log": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1ff24fa2061a21ff",
     "via": "mt"
   },
   "Clear search": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "3b7ea51793e9d906",
     "via": "mt"
   },
   "Clear target filter": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1053e7c4e148d246",
     "via": "mt"
   },
   "Client ID": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "8726db013948f070",
     "via": "mt"
   },
   "Client IP addresses": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fd35ca79fb3a5120",
     "via": "mt"
   },
   "Client secret": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4aded5faf15623c5",
     "via": "mt"
   },
   "Clock skew (seconds)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "06298b5abbb64d56",
     "via": "mt"
   },
   "Clone": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5779f32fab00c2aa",
     "via": "mt"
   },
   "Clone depth": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7c31395181d5dff5",
     "via": "mt"
   },
   "Clone destination": {
+    "review": {
+      "fix": "배포 대상 복제",
+      "reason": "'Clone'의 번역이 누락되었습니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a13631b5a10ace41",
     "via": "mt"
   },
   "Clone environment": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "54b2b3791d3dfc7e",
     "via": "mt"
   },
   "Clone resource": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "829a6b7fa2dce4b0",
     "via": "mt"
   },
   "Clone submodules": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1bcb7c720c12a921",
     "via": "mt"
   },
   "Clone this environment inside :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "74f1b956280b4028",
     "via": "mt"
   },
   "Clone to another destination": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "cba9371c3cdc39c6",
     "via": "mt"
   },
   "Clone to another environment": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "31a2cb5b93d3a76a",
     "via": "mt"
   },
   "Clone to environment": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "32d307887f62c0c2",
     "via": "mt"
   },
   "Clone to project": {
+    "review": {
+      "fix": "프로젝트로 복제",
+      "reason": "버튼 및 메뉴 레이블에는 명사형을 사용해야 합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "95ee467f38e58f5d",
     "via": "mt"
   },
   "Cloning copies settings, environment variables, and resource configuration. Stored files, database records, and other persistent data are not copied.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "dcb904798630f36d",
     "via": "mt"
   },
   "Close": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7d9eb7acb13e2462",
     "via": "mt"
   },
   "Close What's new": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fd327c563847ea46",
     "via": "mt"
   },
   "Close menu": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6ccd5c7856042d36",
     "via": "mt"
   },
   "Cloud Token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d3bb7014d70f0109",
     "via": "mt"
   },
   "Cloud Tokens": {
+    "review": {
+      "fix": "클라우드 토큰",
+      "reason": "다른 항목들과 일관되게 'Cloud'를 '클라우드'로 번역합니다.",
+      "run": "2026-10-21-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "54522f521ec0f652",
     "via": "mt"
   },
   "Cloud credentials are available for servers created through a supported provider.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "646fc6c73973fef9",
     "via": "mt"
   },
   "Cloud provider token added successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ac9338200fefe236",
     "via": "mt"
   },
   "Cloud provider token deleted successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a15f73e63d1fe4e4",
     "via": "mt"
   },
   "Cloud provider token updated.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "60c565f9d8127f95",
     "via": "mt"
   },
   "Cloud token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c77b78233cc45e93",
     "via": "mt"
   },
   "Cloud tokens": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "e0c958764d7ee35f",
     "via": "mt"
   },
   "Cloud-Init Scripts": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2a538ae33b2aa9bc",
     "via": "mt"
   },
   "Cloud-config YAML or another script accepted by your provider.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2872a4a80cb0b448",
     "via": "mt"
   },
   "Cloud-init script": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-21-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f0c567808f375bc8",
     "via": "mt"
   },
   "Cloud-init script content is required.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4cdf034cc6c351bf",
     "via": "mt"
   },
   "Cloud-init script deleted successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "6764ede1722bb494",
     "via": "mt"
   },
   "Cloud-init script updated successfully.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "c2d3953900e277f0",
     "via": "mt"
   },
   "Cloud-init scripts": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "7851f5d9f6bf4129",
     "via": "mt"
   },
   "Cloudflare Tunnel Configuration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "19163dddbc63d7f7",
     "via": "mt"
   },
   "Cloudflare Tunnel Update": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1b4d1a3b41963950",
     "via": "mt"
   },
   "Cloudflare Tunnel disabled. Action required: Update the server IP address to its real IP address in the Advanced settings.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "af3bba682ea60e6d",
     "via": "mt"
   },
   "Cloudflare Tunnel disabled.<0/><1/>Manually updated the server IP address to its previous IP address.": {
+    "review": {
+      "fix": "Cloudflare Tunnel이 비활성화되었습니다.<0/><1/>서버 IP 주소를 이전 IP 주소로 수동 업데이트했습니다.",
+      "reason": "상태 토스트 메시지로서 '비활성화되었습니다'로 표현하는 것이 더 자연스럽습니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "0275808a518e6be7",
     "via": "mt"
   },
   "Cloudflare Tunnel enabled.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "06f6cf2bd67c70f5",
     "via": "mt"
   },
   "Cloudflare and cloudflared have already been configured.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "a2c667adac7d00b0",
     "via": "mt"
   },
   "Cloudflare token": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "79644cb9aff45302",
     "via": "mt"
@@ -3718,196 +6824,402 @@
         "rule": "particle"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "50ea8c3a6ef5c081",
     "via": "mt"
   },
   "Cloudflare zones refreshed. :zone_count accessible zones found.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "4a5826b71520a4db",
     "via": "mt"
   },
   "Collapse the sidebar on pages that have a settings menu": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ccd0065c32226a5a",
     "via": "mt"
   },
   "Collection rate": {
+    "review": {
+      "fix": "수집 주기",
+      "reason": "차트 지표 수집 빈도(rate/frequency)를 의미하므로 '수집 주기' 또는 '수집 간격'이 더 자연스럽습니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "aad72fc866719ce7",
     "via": "mt"
   },
   "Color theme": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "475074224fc2432b",
     "via": "mt"
   },
   "Combined 4xx and 5xx response rate": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0dbd80110563cdb4",
     "via": "mt"
   },
   "Combined memory and swap allowance. Use values such as 512m or 2g.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "f4d628e3da454a84",
     "via": "mt"
   },
   "Comma separated list of device ids. More info <0>here</0>.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "1dda9ea932f70867",
     "via": "mt"
   },
   "Comma-separated IPs or CIDR ranges. Empty or 0.0.0.0 allows all sources.": {
+    "review": {
+      "fix": "쉼표로 구분된 IP 또는 CIDR 범위입니다. 비어 있거나 0.0.0.0이면 모든 소스를 허용합니다.",
+      "reason": "도움말 설명문은 규칙에 따라 '…합니다/입니다' 종결형 문장으로 작성합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b3893fbe7793bdb8",
     "via": "mt"
   },
   "Comma-separated custom labels. Coolify also registers self-hosted and linux. Jobs must ask for at least one custom label.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "6033700e5875e2c2",
     "via": "mt"
   },
   "Comma-separated database names. Leave empty to include the default database.": {
+    "review": {
+      "fix": "쉼표로 구분한 데이터베이스 이름입니다. 기본 데이터베이스를 포함하려면 비워 두세요.",
+      "reason": "도움말 설명문은 명사형 종결 대신 '…입니다' 종결형 문장으로 작성합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "a05f6a2995841b41",
     "via": "mt"
   },
   "Comma-separated file names inside the data volume. Leave empty to back up every configured file.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "4c5d29eb6a7a0568",
     "via": "mt"
   },
   "Comma-separated file names. Missing files are created in the data volume on the next start. Removing a name does not delete its file. Backups restore into the first file.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "7df73041d64fd495",
     "via": "mt"
   },
   "Comma-separated group names to filter visible repositories.": {
+    "review": {
+      "fix": "표시되는 저장소를 필터링할 쉼표로 구분된 그룹 이름입니다.",
+      "reason": "도움말 설명문은 명사형 종결 대신 '…입니다' 종결형 문장으로 작성합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "167ee3cb0c984fd2",
     "via": "mt"
   },
   "Comma-separated host-to-container mappings, for example 3000:27017.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "88c101ff7303b9c5",
     "via": "mt"
   },
   "Comma-separated host-to-container mappings, for example 3000:3306.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "9d9b42dffff65a8a",
     "via": "mt"
   },
   "Comma-separated host-to-container mappings, for example 3000:5432.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d65b3e65a403ef34",
     "via": "mt"
   },
   "Comma-separated host-to-container mappings, for example 3000:6379.": {
+    "review": {
+      "fix": "쉼표로 구분된 호스트-컨테이너 매핑, 예: 3000:6379.",
+      "reason": "다른 항목과 일관되게 '콤마' 대신 '쉼표'를 사용합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b511cbe2e00f134e",
     "via": "mt"
   },
   "Comma-separated host-to-container mappings, for example 3000:8123.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "caff48ed3cad5811",
     "via": "mt"
   },
   "Comma-separated resolvers. Leave empty to use system defaults.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "eb0313a5f69ff2c0",
     "via": "mt"
   },
   "Command": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "713166971d730f81",
     "via": "mt"
   },
   "Commands, directories and options used while building the application.": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "fb3ae2d5cfbeb593",
     "via": "mt"
   },
   "Comment": {
+    "review": {
+      "fix": "주석",
+      "reason": "환경 변수/설정 에디터 맥락에서 Comment는 '댓글'이 아니라 '주석' 또는 '설명'입니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "44f5e3fbec57be75",
     "via": "mt"
   },
   "Commit": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "82a9c46ffa478994",
     "via": "mt"
   },
   "Commit SHA": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d0bc6028ad6e01a0",
     "via": "mt"
   },
   "Commits": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "d09648c6058a4c84",
     "via": "mt"
   },
   "Complete": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "143b270a32602d41",
     "via": "mt"
   },
   "Complete GitHub installation": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0e59a13f30072e02",
     "via": "mt"
   },
   "Compose": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "98652afe6ee7c577",
     "via": "mt"
   },
   "Compose configuration could not be parsed. Preview domains were not changed.": {
+    "review": {
+      "fix": "Compose 구성을 파싱할 수 없습니다. 미리보기 도메인은 변경되지 않았습니다.",
+      "reason": "Compose가 누락되었으며 용어집에 맞게 번역합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "0a798fccd0d76121",
     "via": "mt"
   },
   "Compose deployment": {
+    "review": {
+      "fix": "Compose 배포",
+      "reason": "Compose는 고유 명사(Docker Compose)이므로 '배포 구성'이 아닌 'Compose 배포'로 번역해야 합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "340a2bb5f58e8781",
     "via": "mt"
   },
   "Compose file": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1fdc8aa2890153a5",
     "via": "mt"
   },
   "Compose resource": {
+    "review": {
+      "fix": "Compose 리소스",
+      "reason": "Compose는 Docker Compose 고유 명사이므로 '리소스 구성'이 아닌 'Compose 리소스'입니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "320924e8e2ebb723",
     "via": "mt"
   },
   "Compose resource settings": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b085759903f3c1f6",
     "via": "mt"
   },
   "Compose resources": {
+    "review": {
+      "fix": "Compose 리소스",
+      "reason": "Compose는 Docker Compose 고유 명사이므로 'Compose 리소스'로 번역해야 합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "major"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "841ad85ff96ecfd7",
     "via": "mt"
   },
   "Compose version": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "4617f4087aac9cdc",
     "via": "mt"
   },
   "Concurrent builds": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "2c87bf27d1e35b98",
     "via": "mt"
   },
   "Config (required)": {
+    "review": {
+      "fix": "구성 (필수)",
+      "reason": "가독성을 위해 괄호 앞에 공백을 추가합니다.",
+      "run": "2026-10-22-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "09b0b4e6e94e3ba9",
     "via": "mt"
   },
   "Configuration": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-22-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-17-index-9b",
     "sourceHash": "b332c3492d5eb10a",
     "via": "mt"
@@ -6319,6 +9631,11 @@
     "via": "mt"
   },
   "Deploy :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b64c978808474658",
     "via": "mt"
@@ -6429,6 +9746,11 @@
     "via": "mt"
   },
   "Deployment failure": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "593ec56504150a57",
     "via": "mt"
@@ -6459,6 +9781,11 @@
     "via": "mt"
   },
   "Deployment success": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1f1cb6f12c9efa40",
     "via": "mt"
@@ -6864,6 +10191,11 @@
     "via": "mt"
   },
   "Disk usage warning": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "7a8d826561a9bd3a",
     "via": "mt"
@@ -7014,6 +10346,11 @@
     "via": "mt"
   },
   "Docker cleanup failure": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "2fc1aed260f2883a",
     "via": "mt"
@@ -7024,6 +10361,11 @@
     "via": "mt"
   },
   "Docker cleanup success": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "186edf7cae80689f",
     "via": "mt"
@@ -7434,11 +10776,21 @@
     "via": "mt"
   },
   "Edit :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "93b4a4d50ae8f2eb",
     "via": "mt"
   },
   "Edit :token_name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "79bbc0807a466175",
     "via": "mt"
@@ -8937,6 +12289,11 @@
     "via": "mt"
   },
   "Generate :name webhook secret": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "de876b23333b9c92",
     "via": "mt"
@@ -10021,6 +13378,11 @@
     "via": "mt"
   },
   "Internal port :internal_port": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ff5a878f80b01e23",
     "via": "mt"
@@ -13229,6 +16591,11 @@
     "via": "mt"
   },
   "Not ready": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "330010f40240ecd8",
     "via": "mt"
@@ -13349,6 +16716,11 @@
     "via": "mt"
   },
   "Observe & troubleshoot": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "ebe06a0cbcbad1ab",
     "via": "mt"
@@ -13454,11 +16826,21 @@
     "via": "mt"
   },
   "Open :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "11e0627b25003f77",
     "via": "mt"
   },
   "Open :resource_name settings": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "92735b402d42b9c6",
     "via": "mt"
@@ -13559,6 +16941,12 @@
     "via": "mt"
   },
   "Open settings for :name": {
+    "review": {
+      "fix": ":name 설정 열기",
+      "reason": "불필요한 조사 '의'를 생략하여 더 자연스럽게 표현합니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1073d915a04ac274",
     "via": "mt"
@@ -16116,6 +19504,11 @@
     "via": "mt"
   },
   "Resource status changes": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "49950137f9f207cf",
     "via": "mt"
@@ -16754,11 +20147,22 @@
     "via": "mt"
   },
   "S3 bucket missing": {
+    "review": {
+      "fix": "S3 버킷 누락",
+      "reason": "상태 표시 라벨이므로 명사형 종결이 더 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b1ca3189038eeefd",
     "via": "mt"
   },
   "S3 credentials": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "167144c27cfed1b1",
     "via": "mt"
@@ -17059,11 +20463,21 @@
     "via": "mt"
   },
   "Scheduled task failure": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "02538fb95f001dc5",
     "via": "mt"
   },
   "Scheduled task success": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e30b5841d1fd17cc",
     "via": "mt"
@@ -17144,16 +20558,32 @@
     "via": "mt"
   },
   "Search (Press / or :mod_key_labelK)": {
+    "review": {
+      "fix": "검색(/ 또는 :mod_key_labelK 누름)",
+      "reason": "UI 단축키 안내 괄호 문구에는 명사형 종결이 더 자연스럽습니다.",
+      "run": "2026-10-18-flash",
+      "verdict": "minor"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8a811571025f6404",
     "via": "mt"
   },
   "Search :label": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "6605341a8345e742",
     "via": "mt"
   },
   "Search :title": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "33aeddf5948ce3f9",
     "via": "mt"
@@ -17371,6 +20801,11 @@
         "rule": "particle"
       }
     ],
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "57541e34b2649fe4",
     "via": "mt"
@@ -17943,6 +21378,11 @@
     "via": "mt"
   },
   "Server disk usage": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "e43647fb9d11f1f7",
     "via": "mt"
@@ -18033,6 +21473,11 @@
     "via": "mt"
   },
   "Server reachable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "067ab7df0ea3e286",
     "via": "mt"
@@ -18053,11 +21498,21 @@
     "via": "mt"
   },
   "Server status: :server_status": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "4e24b4a29a9cb914",
     "via": "mt"
   },
   "Server status: :status": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "c9409a01bf2034bb",
     "via": "mt"
@@ -18093,6 +21548,11 @@
     "via": "mt"
   },
   "Server unreachable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "8a6c0260d145629f",
     "via": "mt"
@@ -18338,6 +21798,11 @@
     "via": "mt"
   },
   "Settings for :public_url": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "5f808bc8247a7c14",
     "via": "mt"
@@ -18428,6 +21893,11 @@
     "via": "mt"
   },
   "Shared variables for :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "663e009119c9248f",
     "via": "mt"
@@ -18653,6 +22123,11 @@
     "via": "mt"
   },
   "Standalone Clickhouse": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "16ca9bf9b8c2f9d2",
     "via": "mt"
@@ -18663,41 +22138,81 @@
     "via": "mt"
   },
   "Standalone Dragonfly": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b926809fb5d0423c",
     "via": "mt"
   },
   "Standalone Keydb": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "2f40fe4e565ba2ad",
     "via": "mt"
   },
   "Standalone Mariadb": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "f7a28bbc673cfc26",
     "via": "mt"
   },
   "Standalone Mongodb": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "0514acacd1742920",
     "via": "mt"
   },
   "Standalone Mysql": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "b3e4b1f218e1aae1",
     "via": "mt"
   },
   "Standalone Postgresql": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1c795c43ddb19964",
     "via": "mt"
   },
   "Standalone Redis": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d7a13cb8fda41e1a",
     "via": "mt"
   },
   "Standalone Sqlite": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "f744416cfac29391",
     "via": "mt"
@@ -19365,6 +22880,11 @@
     "via": "mt"
   },
   "Team: :name": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "13741da52995d980",
     "via": "mt"
@@ -20652,6 +24172,11 @@
     "via": "mt"
   },
   "Traefik proxy outdated": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "a3449edf3c570b18",
     "via": "mt"
@@ -21006,6 +24531,11 @@
     "via": "mt"
   },
   "Unreachable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "abaa46adb4e13ab2",
     "via": "mt"
@@ -22717,6 +26247,11 @@
   },
   "application": {
     "from": "Application",
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-memory",
     "sourceHash": "1fe289205936c3fd",
     "via": "tm-near"
@@ -23062,11 +26597,21 @@
     "via": "mt"
   },
   "reconnecting… (attempt :reconnect_attempts)": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "1208dc77a26dee6a",
     "via": "mt"
   },
   "remote command failed": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d40acaca3480eff9",
     "via": "mt"
@@ -23078,6 +26623,11 @@
   },
   "resource": {
     "from": "Resource",
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-memory",
     "sourceHash": "5de95319f17467ed",
     "via": "tm-near"
@@ -23123,6 +26673,11 @@
     "via": "mt"
   },
   "server unreachable": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "88129d98c2c86a25",
     "via": "mt"
@@ -23134,17 +26689,32 @@
   },
   "service": {
     "from": "Service",
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-memory",
     "sourceHash": "9df6b026a8c6c26e",
     "via": "tm-near"
   },
   "service application": {
     "from": "Service application",
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-memory",
     "sourceHash": "896284d3509b5c2e",
     "via": "tm-near"
   },
   "service database": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "07d0fda56acacc8e",
     "via": "mt"
@@ -23179,6 +26749,11 @@
     "via": "tm-near"
   },
   "unknown error": {
+    "review": {
+      "reason": "",
+      "run": "2026-10-18-flash",
+      "verdict": "ok"
+    },
     "run": "2026-10-18-index-9b",
     "sourceHash": "3e4443e52275a9a0",
     "via": "mt"

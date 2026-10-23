@@ -55,7 +55,7 @@ docker build --target overlay -t coolify-ko:4.4.6 .
     - 등록 항목은 파일 경로, 변환 유형(kind), 원본 코드 조각의 해시로 식별되므로 업스트림의 줄 번호가 바뀌어도 안정적으로 유지됩니다.
     - 예외 목록에 없거나, 원본 코드 조각 또는 오류 문구가 변경되면 테스트가 실패하여 사람의 재검증을 요구합니다.
 
-구체적인 변환 통계는 [`reports/coverage.md`](../reports/coverage.md)에서 확인하실 수 있습니다 (4.4.6 버전 기준).
+구체적인 변환 통계는 [`reports/coverage.md`](../reports/coverage.md)에서 확인하실 수 있습니다.
 
 ## 시험 인스턴스(로컬 Docker)
 

@@ -85,7 +85,7 @@ sudo bash coolify-ko.sh preinstall
 | [설치와 되돌리기](docs/install.md) | 설치 방법별 상세 안내, 공식 버전 복구, 이미지 서명 확인(cosign) |
 | [동작 원리와 보안](docs/how-it-works.md) | 공식 훅 활용 방식, 보안 모델, 제약 사항, 프로젝트 종료 정책 |
 | [개발](docs/development.md) | 빌드 및 변환 파이프라인, 개발 환경, 검증 절차, 로컬 테스트 인스턴스 |
-| [번역 범위](reports/coverage.md) | Coolify 4.4.6 기준 변환 및 번역 현황 |
+| [번역 범위](reports/coverage.md) | 지금 판의 변환 및 번역 현황 |
 
 공식 웹사이트: https://coolify-ko.geonwoo.dev · 컨테이너 이미지: `ghcr.io/kim-geonwoo/coolify-ko`
 

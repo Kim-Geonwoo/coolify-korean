@@ -55,6 +55,20 @@ export function assertCatalogVersion(catalog: unknown, state: SyncState): void {
   }
 }
 
+/**
+ * Dockerfile의 기본 ARG(COOLIFY_IMAGE·COOLIFY_VERSION)를 state에 맞춘다. 밤 작업이 상류 새 버전을 받을 때 state.json과 함께 쓴다
+ * (2026-10-23: state만 바꾸고 Dockerfile은 남겨 verify가 실패했다). 기본값 줄이 없으면 던진다
+ */
+export function syncDockerfileDefaults(dockerfile: string, state: SyncState): string {
+  const image = /^ARG COOLIFY_IMAGE=.*$/m;
+  const version = /^ARG COOLIFY_VERSION=.*$/m;
+  if (!image.test(dockerfile) || !version.test(dockerfile)) {
+    throw new Error('Dockerfile에 ARG COOLIFY_IMAGE=·ARG COOLIFY_VERSION= 기본값 줄이 없습니다.');
+  }
+
+  return dockerfile.replace(image, `ARG COOLIFY_IMAGE=${imageRef(state)}`).replace(version, `ARG COOLIFY_VERSION=${state.upstream.version}`);
+}
+
 /** Dockerfile 기본값에 기대지 않고 늘 state의 버전으로 빌드한다 */
 export function buildArgs(state: SyncState): string[] {
   return ['--build-arg', `COOLIFY_IMAGE=${imageRef(state)}`, '--build-arg', `COOLIFY_VERSION=${state.upstream.version}`];

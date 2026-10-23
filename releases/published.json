@@ -6,6 +6,12 @@
       "index": "sha256:6e012ea16c559b70ec24ae962fb82475376382bc451cf9315ed9d6b128861198",
       "commit": "369f4a2763df24df45fdf28d28eab65c0ca00344",
       "publishedAt": "2026-10-20T06:23:04.148Z"
+    },
+    "4.4.7": {
+      "kind": "ko",
+      "index": "sha256:2602fd00a1f095454899b8ed31e9036eb04bc6202d0a4d5896a26409dbfcc67b",
+      "commit": "5bf08463db121e4a87b4cbaabfb42c1a5fb3e29e",
+      "publishedAt": "2026-10-23T09:50:59.653Z"
     }
   }
 }

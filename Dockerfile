@@ -6,8 +6,8 @@
 #   컴파일 검사:   docker build --target compile-check .
 # 업스트림 버전은 이미지 다이제스트로 고정한다(태그는 다시 쓰일 수 있다).
 
-ARG COOLIFY_IMAGE=docker.io/coollabsio/coolify:4.4.6@sha256:7c54f42d64c0d20fed4a8f4561df9018a561fecba9931ed3f64a4f3e0d34a3be
-ARG COOLIFY_VERSION=4.4.6
+ARG COOLIFY_IMAGE=docker.io/coollabsio/coolify:4.4.7@sha256:df5d62a743dd0a786cb604a9550243ef5ca04f610056852aff8b69faa9a06698
+ARG COOLIFY_VERSION=4.4.7
 
 # 변환 도구와 변환 입력은 빌드 기계 플랫폼에서 돈다: arm64 판도 같은 변환 결과를 COPY만 하므로 에뮬레이션이 필요 없다(5단계 판결 R3).
 # 대신 공식 이미지의 플랫폼별 소스가 같은지는 source-hashes 단계로 확인한다.

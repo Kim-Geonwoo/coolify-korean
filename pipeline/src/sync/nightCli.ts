@@ -9,7 +9,7 @@ import { runNight, type NightDeps, type PublishPlan } from './night.ts';
 import { decideCandidate } from '../publish/candidates.ts';
 import { fetchHookFiles, hookFingerprint, hookIssues } from '../publish/hooks.ts';
 import { parsePublished } from '../publish/ledger.ts';
-import { loadState, parseState, type SyncState } from './state.ts';
+import { loadState, parseState, syncDockerfileDefaults, type SyncState } from './state.ts';
 import { discordMessage, emptyStatus, type JobStatus } from './status.ts';
 import { appJwt, gitAuthEnv, installationToken, openPullRequest } from './githubApp.ts';
 import { checkUpstream } from './upstream.ts';
@@ -265,7 +265,11 @@ const deps: NightDeps = {
   },
   readState: () => loadState(statePath),
   writeState: (state: SyncState) => {
-    writeFileSync(statePath, canonicalJson(parseState(state)));
+    const parsed = parseState(state);
+    writeFileSync(statePath, canonicalJson(parsed));
+    // Dockerfile 기본값도 같은 버전으로(state.test가 둘이 같은지 본다, 2026-10-23 밤 작업 실패)
+    const dockerfile = join(WORK, 'Dockerfile');
+    writeFileSync(dockerfile, syncDockerfileDefaults(readFileSync(dockerfile, 'utf8'), parsed));
   },
   resetWorkcopy: () => {
     rmSync(join(WORK, '.git', 'index.lock'), { force: true });
@@ -313,7 +317,7 @@ const deps: NightDeps = {
     return Promise.resolve();
   },
   commitAndPush: async (message) => {
-    run('commit', 'git', ['add', '--', 'i18n']);
+    run('commit', 'git', ['add', '--', 'i18n', 'Dockerfile', 'reports/coverage.md']);
     run('commit', 'git', [...BOT, 'commit', '-q', '-m', message]);
     // 배포 키는 받아 오기 전용이다. 푸시는 GitHub App 신원으로 해서 main·dev 규칙셋이 막게 한다
     // bot/*만 올린다. 작업 사본의 pre-push 훅도 다른 ref를 거부한다
