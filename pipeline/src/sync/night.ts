@@ -15,6 +15,8 @@ export interface DraftSummary {
   readonly drafted: number;
   readonly fallbacks: number;
   readonly normalized: number;
+  /** 마감으로 멈춰 다음 밤에 이어 할 키 */
+  readonly pending: number;
 }
 
 /** 밤 작업이 바깥과 만나는 곳. 서버에서는 git·rootless Docker·llama-server·Gemini·Discord로, 시험에서는 가짜로 채운다 */
@@ -33,6 +35,8 @@ export interface NightDeps {
   readonly extract: (state: SyncState) => Promise<void>;
   /** 번역 메모리 → 엔진(원장 이어 쓰기) → 초안 저장 */
   readonly drafts: () => Promise<DraftSummary>;
+  /** 지금 카탈로그에서 엔진이 아직 처리하지 않은 키 수. 0보다 크면 새 버전이 아닌 밤에도 초안을 잇는다 */
+  readonly pendingDrafts?: () => Promise<number>;
   /** 하루 한도 안에서 Flash 검토, 판정은 캐시에 쌓고 초안 메타에 다시 얹는다 */
   readonly review: () => Promise<{ readonly reviewed: number; readonly queueEmpty: boolean }>;
   /** Weblate 다리(원문·초안·제안 올리기, 승인 내려받기). 실패해도 밤 작업은 계속한다 */
@@ -117,7 +121,7 @@ export async function runNight(deps: NightDeps): Promise<NightOutcome> {
       return 'postponed';
     }
 
-    let processed: { version: string; summary: DraftSummary } | undefined;
+    let processed: { version: string; summary: DraftSummary; continued: boolean } | undefined;
     let waiting = false;
     if (enabled('upstream')) {
       const current = deps.readState();
@@ -139,9 +143,13 @@ export async function runNight(deps: NightDeps): Promise<NightOutcome> {
         await guard('extract', () => deps.extract(next));
         const summary = await guard('drafts', deps.drafts);
         status = recordSuccess(status, 'upstream', at());
-        processed = { version: decision.version, summary };
+        processed = { version: decision.version, summary, continued: false };
       } else {
         status = recordSuccess(status, 'upstream', at());
+        // 지난밤 마감으로 남긴 키를 잇는다. 남은 것이 없으면 엔진을 띄우지 않는다
+        if (deps.pendingDrafts !== undefined && enabled('drafts') && (await guard('drafts', deps.pendingDrafts)) > 0) {
+          processed = { version: current.upstream.version, summary: await guard('drafts', deps.drafts), continued: true };
+        }
       }
     }
 
@@ -182,7 +190,7 @@ export async function runNight(deps: NightDeps): Promise<NightOutcome> {
     // 사람이 승인한 검수 결과는 그날 바로 올린다(검토자 판정만 바뀐 날은 일요일이나 대기열이 빈 날에 묶는다)
     if ((processed !== undefined || reviewDay || reviewedChanged) && enabled('push') && (await guard('push', deps.hasChanges))) {
       await guard('verify', deps.verify);
-      const message = processed !== undefined ? `i18n: ${processed.version} 초안` : reviewedChanged ? 'i18n: 검수 결과' : 'i18n: 검토 결과';
+      const message = processed !== undefined ? `i18n: ${processed.version} 초안${processed.continued ? ' 이어서' : ''}` : reviewedChanged ? 'i18n: 검수 결과' : 'i18n: 검토 결과';
       review = await guard('push', () => deps.commitAndPush(message));
       outcome = 'pushed';
       status = recordSuccess(status, 'push', at());

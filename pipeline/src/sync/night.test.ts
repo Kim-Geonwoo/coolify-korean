@@ -14,7 +14,7 @@ interface Fake extends NightDeps {
   savedState: SyncState;
 }
 
-function fake(options: { decision?: UpstreamDecision; resources?: { memFreeGiB: number; diskFreeGiB: number }; fail?: string; status?: JobStatus; changed?: boolean; weekday?: number; queueEmpty?: boolean; pullRequest?: string; weblate?: { changed: boolean; rejected: string[] } | 'fail'; screenshots?: 'ok' | 'fail'; releaseImage?: 'ok' | 'fail' | 'skipped'; publishPlan?: PublishPlan | 'fail' } = {}): Fake {
+function fake(options: { decision?: UpstreamDecision; resources?: { memFreeGiB: number; diskFreeGiB: number }; fail?: string; status?: JobStatus; changed?: boolean; weekday?: number; queueEmpty?: boolean; pullRequest?: string; weblate?: { changed: boolean; rejected: string[] } | 'fail'; screenshots?: 'ok' | 'fail'; releaseImage?: 'ok' | 'fail' | 'skipped'; publishPlan?: PublishPlan | 'fail'; pending?: number; draftsLeft?: number } = {}): Fake {
   const calls: string[] = [];
   const events: JobEvent[] = [];
   const step = (name: string) => (): Promise<void> => {
@@ -49,8 +49,17 @@ function fake(options: { decision?: UpstreamDecision; resources?: { memFreeGiB: 
     drafts: () => {
       calls.push('drafts');
 
-      return options.fail === 'drafts' ? Promise.reject(new Error('drafts 실패')) : Promise.resolve({ added: 2, changed: 0, removed: 1, drafted: 2, fallbacks: 0, normalized: 1 });
+      return options.fail === 'drafts' ? Promise.reject(new Error('drafts 실패')) : Promise.resolve({ added: 2, changed: 0, removed: 1, drafted: 2, fallbacks: 0, normalized: 1, pending: options.draftsLeft ?? 0 });
     },
+    ...(options.pending === undefined
+      ? {}
+      : {
+          pendingDrafts: () => {
+            calls.push('pending');
+
+            return Promise.resolve(options.pending ?? 0);
+          },
+        }),
     review: () => {
       calls.push('review');
 
@@ -118,9 +127,35 @@ describe('runNight', () => {
     const outcome: NightOutcome = await runNight(deps);
 
     expect(deps.calls).toEqual(['reset', 'upstream', 'state 4.4.7', 'extract', 'drafts', 'review', 'verify', 'push i18n: 4.4.7 초안']);
-    expect(deps.events).toEqual([{ type: 'version', version: '4.4.7', added: 2, changed: 0, removed: 1, drafted: 2, fallbacks: 0, normalized: 1, compare: deps.compareUrl }]);
+    expect(deps.events).toEqual([{ type: 'version', version: '4.4.7', added: 2, changed: 0, removed: 1, drafted: 2, fallbacks: 0, normalized: 1, pending: 0, compare: deps.compareUrl }]);
     expect(outcome).toBe('pushed');
     expect(deps.savedStatus.lastSuccess).toBeDefined();
+  });
+
+  // 2026-10-24: 4.5.0 새 키 631개가 한 밤 상한을 넘었다. 마감 전에 멈춘 만큼 올리고, 다음 밤에 나머지를 잇는다
+  it('pushes what it drafted before the deadline and says how many keys are left', async () => {
+    const deps = fake({ decision: { action: 'new', version: '4.5.0', digest: D }, draftsLeft: 400 });
+
+    expect(await runNight(deps)).toBe('pushed');
+    expect(deps.calls).toContain('push i18n: 4.5.0 초안');
+    expect(deps.events[0]).toMatchObject({ type: 'version', version: '4.5.0', pending: 400 });
+  });
+
+  it('carries on drafting the current version on a later night while keys are left', async () => {
+    const deps = fake({ pending: 400, draftsLeft: 170 });
+
+    expect(await runNight(deps)).toBe('pushed');
+    expect(deps.calls).toEqual(['reset', 'upstream', 'pending', 'drafts', 'review', 'verify', 'push i18n: 4.4.6 초안 이어서']);
+    expect(deps.events[0]).toMatchObject({ type: 'version', version: '4.4.6', pending: 170 });
+  });
+
+  it('leaves the engine off on a night with no keys left', async () => {
+    const deps = fake({ pending: 0 });
+
+    await runNight(deps);
+
+    expect(deps.calls.slice(0, 4)).toEqual(['reset', 'upstream', 'pending', 'review']);
+    expect(deps.calls).not.toContain('drafts');
   });
 
   it('links the pull request the push opened instead of the compare page', async () => {

@@ -49,6 +49,9 @@ const WEBLATE_CACHE = join(BASE, 'cache', 'weblate');
 const WEBLATE_URL = env('COOLIFY_KO_WEBLATE_URL', 'http://127.0.0.1:8792', /^http:\/\/127\.0\.0\.1:\d{1,5}$/);
 /** systemd TimeoutStartSec(2시간 30분)보다 먼저 스스로 멈춘다 */
 const BUDGET_MS = (2 * 60 + 15) * 60_000;
+const ENGINE = 'index-9b-cpu';
+/** 초안 단계 뒤(검토 30분 상한·Weblate·verify·커밋·푸시)에 남겨 둘 시간. 그 나머지만 엔진에 준다(2026-10-24 4.5.0이 상한에 끊겨 하나도 못 올렸다) */
+const AFTER_DRAFTS_MS = 45 * 60_000;
 const COMPARE_URL = `https://github.com/Kim-Geonwoo/coolify-ko/compare/${BRANCH}...${PUSH_BRANCH}`;
 const OWNER = 'Kim-Geonwoo';
 const REPO = 'coolify-ko';
@@ -297,11 +300,22 @@ const deps: NightDeps = {
   drafts: () =>
     withLlama(() => {
       const report = join(CACHE, 'drafts-report.json');
-      run('drafts', 'node', ['pipeline/src/cli.ts', 'drafts', 'run', '--engine', 'index-9b-cpu', '--base-url', `http://127.0.0.1:${String(LLAMA_PORT)}`, '--ledger-dir', join(CACHE, 'ledger'), '--previous', previousCatalog, '--report', report]);
-      const data = readJson(report) as { increment: { added: string[]; changed: string[]; removed: string[]; drafted: number }; fallbacks: string[]; normalized: number };
+      const budgetMin = Math.max(1, Math.floor((remaining() - AFTER_DRAFTS_MS) / 60_000));
+      // 새 버전 밤에만 이전 카탈로그와 비교한다(추출이 남기고, 초안을 쓴 뒤 지운다. 이어 하는 밤은 증분을 다시 쓰지 않는다)
+      const previous = existsSync(previousCatalog) ? ['--previous', previousCatalog] : [];
+      run('drafts', 'node', ['pipeline/src/cli.ts', 'drafts', 'run', '--engine', ENGINE, '--base-url', `http://127.0.0.1:${String(LLAMA_PORT)}`, '--ledger-dir', join(CACHE, 'ledger'), ...previous, '--report', report, '--budget-min', String(budgetMin)]);
+      rmSync(previousCatalog, { force: true });
+      const data = readJson(report) as { increment: { added: string[]; changed: string[]; removed: string[]; drafted: number }; fallbacks: string[]; normalized: number; pending?: number };
 
-      return Promise.resolve({ added: data.increment.added.length, changed: data.increment.changed.length, removed: data.increment.removed.length, drafted: data.increment.drafted, fallbacks: data.fallbacks.length, normalized: data.normalized });
+      return Promise.resolve({ added: data.increment.added.length, changed: data.increment.changed.length, removed: data.increment.removed.length, drafted: data.increment.drafted, fallbacks: data.fallbacks.length, normalized: data.normalized, pending: data.pending ?? 0 });
     }),
+  pendingDrafts: () => {
+    const out = join(CACHE, 'drafts-pending.json');
+    run('drafts', 'node', ['pipeline/src/cli.ts', 'drafts', 'pending', '--engine', ENGINE, '--ledger-dir', join(CACHE, 'ledger'), '--out', out], 5 * 60_000);
+    const pending = (readJson(out) as { pending?: unknown }).pending;
+
+    return Promise.resolve(typeof pending === 'number' && Number.isInteger(pending) && pending >= 0 ? pending : 0);
+  },
   review: () => {
     const report = join(CACHE, 'review-report.json');
     const gate = process.env['COOLIFY_KO_REVIEW_GATE'] === 'pass' ? ['--gate', 'pass'] : [];

@@ -55,7 +55,11 @@ function coolify_ko_vars(string ...$codes): array
 
 function coolify_ko_error(Throwable $e): string
 {
-    return 'ERROR:' . get_class($e) . ': ' . $e->getMessage();
+    // 조각을 eval로 평가해 TypeError에 "called in …harness.php(69) : eval()'d code on line N"이 붙는다.
+    // N은 조각을 몇 줄로 썼는지에 따라 달라질 뿐 동작과 무관해 비교에서 뺀다(4.5.0 cloudflare-tunnel: 원본 두 줄, 변환본 한 줄)
+    $message = preg_replace('/, called in \S+\(\d+\) : eval\(\)\'d code on line \d+/', '', $e->getMessage()) ?? $e->getMessage();
+
+    return 'ERROR:' . get_class($e) . ': ' . $message;
 }
 
 /** Blade 조각을 렌더한다. 예외는 문자열 'ERROR:클래스: 메시지'로 돌려준다. */

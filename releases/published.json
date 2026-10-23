@@ -12,6 +12,12 @@
       "index": "sha256:2602fd00a1f095454899b8ed31e9036eb04bc6202d0a4d5896a26409dbfcc67b",
       "commit": "5bf08463db121e4a87b4cbaabfb42c1a5fb3e29e",
       "publishedAt": "2026-10-23T09:50:59.653Z"
+    },
+    "4.5.0": {
+      "kind": "ko",
+      "index": "sha256:2f2d03729000aaf907d4b9598d9e19564e028c6690b57eb061fd8d7012431cd0",
+      "commit": "64c48684d2bf3b8b2d1d8492690b37ed321a58aa",
+      "publishedAt": "2026-10-23T22:22:47.645Z"
     }
   }
 }

@@ -27,9 +27,15 @@ describe('failure memory', () => {
 
 describe('discordMessage', () => {
   it('reports a processed version with counts and the compare link, without logs or arguments', () => {
-    const text = discordMessage({ type: 'version', version: '4.4.7', added: 12, changed: 1, removed: 3, drafted: 11, fallbacks: 1, normalized: 4, compare: 'https://github.com/Kim-Geonwoo/coolify-ko/compare/dev...bot/i18n' });
+    const text = discordMessage({ type: 'version', version: '4.4.7', added: 12, changed: 1, removed: 3, drafted: 11, fallbacks: 1, normalized: 4, pending: 0, compare: 'https://github.com/Kim-Geonwoo/coolify-ko/compare/dev...bot/i18n' });
 
     expect(text).toBe('coolify-ko 4.4.7 처리: 새 키 12 · 바뀐 키 1 · 없어진 키 3 · 초안 11(폴백 1, 정규화 4)\n받을 결과: https://github.com/Kim-Geonwoo/coolify-ko/compare/dev...bot/i18n');
+  });
+
+  it('says how many keys are left for the next night when the deadline cut the drafting short', () => {
+    const text = discordMessage({ type: 'version', version: '4.5.0', added: 631, changed: 0, removed: 2, drafted: 231, fallbacks: 0, normalized: 9, pending: 400, compare: 'https://github.com/Kim-Geonwoo/coolify-ko/pull/12' });
+
+    expect(text).toBe('coolify-ko 4.5.0 처리: 새 키 631 · 바뀐 키 0 · 없어진 키 2 · 초안 231(폴백 0, 정규화 9) · 남은 키 400(다음 밤에 이어서)\n받을 결과: https://github.com/Kim-Geonwoo/coolify-ko/pull/12');
   });
 
   it('reports failures by stage and short code only', () => {

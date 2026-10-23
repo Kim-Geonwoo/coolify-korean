@@ -18,13 +18,13 @@ import { reviewFailed, runReview, type ReviewItem } from '../translate/review.ts
 import type { CatalogEntry } from '../translate/sample.ts';
 import { textType } from '../translate/prompt.ts';
 import { hardIssues } from '../translate/validate.ts';
-import { draftItems, isHardKey, translateKeys } from './drafting.ts';
+import { draftItems, engineBacklog, isHardKey, translateKeys } from './drafting.ts';
 import { assertCatalogVersion, loadState } from './state.ts';
 
 const BATCH = 20;
 const RETRY_BATCH = 5;
 const KEEP_VERSIONS = 3;
-const USAGE = '사용법: cli.ts drafts run --engine <id> [--base-url URL] [--ledger-dir D] [--previous catalog.json] [--report R] | drafts review [--engine flash] [--requests 15] [--gate pass] [--key-file F] [--cache-dir D] | drafts hard-prepare [--parts 2] [--only keys.json --name N] | drafts hard-import --files a.json,b.json --label 이름 [--instructions I.md] [--inputs in.json]';
+const USAGE = '사용법: cli.ts drafts run --engine <id> [--base-url URL] [--ledger-dir D] [--previous catalog.json] [--report R] [--budget-min N] | drafts pending --engine <id> [--ledger-dir D] --out F | drafts review [--engine flash] [--requests 15] [--gate pass] [--key-file F] [--cache-dir D] | drafts hard-prepare [--parts 2] [--only keys.json --name N] | drafts hard-import --files a.json,b.json --label 이름 [--instructions I.md] [--inputs in.json]';
 
 interface Catalog {
   readonly version: string;
@@ -107,13 +107,48 @@ function commit(ctx: Context, results: ReadonlyMap<string, DraftResult>, runs: R
   return out;
 }
 
-async function runCommand(argv: readonly string[], ctx: Context): Promise<void> {
+/** 엔진·프롬프트·용어집별 원장. run과 pending이 같은 파일을 본다 */
+function engineLedger(argv: readonly string[], ctx: Context): { readonly p: ReturnType<typeof profile>; readonly promptVersion: 1 | 2; readonly promptHash: string; readonly glossaryHash: string; readonly ledgerPath: string; readonly ledger: Map<string, BakeoffRecord> } {
   const engineId = option(argv, 'engine');
   if (engineId === undefined) {
     throw new Error(USAGE);
   }
   const p = profile(engineId);
   const promptVersion = p.promptVersion ?? 2;
+  const promptHash = hash(readFileSync(join(ctx.root, 'pipeline', 'src', 'translate', 'prompt.ts'), 'utf8'));
+  const glossaryHash = hash(ctx.glossaryText);
+  const ledgerDir = option(argv, 'ledger-dir') ?? join(ctx.root, '.work', 'ledger');
+  mkdirSync(ledgerDir, { recursive: true });
+  const ledgerPath = join(ledgerDir, `${p.id}.p${String(promptVersion)}.${promptHash}.${glossaryHash}.jsonl`);
+  const ledger = new Map(readJsonl<BakeoffRecord>(ledgerPath).map((record) => [record.id, record]));
+
+  return { p, promptVersion, promptHash, glossaryHash, ledgerPath, ledger };
+}
+
+/**
+ * 밤 작업이 엔진을 띄울지 정한다: 엔진이 아직 처리하지 않은 키 수. 번역 메모리 키는 새 버전 밤에 이미 적용했고,
+ * 거부된 것은 다시 돌려도 같으므로 세지 않는다(4.4.7의 거부 1개 때문에 매일 밤 엔진을 띄우지 않게)
+ */
+function pendingCommand(argv: readonly string[], ctx: Context): void {
+  const out = option(argv, 'out');
+  if (out === undefined) {
+    throw new Error(USAGE);
+  }
+  const { ledger } = engineLedger(argv, ctx);
+  const store = readStore(ctx.draftsDir, ctx.code);
+  const plan = planDrafts({ catalog: ctx.catalog, drafts: store.drafts, exclusions: ctx.exclusions, keys: pendingKeys(ctx.catalog, store, ctx.exclusions) });
+  const pending = engineBacklog(ctx.catalog.keys, plan.filter((entry) => entry.kind === 'mt').map((entry) => entry.key), ledger).length;
+  writeFileSync(out, `${JSON.stringify({ pending })}\n`);
+  console.log(`엔진이 이어 할 초안 ${String(pending)}개`);
+}
+
+async function runCommand(argv: readonly string[], ctx: Context): Promise<void> {
+  const { p, promptVersion, promptHash, glossaryHash, ledgerPath, ledger } = engineLedger(argv, ctx);
+  const budget = option(argv, 'budget-min');
+  if (budget !== undefined && !/^\d{1,4}$/.test(budget)) {
+    throw new Error('--budget-min은 분 단위 정수다.');
+  }
+  const deadline = budget === undefined ? undefined : Date.now() + Number(budget) * 60_000;
   const glossary = loadGlossary(join(ctx.root, langPaths(ctx.code).glossary));
   const store = readStore(ctx.draftsDir, ctx.code);
   const keys = pendingKeys(ctx.catalog, store, ctx.exclusions);
@@ -124,13 +159,7 @@ async function runCommand(argv: readonly string[], ctx: Context): Promise<void> 
   }
   console.log(`초안이 필요한 키 ${String(keys.length)} → ${[...counts].map(([k, n]) => `${k} ${String(n)}`).join(' · ')}`);
 
-  const promptHash = hash(readFileSync(join(ctx.root, 'pipeline', 'src', 'translate', 'prompt.ts'), 'utf8'));
-  const glossaryHash = hash(ctx.glossaryText);
-  const ledgerDir = option(argv, 'ledger-dir') ?? join(ctx.root, '.work', 'ledger');
-  mkdirSync(ledgerDir, { recursive: true });
-  const ledgerPath = join(ledgerDir, `${p.id}.p${String(promptVersion)}.${promptHash}.${glossaryHash}.jsonl`);
   const requestsPath = ledgerPath.replace(/\.jsonl$/, '.requests.jsonl');
-  const ledger = new Map(readJsonl<BakeoffRecord>(ledgerPath).map((record) => [record.id, record]));
   let deps: EngineDeps;
   let server: { modelPath: string; build: string } | undefined;
   if (p.runtime === 'gemini') {
@@ -156,6 +185,7 @@ async function runCommand(argv: readonly string[], ctx: Context): Promise<void> 
     run,
     ledger,
     sleep,
+    ...(deadline === undefined ? {} : { deadline }),
     onRecord: (record) => {
       appendFileSync(ledgerPath, `${JSON.stringify(record)}\n`);
     },
@@ -177,10 +207,10 @@ async function runCommand(argv: readonly string[], ctx: Context): Promise<void> 
   const out = commit(ctx, results, runs, previous === undefined ? {} : { previous });
   const normalized = [...results.values()].filter((result) => (result.edits?.length ?? 0) > 0).length;
   const reportPath = option(argv, 'report') ?? join(ctx.root, '.work', `drafts-${run}.json`);
-  writeFileSync(reportPath, `${JSON.stringify({ run, increment: out.increment, fallbacks: outcome.fallbacks, normalized, rejected: out.rejected, resumed: outcome.resumed, requests: outcome.requests, stopped: outcome.stopped ?? null }, null, 2)}\n`);
+  writeFileSync(reportPath, `${JSON.stringify({ run, increment: out.increment, fallbacks: outcome.fallbacks, normalized, rejected: out.rejected, resumed: outcome.resumed, requests: outcome.requests, stopped: outcome.stopped ?? null, pending: outcome.pending.length }, null, 2)}\n`);
   console.log(`초안 ${String(out.increment.drafted)}개 반영 · 폴백 ${String(outcome.fallbacks.length)} · 거부 ${String(out.rejected.length)} · 원장 재사용 ${String(outcome.resumed)} · 요청 ${String(outcome.requests)} → ${reportPath}`);
-  if (outcome.stopped === 'quota-daily') {
-    console.log('일일 한도로 멈췄습니다. 같은 명령으로 이어서 돌립니다.');
+  if (outcome.stopped !== undefined) {
+    console.log(`${outcome.stopped === 'deadline' ? '시간 예산' : '일일 한도'}으로 멈췄습니다(남은 키 ${String(outcome.pending.length)}). 같은 명령으로 이어서 돌립니다.`);
   }
 }
 
@@ -343,6 +373,9 @@ export async function draftsCommand(argv: readonly string[], root: string): Prom
   switch (argv[1]) {
     case 'run':
       await runCommand(argv, ctx);
+      return;
+    case 'pending':
+      pendingCommand(argv, ctx);
       return;
     case 'hard-prepare':
       hardPrepare(argv, ctx);

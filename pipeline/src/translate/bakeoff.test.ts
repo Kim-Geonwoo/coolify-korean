@@ -121,6 +121,34 @@ describe('runBakeoff', () => {
     expect(fake.requests[0]?.schema).toBeUndefined();
   });
 
+  // 2026-10-24 밤 작업: 4.5.0 새 키 631개를 서버 CPU로 돌리다 2시간 15분 상한에 끊겨, 번역한 것까지 하나도 못 올렸다
+  it('stops before a batch that would end past the deadline and keeps what it finished', async () => {
+    let clock = 0;
+    const base = engine([{ a: '저장' }, { b: ':name을(를) 삭제했습니다.' }, { c: '<0>안내서</0>를 읽습니다.' }]);
+    const slow: Engine = {
+      complete: (request) => {
+        clock += 60_000;
+
+        return base.complete(request);
+      },
+    };
+    const records: BakeoffRecord[] = [];
+
+    const outcome = await runBakeoff({ items, glossary, style: 'generic', schema: true, engine: slow, engineId: 'fake', batchSize: 1, retryBatchSize: 1, sleep: () => Promise.resolve(), onRecord: (r) => records.push(r), onRequest: () => undefined, deadline: 150_000, now: () => clock });
+
+    expect(records.map((r) => r.id)).toEqual(['a', 'b']);
+    expect(outcome.stopped).toBe('deadline');
+    expect(base.requests).toHaveLength(2);
+  });
+
+  it('does not start at all when the deadline has already passed', async () => {
+    const fake = engine([{ a: '저장' }]);
+
+    const outcome = await runBakeoff({ items, glossary, style: 'generic', schema: true, engine: fake, engineId: 'fake', batchSize: 3, retryBatchSize: 1, sleep: () => Promise.resolve(), onRecord: () => undefined, onRequest: () => undefined, deadline: 1_000, now: () => 1_000 });
+
+    expect(outcome).toMatchObject({ records: 0, requests: 0, stopped: 'deadline' });
+  });
+
   it('stops before recording a batch when the daily limit is reached', async () => {
     const fake = engine([{ a: '저장' }, new EngineError('quota-daily', 'day')]);
 

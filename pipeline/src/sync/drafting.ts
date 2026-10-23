@@ -55,6 +55,9 @@ export interface TranslateOptions {
   readonly onRequest: (log: RequestLog) => void;
   readonly onWait?: (ms: number, error: EngineError) => void;
   readonly sleep: (ms: number) => Promise<void>;
+  /** 이 시각(ms)을 넘길 묶음은 시작하지 않는다(밤 작업 상한) */
+  readonly deadline?: number;
+  readonly now?: () => number;
 }
 
 export interface TranslateOutcome {
@@ -63,7 +66,9 @@ export interface TranslateOutcome {
   readonly fallbacks: readonly string[];
   readonly resumed: number;
   readonly requests: number;
-  readonly stopped?: 'quota-daily';
+  readonly stopped?: 'quota-daily' | 'deadline';
+  /** 멈춰서 결과가 없는 키(다음 실행이 이어서 한다) */
+  readonly pending: readonly string[];
 }
 
 function toTranslated(record: BakeoffRecord, item: SampleItem, run: string): Translated {
@@ -71,6 +76,16 @@ function toTranslated(record: BakeoffRecord, item: SampleItem, run: string): Tra
   const edits = result.edits.map(({ rule, before, after }) => ({ rule, before, after }));
 
   return { text: result.text, run, ...(edits.length === 0 ? {} : { edits }), ...(result.warnings.length === 0 ? {} : { warnings: result.warnings }) };
+}
+
+const needsEngine = (record: BakeoffRecord | undefined): boolean => record === undefined || failedOnlyByRequests(record);
+
+/** 엔진에 보낼 키(원장에 없거나 요청 실패로만 끝남). 0이면 밤 작업이 엔진을 띄우지 않는다 */
+export function engineBacklog(catalog: Readonly<Record<string, CatalogEntry>>, keys: readonly string[], ledger: ReadonlyMap<string, BakeoffRecord>): string[] {
+  return draftItems(catalog, keys)
+    .filter((item) => needsEngine(ledger.get(item.id)))
+    .map((item) => item.key)
+    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
 }
 
 /** 원장에 없는 키만 엔진에 보낸다. API 실패로만 끝난 기록은 다시 보내고, 출력이 틀린 기록은 실패로 둔다 */
@@ -115,6 +130,8 @@ export async function translateKeys(options: TranslateOptions): Promise<Translat
     sleep: options.sleep,
     onRequest: options.onRequest,
     ...(options.onWait === undefined ? {} : { onWait: options.onWait }),
+    ...(options.deadline === undefined ? {} : { deadline: options.deadline }),
+    ...(options.now === undefined ? {} : { now: options.now }),
     onRecord: (record) => {
       options.onRecord(record);
       take(record, options.run);
@@ -127,5 +144,9 @@ export async function translateKeys(options: TranslateOptions): Promise<Translat
     resumed,
     requests: outcome.requests,
     ...(outcome.stopped === undefined ? {} : { stopped: outcome.stopped }),
+    pending: pending
+      .map((item) => item.key)
+      .filter((key) => !translated.has(key) && !fallbacks.includes(key))
+      .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
   };
 }

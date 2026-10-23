@@ -37,7 +37,7 @@ export function recordSuccess(status: JobStatus, stage: string, at: string): Job
 }
 
 export type JobEvent =
-  | { readonly type: 'version'; readonly version: string; readonly added: number; readonly changed: number; readonly removed: number; readonly drafted: number; readonly fallbacks: number; readonly normalized: number; readonly compare: string }
+  | { readonly type: 'version'; readonly version: string; readonly added: number; readonly changed: number; readonly removed: number; readonly drafted: number; readonly fallbacks: number; readonly normalized: number; readonly pending: number; readonly compare: string }
   | { readonly type: 'failure'; readonly stage: string; readonly code: string; readonly count: number; readonly disabled: boolean }
   | { readonly type: 'stop'; readonly reason: string; readonly detail: string }
   | { readonly type: 'rejected'; readonly keys: readonly string[] }
@@ -50,7 +50,7 @@ export function discordMessage(event: JobEvent): string {
   let text: string;
   switch (event.type) {
     case 'version':
-      text = `coolify-ko ${event.version} 처리: 새 키 ${String(event.added)} · 바뀐 키 ${String(event.changed)} · 없어진 키 ${String(event.removed)} · 초안 ${String(event.drafted)}(폴백 ${String(event.fallbacks)}, 정규화 ${String(event.normalized)})\n받을 결과: ${event.compare}`;
+      text = `coolify-ko ${event.version} 처리: 새 키 ${String(event.added)} · 바뀐 키 ${String(event.changed)} · 없어진 키 ${String(event.removed)} · 초안 ${String(event.drafted)}(폴백 ${String(event.fallbacks)}, 정규화 ${String(event.normalized)})${event.pending > 0 ? ` · 남은 키 ${String(event.pending)}(다음 밤에 이어서)` : ''}\n받을 결과: ${event.compare}`;
       break;
     case 'failure':
       text = `coolify-ko 밤 작업 실패: ${event.stage} (${event.code}), ${String(event.count)}번째.${event.disabled ? ' 이 단계를 껐습니다. 확인이 필요합니다.' : ''}`;

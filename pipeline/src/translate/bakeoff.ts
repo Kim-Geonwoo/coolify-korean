@@ -50,8 +50,8 @@ export interface RunOutcome {
   readonly fallbacks: number;
   readonly retried: number;
   readonly requests: number;
-  /** 일일 한도로 멈췄으면 그 이유. 그 묶음부터는 기록하지 않았다(다시 돌리면 이어서 한다) */
-  readonly stopped?: 'quota-daily';
+  /** 일일 한도나 마감으로 멈췄으면 그 이유. 그 묶음부터는 기록하지 않았다(다시 돌리면 이어서 한다) */
+  readonly stopped?: 'quota-daily' | 'deadline';
 }
 
 export interface RunOptions {
@@ -71,6 +71,9 @@ export interface RunOptions {
   readonly onWait?: (ms: number, error: EngineError) => void;
   /** 1: 2a 동결 프롬프트, 2: 2b 규칙(기본) */
   readonly promptVersion?: 1 | 2;
+  /** 이 시각(ms)을 넘길 것 같은 묶음은 시작하지 않는다(직전 묶음이 걸린 시간으로 어림). 밤 작업 상한 안에서 결과를 남기려는 것 */
+  readonly deadline?: number;
+  readonly now?: () => number;
 }
 
 const SMOKE_STRATA: readonly Stratum[] = ['tag', 'placeholder', 'label', 'long', 'edge', 'representative'];
@@ -170,8 +173,14 @@ export async function runBakeoff(options: RunOptions): Promise<RunOutcome> {
   };
 
   const prepared: Prepared[] = options.items.map((item) => ({ item, masked: mask(item.source, item.placeholders) }));
+  const now = options.now ?? Date.now;
+  let lastBatchMs = 0;
   try {
     for (let start = 0; start < prepared.length; start += options.batchSize) {
+      const batchStarted = now();
+      if (options.deadline !== undefined && batchStarted + lastBatchMs >= options.deadline) {
+        return { records, fallbacks, retried, requests, stopped: 'deadline' };
+      }
       const batch = prepared.slice(start, start + options.batchSize);
       const batchNo = start / options.batchSize;
       const first = await ask(batch, false, batchNo);
@@ -204,6 +213,7 @@ export async function runBakeoff(options: RunOptions): Promise<RunOutcome> {
           soft: text === null ? null : softReport(item, text, glossary),
         });
       }
+      lastBatchMs = now() - batchStarted;
     }
   } catch (error: unknown) {
     if (error instanceof EngineError && error.kind === 'quota-daily') {

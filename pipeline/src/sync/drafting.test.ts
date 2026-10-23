@@ -3,7 +3,7 @@ import type { BakeoffRecord } from '../translate/bakeoff.ts';
 import { type Engine, type EngineRequest } from '../translate/engines/engine.ts';
 import { parseGlossary } from '../translate/glossary.ts';
 import type { CatalogEntry } from '../translate/sample.ts';
-import { draftItems, isHardKey, translateKeys } from './drafting.ts';
+import { draftItems, engineBacklog, isHardKey, translateKeys } from './drafting.ts';
 
 const glossary = parseGlossary({ terms: [], brands: [] });
 const entry = (english: string, kinds: string[], placeholders: string[] = []): CatalogEntry => ({ english, markup: false, kinds, placeholders, occurrences: [{ file: 'resources/views/x.blade.php', line: 1, kind: kinds[0] ?? 'text' }] });
@@ -78,6 +78,19 @@ describe('translateKeys', () => {
     expect(fake.requests).toHaveLength(1);
     expect([...out.translated.keys()].sort()).toEqual(['Restart the server.', 'auth.failed']);
     expect(out).toMatchObject({ fallbacks: ['Deleted :name.'], resumed: 2 });
+    // 엔진에 다시 보낼 것은 요청 실패로만 끝난 키뿐이다(밤 작업이 엔진을 띄울지 정한다)
+    expect(engineBacklog(catalog, Object.keys(catalog), ledger)).toEqual(['auth.failed']);
+  });
+
+  it('stops at the deadline and lists the keys it left for the next run', async () => {
+    const fake = engine(() => '번역');
+
+    const out = await translateKeys({ ...base, catalog, keys: Object.keys(catalog), engine: fake, ledger: new Map(), onRecord: () => undefined, deadline: 10, now: () => 10 });
+
+    expect(fake.requests).toHaveLength(0);
+    expect(out.stopped).toBe('deadline');
+    expect(out.pending).toEqual(['Deleted :name.', 'Restart the server.', 'auth.failed']);
+    expect(engineBacklog(catalog, Object.keys(catalog), new Map())).toHaveLength(3);
   });
 });
 
