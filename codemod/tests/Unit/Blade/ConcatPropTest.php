@@ -71,7 +71,8 @@ final class ConcatPropTest extends TestCase
         yield 'no words around values' => ["<x-forms.input :label=\"\$a . ' / ' . \$b\" />"];
         yield 'only values' => ["<x-forms.input :label=\"\$a . \$b\" />"];
         yield 'prop not in rules' => ["<x-forms.input :id=\"'field for ' . \$x\" />"];
-        yield 'echo concatenation' => ["<span>{{ 'Hello ' . \$name }}</span>"];
+        // echo의 이어 붙이기는 2026-10-25부터 자리표시자 문장으로 바꾼다(DisplaySiteTest). 글자 없는 이어 붙이기는 그대로다
+        yield 'echo concatenation without words' => ["<span>{{ \$a . ' / ' . \$b }}</span>"];
     }
 
     #[DataProvider('untouched')]

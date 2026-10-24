@@ -226,30 +226,37 @@ async function publishPlanStage(input: Parameters<NonNullable<NightDeps['publish
 
 /** 스크린샷: 아직 안 찍은 카탈로그 버전이고 남은 시간이 넉넉할 때만 찍는다(빌드·기동 20~30분, 예시 리소스·약 170쪽·창 찍기 10~15분) */
 const SCREENSHOT_MIN_MS = 55 * 60_000;
-function screenshotsStage(tokenDir: string): Promise<void> {
+async function screenshotsStage(tokenDir: string): Promise<void> {
   const version = (readJson(join(WORK, 'i18n', 'catalog.json')) as { version?: unknown }).version;
   const donePath = join(WEBLATE_CACHE, 'screenshots.version');
   const done = existsSync(donePath) ? readFileSync(donePath, 'utf8').trim() : '';
   if (typeof version !== 'string' || done === captureDoneKey(WORK, version)) {
     console.log('스크린샷: 이 입력(버전·찍기 코드·변환기·카탈로그)으로는 이미 찍었습니다.');
 
-    return Promise.resolve();
+    return;
   }
   if (remaining() < SCREENSHOT_MIN_MS) {
     console.log('스크린샷: 남은 시간이 모자라 다음 밤으로 미룹니다.');
 
-    return Promise.resolve();
+    return;
   }
+  const reportPath = join(CACHE, 'screenshots-report.json');
+  rmSync(reportPath, { force: true });
   try {
     // 안쪽은 50분 안에 끝내고 정리할 시간을 남긴다. 바깥 제한은 그보다 5분 길다
-    run('screenshots', 'node', ['pipeline/src/cli.ts', 'screenshots', 'run', '--base-url', WEBLATE_URL, '--token-dir', tokenDir, '--cache-dir', WEBLATE_CACHE, '--report', join(CACHE, 'screenshots-report.json'), '--budget-min', '50'], SCREENSHOT_MIN_MS);
+    run('screenshots', 'node', ['pipeline/src/cli.ts', 'screenshots', 'run', '--base-url', WEBLATE_URL, '--token-dir', tokenDir, '--cache-dir', WEBLATE_CACHE, '--report', reportPath, '--budget-min', '50'], SCREENSHOT_MIN_MS);
   } finally {
     // 끊겨도 시험 인스턴스·찍기 컨테이너가 rootless 데몬에 남지 않게(다음 밤 메모리 하한에 걸린다)
     spawnSync('docker', ['rm', '-f', 'coolify-ko-screens-capture'], { stdio: 'ignore', timeout: 2 * 60_000 });
     spawnSync('docker', ['compose', '-p', 'coolify-ko-screens', 'down', '-v', '--remove-orphans'], { stdio: 'ignore', timeout: 5 * 60_000 });
   }
-
-  return Promise.resolve();
+  // 지난 찍기에 없던 '표식 없이 보인 영어'는 변환 규칙이 모르는 꼴이 새로 생겼다는 신호라 바로 알린다(2026-10-25 4.5.0 사이드바)
+  const report = readJson(reportPath) as { newUntranslated?: unknown; untranslatedSince?: unknown };
+  const fresh = Array.isArray(report.newUntranslated) ? report.newUntranslated.flatMap((gap: unknown) => (typeof (gap as { text?: unknown } | null)?.text === 'string' ? [(gap as { text: string }).text] : [])) : [];
+  if (fresh.length > 0) {
+    console.log(`스크린샷: 지난 찍기에 없던 표식 없는 영어 ${String(fresh.length)}개`);
+    await postDiscord(credential('discord-webhook'), discordMessage({ type: 'untranslated', version, ...(typeof report.untranslatedSince === 'string' ? { previousVersion: report.untranslatedSince } : {}), count: fresh.length, examples: fresh }));
+  }
 }
 
 const weblateTokens = weblateTokenDir();

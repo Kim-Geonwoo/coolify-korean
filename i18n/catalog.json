@@ -829,6 +829,23 @@
                 }
             ]
         },
+        ":count servers can start collecting traffic analytics": {
+            "english": ":count servers can start collecting traffic analytics",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/analytics.blade.php",
+                    "line": 97,
+                    "kind": "echo-literal"
+                }
+            ]
+        },
         ":count step is OK or done|:count steps are OK or done": {
             "english": ":count step is OK or done|:count steps are OK or done",
             "markup": false,
@@ -1241,6 +1258,23 @@
                 }
             ]
         },
+        ":name > Canvas": {
+            "english": ":name > Canvas",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "name"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/canvas.blade.php",
+                    "line": 3,
+                    "kind": "echo-literal"
+                }
+            ]
+        },
         ":name Resources": {
             "english": ":name Resources",
             "markup": false,
@@ -1396,7 +1430,8 @@
             "english": ":provider_label token",
             "markup": false,
             "kinds": [
-                "prop-text"
+                "prop-text",
+                "echo-literal"
             ],
             "placeholders": [
                 "provider_label"
@@ -1406,6 +1441,11 @@
                     "file": "resources/views/components/server/provider-link-modal.blade.php",
                     "line": 39,
                     "kind": "prop-text"
+                },
+                {
+                    "file": "resources/views/components/server/provider-token-picker.blade.php",
+                    "line": 41,
+                    "kind": "echo-literal"
                 }
             ]
         },
@@ -2674,10 +2714,16 @@
             "english": "API Tokens",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/security/api-tokens.blade.php",
                     "line": 3,
@@ -5305,6 +5351,21 @@
                 }
             ]
         },
+        "Admin View": {
+            "english": "Admin View",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                }
+            ]
+        },
         "Advanced": {
             "english": "Advanced",
             "markup": false,
@@ -5318,6 +5379,11 @@
                 {
                     "file": "resources/views/components/application/configuration-sidebar.blade.php",
                     "line": 3,
+                    "kind": "display"
+                },
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
                     "kind": "display"
                 },
                 {
@@ -6273,6 +6339,11 @@
                 {
                     "file": "resources/views/components/application/configuration-sidebar.blade.php",
                     "line": 3,
+                    "kind": "display"
+                },
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
                     "kind": "display"
                 },
                 {
@@ -7377,10 +7448,16 @@
             "english": "Audit log",
             "markup": false,
             "kinds": [
+                "display",
                 "prop-text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/team/audit-log.blade.php",
                     "line": 8,
@@ -7407,10 +7484,16 @@
             "english": "Authentication",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/settings-oauth.blade.php",
                     "line": 3,
@@ -8147,10 +8230,16 @@
             "english": "Backup",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/project/database/backup/execution.blade.php",
                     "line": 3,
@@ -12841,10 +12930,16 @@
             "english": "Cloud Tokens",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/security/cloud-provider-token/show.blade.php",
                     "line": 25,
@@ -12951,10 +13046,16 @@
             "english": "Cloud-Init Scripts",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/security/cloud-init-script/show.blade.php",
                     "line": 20,
@@ -19282,6 +19383,23 @@
                 }
             ]
         },
+        "Created :created_at": {
+            "english": "Created :created_at",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "created_at"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/cloud-provider-token/show.blade.php",
+                    "line": 50,
+                    "kind": "echo-literal"
+                }
+            ]
+        },
         "Creation order": {
             "english": "Creation order",
             "markup": false,
@@ -20597,6 +20715,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/components/server/sidebar.blade.php",
                     "line": 3,
                     "kind": "display"
@@ -20713,6 +20836,11 @@
                     "file": "resources/views/components/error-page.blade.php",
                     "line": 50,
                     "kind": "text"
+                },
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
                 },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
@@ -24558,6 +24686,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/server/sidebar.blade.php",
                     "line": 3,
@@ -28545,6 +28678,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/livewire/admin/index.blade.php",
                     "line": 65,
                     "kind": "text"
@@ -29290,6 +29428,40 @@
                     "file": "resources/views/livewire/project/shared/metrics.blade.php",
                     "line": 28,
                     "kind": "prop-text"
+                }
+            ]
+        },
+        "Enable metrics on :count servers": {
+            "english": "Enable metrics on :count servers",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/fleet/metrics.blade.php",
+                    "line": 92,
+                    "kind": "echo-literal"
+                }
+            ]
+        },
+        "Enable metrics on :enableable_servers": {
+            "english": "Enable metrics on :enableable_servers",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "enableable_servers"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/fleet/metrics.blade.php",
+                    "line": 91,
+                    "kind": "echo-literal"
                 }
             ]
         },
@@ -30860,11 +31032,17 @@
             "english": "Environments",
             "markup": false,
             "kinds": [
+                "display",
                 "text",
                 "html-attribute"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 247,
@@ -34060,6 +34238,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/components/server/sidebar.blade.php",
                     "line": 3,
                     "kind": "display"
@@ -34834,6 +35017,23 @@
                 }
             ]
         },
+        "GitLab App for :group_name": {
+            "english": "GitLab App for :group_name",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "group_name"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/source/gitlab/change.blade.php",
+                    "line": 16,
+                    "kind": "echo-literal"
+                }
+            ]
+        },
         "GitLab App is not connected. Please complete the OAuth flow first.": {
             "english": "GitLab App is not connected. Please complete the OAuth flow first.",
             "markup": false,
@@ -34982,6 +35182,23 @@
                     "file": "resources/views/livewire/source/gitea/change.blade.php",
                     "line": 179,
                     "kind": "prop-text"
+                }
+            ]
+        },
+        "Gitea App for :organization": {
+            "english": "Gitea App for :organization",
+            "markup": false,
+            "kinds": [
+                "echo-literal"
+            ],
+            "placeholders": [
+                "organization"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/source/gitea/change.blade.php",
+                    "line": 16,
+                    "kind": "echo-literal"
                 }
             ]
         },
@@ -37562,6 +37779,21 @@
                 }
             ]
         },
+        "Infrastructure": {
+            "english": "Infrastructure",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                }
+            ]
+        },
         "Inherited from the Coolify service port": {
             "english": "Inherited from the Coolify service port",
             "markup": false,
@@ -38278,10 +38510,16 @@
             "english": "Integration Tokens",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/security/integration-tokens.blade.php",
                     "line": 3,
@@ -38372,6 +38610,21 @@
                     "file": "resources/views/livewire/security/integration-tokens.blade.php",
                     "line": 8,
                     "kind": "prop-text"
+                }
+            ]
+        },
+        "Integrations": {
+            "english": "Integrations",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
                 }
             ]
         },
@@ -39607,11 +39860,16 @@
             "english": "Keys & Tokens",
             "markup": false,
             "kinds": [
-                "text",
-                "display"
+                "display",
+                "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/security/settings-layout.blade.php",
                     "line": 39,
@@ -42173,10 +42431,16 @@
             "english": "Manage",
             "markup": false,
             "kinds": [
+                "display",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/project/database/scheduled-backups.blade.php",
                     "line": 110,
@@ -43434,10 +43698,16 @@
             "english": "Members",
             "markup": false,
             "kinds": [
+                "display",
                 "prop-text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/team/member/index.blade.php",
                     "line": 61,
@@ -43696,6 +43966,11 @@
                 {
                     "file": "resources/views/components/database/configuration-sidebar.blade.php",
                     "line": 3,
+                    "kind": "display"
+                },
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
                     "kind": "display"
                 },
                 {
@@ -44083,6 +44358,21 @@
                     "file": "resources/views/livewire/server/sentinel/show.blade.php",
                     "line": 16,
                     "kind": "prop-html"
+                }
+            ]
+        },
+        "Monitoring": {
+            "english": "Monitoring",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
                 }
             ]
         },
@@ -50847,11 +51137,16 @@
             "english": "Notifications",
             "markup": false,
             "kinds": [
-                "text",
-                "display"
+                "display",
+                "text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/notification/settings-layout.blade.php",
                     "line": 15,
@@ -52495,10 +52790,16 @@
             "english": "Overview",
             "markup": false,
             "kinds": [
+                "display",
                 "prop-text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/analytics-placeholder.blade.php",
                     "line": 24,
@@ -56186,6 +56487,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/livewire/security/private-key/show.blade.php",
                     "line": 46,
                     "kind": "text"
@@ -57057,6 +57363,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 1,
@@ -60023,6 +60334,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/server/sidebar.blade.php",
                     "line": 3,
@@ -64582,6 +64898,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 1,
@@ -70231,6 +70552,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/components/notification/event-grid.blade.php",
                     "line": 7,
                     "kind": "display"
@@ -71091,6 +71417,11 @@
             "placeholders": [],
             "occurrences": [
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 1,
                     "kind": "display"
@@ -71461,6 +71792,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 1,
@@ -72314,6 +72650,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/top-breadcrumb.blade.php",
                     "line": 1,
@@ -73955,12 +74296,18 @@
             "english": "Subscription",
             "markup": false,
             "kinds": [
+                "display",
                 "html-attribute",
                 "text",
                 "prop-text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/navbar.blade.php",
                     "line": 330,
@@ -74914,6 +75261,11 @@
                     "kind": "display"
                 },
                 {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
+                {
                     "file": "resources/views/components/service/configuration-sidebar.blade.php",
                     "line": 3,
                     "kind": "display"
@@ -75099,6 +75451,11 @@
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/components/shared-variables/editor.blade.php",
                     "line": 131,
@@ -75565,6 +75922,11 @@
                 {
                     "file": "resources/views/components/database/configuration-sidebar.blade.php",
                     "line": 3,
+                    "kind": "display"
+                },
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
                     "kind": "display"
                 },
                 {
@@ -82255,10 +82617,16 @@
             "english": "Updates",
             "markup": false,
             "kinds": [
+                "display",
                 "prop-text"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/settings/updates.blade.php",
                     "line": 11,
@@ -85754,11 +86122,17 @@
             "english": "Webhook",
             "markup": false,
             "kinds": [
+                "display",
                 "prop-text",
                 "prop-literal"
             ],
             "placeholders": [],
             "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
+                },
                 {
                     "file": "resources/views/livewire/notifications/webhook.blade.php",
                     "line": 10,
@@ -86364,6 +86738,21 @@
                     "file": "resources/views/livewire/project/application/general.blade.php",
                     "line": 139,
                     "kind": "prop-literal"
+                }
+            ]
+        },
+        "Workspace": {
+            "english": "Workspace",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/navbar.blade.php",
+                    "line": 103,
+                    "kind": "display"
                 }
             ]
         },

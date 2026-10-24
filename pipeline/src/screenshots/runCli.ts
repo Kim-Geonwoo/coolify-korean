@@ -8,6 +8,7 @@ import { uploadScreenshots, type CapturedPage, type ScreenshotReport } from '../
 import { imageArchive } from './archive.ts';
 import { captureDoneKey } from './gaps.ts';
 import { stepTimeout } from './budget.ts';
+import { recordGaps, type UntranslatedGap } from './untranslated.ts';
 import { keyedPseudo } from './markers.ts';
 import { readCapturedList, readImage } from './pages.ts';
 import { DEMO_SEED_PHP } from './seed.ts';
@@ -38,6 +39,10 @@ export interface ScreensReport extends ScreenshotReport {
   readonly pages: number;
   readonly keysCovered: number;
   readonly keysTotal: number;
+  /** 표식 없이 보인 영어(번역 호출 밖) 수와, 지난 찍기에 없던 것(밤 작업이 알린다) */
+  readonly untranslated: number;
+  readonly newUntranslated: readonly UntranslatedGap[];
+  readonly untranslatedSince?: string;
 }
 
 function run(what: string, command: string, args: readonly string[], options: { readonly cwd: string; readonly timeoutMs: number; readonly env?: NodeJS.ProcessEnv }): string {
@@ -232,13 +237,24 @@ export async function runScreenshots(options: { readonly root: string; readonly 
     }
     writeFileSync(join(archived, 'pages.json'), `${JSON.stringify(pages, null, 2)}\n`);
   }
+  // 표식 없이 보인 영어는 지우기 전에 지난 찍기와 비교하고 다음 기준선으로 남긴다(2026-10-25 4.5.0 사이드바를 놓쳤다)
+  mkdirSync(options.cacheDir, { recursive: true });
+  const gaps = recordGaps(out, options.cacheDir, version);
   // 컨테이너가 쓴 출력은 SSD에 남기지 않는다(올렸고, 검사를 거친 이미지는 HDD에 보관했다)
   rmSync(out, { recursive: true, force: true });
-  mkdirSync(options.cacheDir, { recursive: true });
   // 밤 작업이 같은 입력으로 다시 찍지 않게 남긴다(업로드까지 끝났을 때만). 찍기 코드·변환기·카탈로그가 바뀌면 다시 찍는다
   writeFileSync(join(options.cacheDir, 'screenshots.version'), `${captureDoneKey(root, version)}\n`);
 
-  return { version, pages: pages.length, keysCovered: new Set(pages.flatMap((page) => page.keys)).size, keysTotal: keys.length, ...uploaded };
+  return {
+    version,
+    pages: pages.length,
+    keysCovered: new Set(pages.flatMap((page) => page.keys)).size,
+    keysTotal: keys.length,
+    ...uploaded,
+    untranslated: gaps.total,
+    newUntranslated: gaps.fresh,
+    ...(gaps.previousVersion === undefined ? {} : { untranslatedSince: gaps.previousVersion }),
+  };
 }
 
 function option(argv: readonly string[], name: string): string | undefined {

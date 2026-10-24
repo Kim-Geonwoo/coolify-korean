@@ -498,6 +498,11 @@
     "sourceHash": "77a76bf336ad41d2",
     "via": "mt"
   },
+  ":count servers can start collecting traffic analytics": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "0de48e28692dc9a0",
+    "via": "mt"
+  },
   ":count service|:count services": {
     "edits": [
       {
@@ -730,6 +735,11 @@
     },
     "run": "2026-10-18-index-9b",
     "sourceHash": "d77e9fac95edaea6",
+    "via": "mt"
+  },
+  ":name > Canvas": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "687c2407040bcf73",
     "via": "mt"
   },
   ":name Resources": {
@@ -9563,6 +9573,11 @@
     "sourceHash": "d70b9e24bca26b40",
     "via": "mt"
   },
+  "Created :created_at": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "bac0d58f9eadb312",
+    "via": "mt"
+  },
   "Creation order": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "04e5b161d89135e5",
@@ -12239,6 +12254,16 @@
     "sourceHash": "13d0dbf4da5fad65",
     "via": "mt"
   },
+  "Enable metrics on :count servers": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "9061abe9b694e00b",
+    "via": "mt"
+  },
+  "Enable metrics on :enableable_servers": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "d98a46ddde7234bb",
+    "via": "mt"
+  },
   "Enable metrics on a server to see fleet resource usage here.": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "2e7bf7b067a18ba5",
@@ -13860,6 +13885,11 @@
     "sourceHash": "03b3e96985358662",
     "via": "mt"
   },
+  "GitLab App for :group_name": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "140604fe62112705",
+    "via": "mt"
+  },
   "GitLab App is not connected. Please complete the OAuth flow first.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "085b594139fbc13d",
@@ -13898,6 +13928,11 @@
   "Gitea App Name": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "e7b61ced9f4966c7",
+    "via": "mt"
+  },
+  "Gitea App for :organization": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "22c00c97eb1474c7",
     "via": "mt"
   },
   "Gitea App is not connected. Please complete the OAuth flow first.": {
@@ -14974,6 +15009,11 @@
   "Integration tokens": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "ed6f7899e334450f",
+    "via": "mt"
+  },
+  "Integrations": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "090512d93fcc3c0d",
     "via": "mt"
   },
   "Interactive shell (docker exec)": {
@@ -16898,6 +16938,11 @@
   "Monitor server and container health while collecting metrics.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "c6ef1b3fe21d3499",
+    "via": "mt"
+  },
+  "Monitoring": {
+    "run": "2026-10-24-index-9b-cpu",
+    "sourceHash": "1dc83f605edf0ae2",
     "via": "mt"
   },
   "Monitoring disabled": {

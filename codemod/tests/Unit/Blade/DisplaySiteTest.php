@@ -70,6 +70,78 @@ final class DisplaySiteTest extends TestCase
         self::assertSame(['General', 'Light'], self::keys($result, 'display'));
     }
 
+    // 4.5.0 navbar: 섹션 이름 → 항목 목록을 블록 클로저가 [...$item, 'children' => …]로 다시 만들고, flatten(1)로 하위 메뉴를 모은다.
+    // 4.5.0 판에서 이 흐름을 놓쳐 사이드바 전체가 영어로 나왔다(2026-10-25). 메뉴 전환 비교(@js·data-active-submenu)는 영어로 둔다
+    public function testFollowsSectionedMenusThroughBlockClosuresSpreadsAndFlatten(): void
+    {
+        $source = "@php\n\$navSections = collect([\n"
+            . "    'Workspace' => [\n"
+            . "        ['label' => 'Dashboard', 'href' => '/', 'active' => request()->is('/')],\n"
+            . "        ['label' => 'Monitoring', 'icon' => 'graph', 'children' => [\n"
+            . "            ['label' => 'Analytics', 'href' => route('analytics'), 'active' => request()->is('analytics')],\n"
+            . "        ]],\n"
+            . "    ],\n"
+            . "    'Manage' => [\n"
+            . "        ['label' => 'Settings', 'visible' => isInstanceAdmin(), 'children' => [\n"
+            . "            ['label' => 'General', 'href' => route('settings.index'), 'active' => request()->is('settings')],\n"
+            . "        ]],\n"
+            . "    ],\n"
+            . "])->map(fn (array \$items) => collect(\$items)\n"
+            . "    ->filter(fn (array \$item): bool => (bool) (\$item['visible'] ?? true))\n"
+            . "    ->map(function (array \$item): array {\n"
+            . "        if (! isset(\$item['children'])) {\n"
+            . "            return \$item;\n"
+            . "        }\n"
+            . "        \$children = array_values(array_filter(\$item['children'], fn (array \$child): bool => (bool) (\$child['visible'] ?? true)));\n\n"
+            . "        return [...\$item, 'children' => \$children, 'href' => \$children[0]['href'], 'active' => collect(\$children)->contains('active', true)];\n"
+            . "    })\n"
+            . "    ->all());\n"
+            . "\$activeSubmenu = \$navSections->flatten(1)->first(fn (array \$item): bool => isset(\$item['children']) && \$item['active']);\n"
+            . "@endphp\n"
+            . "@php\n\$renderedSubmenus = \$navSections->flatten(1)->filter(fn (array \$item): bool => isset(\$item['children']));\n@endphp\n"
+            . "@foreach (\$renderedSubmenus as \$submenuItem)\n"
+            . "<li x-show=\"submenu === @js(\$submenuItem['label'])\" data-active-submenu=\"{{ \$submenuItem['label'] }}\"><span>{{ \$submenuItem['label'] }}</span>\n"
+            . "@foreach (\$submenuItem['children'] as \$child)\n<a title=\"{{ \$child['label'] }}\"><span>{{ \$child['label'] }}</span></a>\n@endforeach\n</li>\n@endforeach\n"
+            . "@foreach (\$navSections as \$sectionLabel => \$sectionItems)\n<li>{{ \$sectionLabel }}</li>\n"
+            . "@foreach (\$sectionItems as \$item)\n<button @click=\"submenu = @js(\$item['label'])\" title=\"{{ \$item['label'] }}\"><span>{{ \$item['label'] }}</span></button>\n@endforeach\n@endforeach";
+        $rules = new RuleSet(brands: ['Coolify'], htmlAttributes: ['title', 'aria-label']);
+        $result = (new BladeFileTransformer($rules, ComponentProps::none()))->transform($source, 'views/components/navbar.blade.php');
+
+        self::assertStringContainsString('<li>{{ coolify_ko_t($sectionLabel) }}</li>', $result->output);
+        self::assertStringContainsString("title=\"{{ coolify_ko_t(\$item['label']) }}\"><span>{{ coolify_ko_t(\$item['label']) }}</span>", $result->output);
+        self::assertStringContainsString("<span>{{ coolify_ko_t(\$submenuItem['label']) }}</span>", $result->output);
+        self::assertStringContainsString("<a title=\"{{ coolify_ko_t(\$child['label']) }}\"><span>{{ coolify_ko_t(\$child['label']) }}</span></a>", $result->output);
+        self::assertStringContainsString("x-show=\"submenu === @js(\$submenuItem['label'])\" data-active-submenu=\"{{ \$submenuItem['label'] }}\"", $result->output);
+        self::assertStringContainsString("@click=\"submenu = @js(\$item['label'])\"", $result->output);
+        self::assertEqualsCanonicalizing(['Workspace', 'Dashboard', 'Monitoring', 'Analytics', 'Manage', 'Settings', 'General'], self::keys($result, 'display'));
+    }
+
+    // 4.5.0 메트릭 빈 화면 단추: 삼항 가지마다 문자열을 이어 붙인 echo가 영어로 남았다(2026-10-25). 결과 자리 이어 붙이기는 자리표시자 문장으로
+    public function testTurnsConcatenatedEchoBranchesIntoPlaceholderSentences(): void
+    {
+        $source = "<x-forms.button wire:click=\"enableMetrics\">\n    {{ count(\$servers) === 1\n        ? 'Enable metrics on '.\\Illuminate\\Support\\Str::limit(\$servers[0], 24)\n"
+            . "        : 'Enable metrics on '.count(\$servers).' servers' }}\n</x-forms.button>\n<p>{{ 'build-' . \$hash }}</p>";
+        $result = self::transform($source);
+
+        self::assertStringContainsString("{{ count(\$servers) === 1\n        ? __('Enable metrics on :servers', ['servers' => \\Illuminate\\Support\\Str::limit(\$servers[0], 24)])", $result->output);
+        self::assertStringContainsString(": __('Enable metrics on :count servers', ['count' => count(\$servers)]) }}", $result->output);
+        self::assertStringContainsString("<p>{{ 'build-' . \$hash }}</p>", $result->output);
+        self::assertSame(['Enable metrics on :servers', 'Enable metrics on :count servers'], self::keys($result, 'echo-literal'));
+    }
+
+    public function testBlockClosureLocalsFromOtherDataStillTaintMenus(): void
+    {
+        $source = "@php\n\$menu = [['label' => 'General', 'children' => [['label' => 'Email']]]];\n"
+            . "\$renamed = collect(\$menu)->map(function (array \$item) use (\$server): array {\n    \$item['label'] = \$server->name;\n\n    return \$item;\n});\n"
+            . "\$borrowed = collect(\$menu)->map(function (array \$item) use (\$server): array {\n    \$children = \$server->menu;\n\n    return [...\$item, 'children' => \$children];\n});\n@endphp\n"
+            . "@foreach (\$renamed as \$a)<a>{{ \$a['label'] }}</a>@endforeach\n"
+            . "@foreach (\$borrowed as \$b)<b>{{ \$b['label'] }}</b>@endforeach";
+        $result = self::transform($source);
+
+        self::assertStringContainsString("<a>{{ \$a['label'] }}</a>", $result->output);
+        self::assertStringContainsString("<b>{{ \$b['label'] }}</b>", $result->output);
+    }
+
     public function testFollowsMappingCallbacksAndEmptyCollections(): void
     {
         $source = "@php\n\$menu = [['label' => 'General', 'route' => 'a'], ['label' => 'Webhooks', 'route' => 'b']];\n"

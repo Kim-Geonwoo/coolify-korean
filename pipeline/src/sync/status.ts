@@ -43,7 +43,10 @@ export type JobEvent =
   | { readonly type: 'rejected'; readonly keys: readonly string[] }
   | { readonly type: 'hooks'; readonly issues: readonly string[] }
   | { readonly type: 'hooks-changed' }
-  | { readonly type: 'candidate'; readonly kind: 'ko' | 'passthrough'; readonly version: string };
+  | { readonly type: 'candidate'; readonly kind: 'ko' | 'passthrough'; readonly version: string }
+  | { readonly type: 'untranslated'; readonly version: string; readonly previousVersion?: string; readonly count: number; readonly examples: readonly string[] };
+
+const UNTRANSLATED_EXAMPLES = 8;
 
 /** Discord 알림 문구. 명령 인자·로그 원문은 넣지 않고, 길이도 자른다 */
 export function discordMessage(event: JobEvent): string {
@@ -70,6 +73,12 @@ export function discordMessage(event: JobEvent): string {
     case 'candidate':
       text = `coolify-ko 공개판 후보: ${event.version} (${event.kind === 'ko' ? '한국어판' : '통과 태그(공식 이미지 그대로)'}). PC에서 확인: node pipeline/src/cli.ts publish plan`;
       break;
+    case 'untranslated': {
+      const since = event.previousVersion === undefined || event.previousVersion === event.version ? '지난 찍기에' : `${event.previousVersion}에`;
+      const more = event.count > UNTRANSLATED_EXAMPLES ? ` 외 ${String(event.count - UNTRANSLATED_EXAMPLES)}개` : '';
+      text = `coolify-ko ${event.version}: ${since} 없던 영어 ${String(event.count)}개가 화면에 그대로 보입니다(번역 호출 밖). 예: ${event.examples.slice(0, UNTRANSLATED_EXAMPLES).join(' · ')}${more}. 변환 규칙을 확인해야 합니다.`;
+      break;
+    }
   }
 
   return text.length <= MESSAGE_LIMIT ? text : `${text.slice(0, MESSAGE_LIMIT - 1)}…`;

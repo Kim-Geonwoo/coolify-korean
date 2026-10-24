@@ -131,7 +131,12 @@ final class DisplaySiteRewriter
             if ($values === null) {
                 $codeStart = strpos($segment->source, $code);
                 if ($expr !== null && $codeStart !== false) {
-                    array_push($outcomes, ...$this->leaves->literals($expr, $segment->start + $codeStart, 'echo-literal'));
+                    // 결과 자리 이어 붙이기('Enable metrics on '.$name)도 자리표시자 문장으로(4.5.0 메트릭 단추)
+                    $labels = [];
+                    array_push($outcomes, ...$this->leaves->withConcatenations($expr, $code, $segment->start + $codeStart, 'echo-literal', $flow, $labels, true));
+                    foreach ($labels as $labelValues) {
+                        self::remember($display, $labelValues);
+                    }
                 }
                 continue;
             }

@@ -53,9 +53,10 @@ final class LiteralLeafTest extends TestCase
             "<span>{{ \$name ?? 'Unnamed' }}</span>",
             "<span>{{ \$name ?? __('Unnamed') }}</span>",
         ];
-        yield 'echo concatenated branch stays' => [
+        // 2026-10-25: echo 결과 자리 이어 붙이기도 자리표시자 문장으로 바꾼다(4.5.0 메트릭 단추가 영어로 남았다)
+        yield 'echo concatenated branch becomes a placeholder sentence' => [
             "<span>{{ \$ok ? 'Hello ' . \$name : 'Goodbye' }}</span>",
-            "<span>{{ \$ok ? 'Hello ' . \$name : __('Goodbye') }}</span>",
+            "<span>{{ \$ok ? __('Hello :name', ['name' => \$name]) : __('Goodbye') }}</span>",
         ];
         yield 'alpine x-text ternary' => [
             "<span x-text=\"enabled ? 'Disable' : 'Enable'\">{{ \$label }}</span>",

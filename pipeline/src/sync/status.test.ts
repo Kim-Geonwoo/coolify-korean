@@ -38,6 +38,12 @@ describe('discordMessage', () => {
     expect(text).toBe('coolify-ko 4.5.0 처리: 새 키 631 · 바뀐 키 0 · 없어진 키 2 · 초안 231(폴백 0, 정규화 9) · 남은 키 400(다음 밤에 이어서)\n받을 결과: https://github.com/Kim-Geonwoo/coolify-ko/pull/12');
   });
 
+  it('names new English text the screenshots saw outside translation calls, with a few examples', () => {
+    const text = discordMessage({ type: 'untranslated', version: '4.5.0', previousVersion: '4.4.7', count: 12, examples: ['Monitoring', 'Integrations', 'Enable Metrics On Localhost', 'Workspace', 'Infrastructure', 'Manage', 'Analytics', 'Metrics', 'Sources'] });
+
+    expect(text).toBe('coolify-ko 4.5.0: 4.4.7에 없던 영어 12개가 화면에 그대로 보입니다(번역 호출 밖). 예: Monitoring · Integrations · Enable Metrics On Localhost · Workspace · Infrastructure · Manage · Analytics · Metrics 외 4개. 변환 규칙을 확인해야 합니다.');
+  });
+
   it('reports failures by stage and short code only', () => {
     expect(discordMessage({ type: 'failure', stage: 'extract', code: 'docker-build', count: 3, disabled: true })).toBe('coolify-ko 밤 작업 실패: extract (docker-build), 3번째. 이 단계를 껐습니다. 확인이 필요합니다.');
     expect(discordMessage({ type: 'failure', stage: 'push', code: 'rejected', count: 1, disabled: false })).toBe('coolify-ko 밤 작업 실패: push (rejected), 1번째.');

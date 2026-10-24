@@ -56,14 +56,14 @@ final class LeafRewriter
      * @param list<list<array{string, int, int}>> $labels 감싼 치환값마다 그 고정 라벨 값들(LiteralLabelFlow::labelValues 형식)
      * @return list<SentenceOutcome>
      */
-    public function withConcatenations(Expr $expr, string $code, int $codeStart, string $kind, ?LiteralLabelFlow $flow = null, array &$labels = []): array
+    public function withConcatenations(Expr $expr, string $code, int $codeStart, string $kind, ?LiteralLabelFlow $flow = null, array &$labels = [], bool $sentenceOnly = false): array
     {
         $outcomes = [];
         foreach (LiteralLeaves::results($expr) as $result) {
             if ($result instanceof Scalar\String_) {
                 array_push($outcomes, ...$this->literal($result, $codeStart, $kind, false));
             } elseif ($result instanceof Expr\BinaryOp\Concat) {
-                array_push($outcomes, ...$this->concatenation($result, $code, $codeStart, $kind, $flow, $labels));
+                array_push($outcomes, ...$this->concatenation($result, $code, $codeStart, $kind, $flow, $labels, $sentenceOnly));
             }
         }
 
@@ -87,7 +87,7 @@ final class LeafRewriter
      * @param list<list<array{string, int, int}>> $labels
      * @return list<SentenceOutcome>
      */
-    private function concatenation(Expr\BinaryOp\Concat $node, string $code, int $codeStart, string $kind, ?LiteralLabelFlow $flow, array &$labels): array
+    private function concatenation(Expr\BinaryOp\Concat $node, string $code, int $codeStart, string $kind, ?LiteralLabelFlow $flow, array &$labels, bool $sentenceOnly = false): array
     {
         $parts = StringParts::flatten($node);
         if ($parts === null) {
@@ -119,7 +119,12 @@ final class LeafRewriter
             }
             $replace[$name] = $values === null ? $partCode : 'coolify_ko_t(' . $partCode . ')';
         }
-        if ($this->classifier->skipReason((string) preg_replace('/:\w+/', ' ', $key)) !== null || !BladeSafety::isSafeInsideEcho($key) || str_contains($key, '"')) {
+        $words = (string) preg_replace('/:\w+/', ' ', $key);
+        if ($this->classifier->skipReason($words) !== null || !BladeSafety::isSafeInsideEcho($key) || str_contains($key, '"')) {
+            return [];
+        }
+        // echo는 식별자를 만드는 이어 붙이기('build-'.$hash)가 흔하다. 낱말 옆에 공백이 있는 문장 조각만 바꾼다
+        if ($sentenceOnly && preg_match('/[A-Za-z]\s|\s[A-Za-z]/', (string) preg_replace('/:\w+/', '', $key)) !== 1) {
             return [];
         }
         $pairs = implode(', ', array_map(

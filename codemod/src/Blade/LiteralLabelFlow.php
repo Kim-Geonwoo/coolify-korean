@@ -700,7 +700,7 @@ final class LiteralLabelFlow
         foreach ($inputs as $input) {
             if ($input instanceof Node\FunctionLike) {
                 if ($mapping) {
-                    $scope = $neutral + self::params($input);
+                    $scope = $this->closureLocals($input, $neutral + self::params($input));
                     foreach (self::returns($input) as $returned) {
                         $parts[] = [$returned, $scope];
                         $hasData = true;
@@ -736,6 +736,38 @@ final class LiteralLabelFlow
         }
 
         return array_keys($names);
+    }
+
+    /**
+     * 매핑 블록 클로저 안에서 매개변수·리터럴만으로 만든 지역 변수도 중립으로 둔다. 반환식이 그 지역 변수를 담아도 출처를 잃지 않게 한다
+     * ($children = array_values(array_filter($item['children'], …)); return [...$item, 'children' => $children]; 4.5.0 navbar).
+     * 바깥 변수·모르는 데이터에서 온 지역 변수, 참조·복합 대입으로 바꾼 변수, 항목 자리에 값을 넣은 변수($item['label'] = …)는 중립에서 뺀다.
+     *
+     * @param array<string, true> $neutral
+     * @return array<string, true>
+     */
+    private function closureLocals(Node\FunctionLike $function, array $neutral): array
+    {
+        if (!$function instanceof Expr\Closure) {
+            return $neutral;
+        }
+        $assigns = $this->finder->find($function->getStmts() ?? [], static fn (Node $node): bool => $node instanceof Expr\Assign || $node instanceof Expr\AssignRef || $node instanceof Expr\AssignOp);
+        foreach ($assigns as $assign) {
+            if (!$assign instanceof Expr\Assign && !$assign instanceof Expr\AssignRef && !$assign instanceof Expr\AssignOp) {
+                continue;
+            }
+            $name = self::root($assign->var);
+            if ($name === null) {
+                continue;
+            }
+            if ($assign instanceof Expr\Assign && $assign->var instanceof Expr\Variable && $this->valueSources($assign->expr, $neutral) === []) {
+                $neutral[$name] = true;
+            } else {
+                unset($neutral[$name]);
+            }
+        }
+
+        return $neutral;
     }
 
     /** @return array<string, true> */
