@@ -22,4 +22,6 @@ enum SkipReason: string
     case DynamicValue = 'dynamic-value';
     case ParseError = 'parse-error';
     case AttributeLike = 'attribute-like';
+    /** 규칙 파일의 수동 치환 원문이 없거나 여러 번 있다(상류가 바꿨다) */
+    case RewriteMissed = 'rewrite-missed';
 }

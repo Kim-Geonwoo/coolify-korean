@@ -38,5 +38,53 @@
     "line": 84,
     "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
     "reason": "analytics의 number_format 조각과 같은 꼴이다. {{ number_format($p95, 1) }} ms → {{ __(':p95 ms', ['p95' => number_format($p95, 1)]) }}로 같은 식을 같은 이스케이프로 출력함을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/components/server/gpu-list.blade.php",
+    "kind": "rich",
+    "originalSha256": "41153fc3a04ba65216e24595a08559a9be1e740460e3ff5308f0a0bed89dded5",
+    "line": 14,
+    "error": "ERROR:TypeError: Unsupported operand types: Sentinel / int",
+    "reason": "GPU 번호·이름·메모리 계산(round($gpu['memory_mb'] / 1024, 1))에 대역 객체가 들어가 양쪽 다 실패한다. 같은 식을 __h 치환값과 e()로 감싼 태그 안에 그대로 옮겼음을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/livewire/project/application/advanced.blade.php",
+    "kind": "rich",
+    "originalSha256": "63d437b0db36ac54a2ec55fcaf1deb34f776d6f5e18be9ec3df5d181c70a5708",
+    "line": 165,
+    "error": "ERROR:Carbon\\Exceptions\\InvalidFormatException: Could not parse 'S<b>&\"'': Failed to parse time string (S<b>&\"') at position 1 (<): Unexpected character",
+    "reason": "Carbon::parse에 대역 객체가 들어가 양쪽 다 실패한다. · checked {{ …->diffForHumans() }} → {{ __('checked :time', ['time' => 같은 식]) }}임을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/livewire/project/database/backup-executions.blade.php",
+    "kind": "rich",
+    "originalSha256": "fc2ffef44795229ee10108500d6d5163bba6d3194eb0068161bb5209a34783f2",
+    "line": 101,
+    "error": "ERROR:DateMalformedStringException: Failed to parse time string (S<b>&\"') at position 1 (<): Unexpected character",
+    "reason": "calculateDuration이 대역 객체를 날짜로 읽지 못해 양쪽 다 실패한다. Running for {{ 식 }} → {{ __('Running for :duration', ['duration' => 같은 식]) }}임을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/livewire/project/database/backup-executions.blade.php",
+    "kind": "text",
+    "originalSha256": "e8cd61a85350e0a22f88aec55f635d24f1bc51c1a8c55df11922a88a1d7df96e",
+    "line": 178,
+    "error": "ERROR:TypeError: Unsupported operand types: Sentinel + int",
+    "reason": "쪽수 계산($skip + 1, min(...))에 대역 객체가 들어가 양쪽 다 실패한다. 세 echo를 같은 식 그대로 한 문장의 치환값으로 옮겼음을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/livewire/project/shared/environment-variable/show.blade.php",
+    "kind": "rich",
+    "originalSha256": "a84c77575fb852b2c432a821ea633346734583e2156aacaec2e3ff101c63c1e7",
+    "line": 207,
+    "error": "ERROR:TypeError: implode(): Argument #2 ($array) must be of type ?array, Sentinel given",
+    "reason": "implode에 대역 객체가 들어가 양쪽 다 실패한다. Used by: {{ implode(...) }}. → {{ __('Used by: :services.', ['services' => 같은 식]) }}임을 사람이 대조했다(4.5.0)."
+  },
+  {
+    "file": "resources/views/livewire/server/transfer.blade.php",
+    "kind": "rich",
+    "originalSha256": "5352f78640f91b451f13c87a02e22f024fb9d4dff1ca08f5a285ef828fde6789",
+    "line": 75,
+    "error": "ERROR:Carbon\\Exceptions\\InvalidFormatException: Could not parse 'S<b>&\"'': Failed to parse time string (S<b>&\"') at position 1 (<): Unexpected character",
+    "reason": "Carbon::parse에 대역 객체가 들어가 양쪽 다 실패한다. 이전 출처(data_get)와 시각(format('H:i'))을 같은 식 그대로 문장 치환값으로 옮겼음을 사람이 대조했다(4.5.0)."
   }
 ]

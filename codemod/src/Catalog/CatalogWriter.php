@@ -85,6 +85,9 @@ final class CatalogWriter
             if ($o->counts !== []) {
                 $edit['counts'] = $o->counts;
             }
+            if ($o->alsoKeys !== []) {
+                $edit['keys'] = $o->alsoKeys;
+            }
             $lines .= json_encode($edit, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
         }
         FileTree::write($dir . '/reports/edits.jsonl', $lines);

@@ -93,12 +93,28 @@ final class SafeExpression
                 && in_array($node->name->toLowerString(), self::ALLOWED_STATIC_METHODS, true)
                 && $this->argsSafe($node->args),
             $node instanceof Expr\BinaryOp\Coalesce => $this->isSafe($node->left) && $this->isLetterFreeOrSafe($node->right),
+            // 숫자 계산(4.5.0 "max {{ Server::PROXY_ERROR_PAGE_MAX_BYTES / 1024 }} KB"). 결과가 숫자라 반쪽 번역이 되지 않는다
+            $node instanceof Expr\BinaryOp\Plus, $node instanceof Expr\BinaryOp\Minus, $node instanceof Expr\BinaryOp\Mul,
+            $node instanceof Expr\BinaryOp\Div, $node instanceof Expr\BinaryOp\Mod => $this->isNumericOperand($node->left) && $this->isNumericOperand($node->right),
             $node instanceof Expr\Cast\String_, $node instanceof Expr\Cast\Int_ => $this->isSafe($node->expr),
             $node instanceof Scalar\String_ => true,
             $node instanceof Scalar\Int_, $node instanceof Scalar\Float_ => true,
             $node instanceof Expr\ConstFetch => in_array($node->name->toLowerString(), ['true', 'false', 'null'], true),
             default => false,
         };
+    }
+
+    /** 계산식의 피연산자: 숫자, 클래스 상수(계산 안에서만, 문자열 상수가 문장에 그대로 끼지 않게), 안전한 식 */
+    private function isNumericOperand(Expr $expr): bool
+    {
+        if ($expr instanceof Scalar\Int_ || $expr instanceof Scalar\Float_) {
+            return true;
+        }
+        if ($expr instanceof Expr\ClassConstFetch) {
+            return $expr->class instanceof Name && $expr->name instanceof Identifier;
+        }
+
+        return !$expr instanceof Scalar\String_ && $this->isSafe($expr);
     }
 
     private function isLetterFreeOrSafe(Expr $expr): bool

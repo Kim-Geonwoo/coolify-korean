@@ -21,6 +21,8 @@ final readonly class RuleSet
      * @param array<string, array<string, list<string>>> $componentArrayProps 컴포넌트 → 배열 리터럴 prop → 항목에서 화면 글자인 키('*'는 키 없는 항목 자체)
      * @param array<string, array<string, string>> $includeArgs @include 뷰 이름 → 데이터 배열에서 화면 글자인 키 → 'text'|'js'(템플릿이 JS 작은따옴표 문자열 안에 넣는 값)
      * @param array<string, array<string, list<string>>> $displayExpressions 뷰 이름 → 코드 값으로 화면 글자를 만드는 식(원문 그대로) → 그 식이 낼 수 있는 영어 값 전부
+     * @param array<string, list<array{find: string, replace: string, kind: string, keys: list<array{key: string, kind: string, placeholders: list<string>}>, counts: list<string>}>> $rewrites
+     *   뷰 이름 → 사람이 쓴 수동 치환(원문이 정확히 한 번 있을 때만). kind는 동등성 검사가 비교하는 방식, keys는 카탈로그에 넣는 키
      */
     public function __construct(
         public array $brands = [],
@@ -35,6 +37,7 @@ final readonly class RuleSet
         public array $componentArrayProps = [],
         public array $includeArgs = [],
         public array $displayExpressions = [],
+        public array $rewrites = [],
     ) {
     }
 
@@ -61,6 +64,7 @@ final readonly class RuleSet
             self::valueMap($config['componentArrayProps'] ?? [], 'componentArrayProps'),
             self::includeMap($config['includeArgs'] ?? []),
             self::valueMap($config['displayExpressions'] ?? [], 'displayExpressions'),
+            self::rewriteMap($config['rewrites'] ?? []),
         );
     }
 
@@ -94,6 +98,37 @@ final readonly class RuleSet
             }
             foreach ($entries as $entry => $values) {
                 $out[(string) $component][(string) $entry] = self::stringList($values);
+            }
+        }
+
+        return $out;
+    }
+
+    /** @return array<string, list<array{find: string, replace: string, kind: string, keys: list<array{key: string, kind: string, placeholders: list<string>}>, counts: list<string>}>> */
+    private static function rewriteMap(mixed $value): array
+    {
+        if (!is_array($value)) {
+            throw new RuntimeException('rewrites는 배열이어야 합니다.');
+        }
+        $out = [];
+        foreach ($value as $view => $rules) {
+            if (!is_array($rules)) {
+                throw new RuntimeException(sprintf('rewrites.%s 값은 배열이어야 합니다.', $view));
+            }
+            foreach ($rules as $index => $rule) {
+                $where = sprintf('rewrites.%s.%s', $view, $index);
+                if (!is_array($rule) || !is_string($rule['find'] ?? null) || !is_string($rule['replace'] ?? null) || !is_string($rule['kind'] ?? null)
+                    || $rule['find'] === '' || !is_array($rule['keys'] ?? null) || $rule['keys'] === []) {
+                    throw new RuntimeException(sprintf('%s에는 find·replace·kind 문자열과 비지 않은 keys가 있어야 합니다.', $where));
+                }
+                $keys = [];
+                foreach ($rule['keys'] as $key) {
+                    if (!is_array($key) || !is_string($key['key'] ?? null) || $key['key'] === '') {
+                        throw new RuntimeException(sprintf('%s.keys 항목에는 key 문자열이 있어야 합니다.', $where));
+                    }
+                    $keys[] = ['key' => $key['key'], 'kind' => is_string($key['kind'] ?? null) ? $key['kind'] : $rule['kind'], 'placeholders' => self::stringList($key['placeholders'] ?? [])];
+                }
+                $out[(string) $view][] = ['find' => $rule['find'], 'replace' => $rule['replace'], 'kind' => $rule['kind'], 'keys' => $keys, 'counts' => self::stringList($rule['counts'] ?? [])];
             }
         }
 

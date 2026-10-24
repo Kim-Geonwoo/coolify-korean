@@ -473,6 +473,40 @@
                 }
             ]
         },
+        ":build_pack selected": {
+            "english": ":build_pack selected",
+            "markup": false,
+            "kinds": [
+                "prop-text"
+            ],
+            "placeholders": [
+                "build_pack"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/new/partials/smart-scan-summary.blade.php",
+                    "line": 45,
+                    "kind": "prop-text"
+                }
+            ]
+        },
+        ":build_pack suggested": {
+            "english": ":build_pack suggested",
+            "markup": false,
+            "kinds": [
+                "prop-text"
+            ],
+            "placeholders": [
+                "build_pack"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/new/partials/smart-scan-summary.blade.php",
+                    "line": 45,
+                    "kind": "prop-text"
+                }
+            ]
+        },
         ":certificate_valid_until - Expired": {
             "english": ":certificate_valid_until - Expired",
             "markup": false,
@@ -739,6 +773,23 @@
                 }
             ]
         },
+        ":count of them security update|:count of them security updates": {
+            "english": ":count of them security update|:count of them security updates",
+            "markup": false,
+            "kinds": [
+                "plural"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 195,
+                    "kind": "plural"
+                }
+            ]
+        },
         ":count package update|:count package updates": {
             "english": ":count package update|:count package updates",
             "markup": false,
@@ -912,6 +963,47 @@
                 }
             ]
         },
+        ":count update available, :security.|:count updates available, :security.": {
+            "english": ":count update available, :security.|:count updates available, :security.",
+            "markup": false,
+            "kinds": [
+                "prop-html",
+                "plural"
+            ],
+            "placeholders": [
+                "count",
+                "security"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 195,
+                    "kind": "prop-html"
+                },
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 195,
+                    "kind": "plural"
+                }
+            ]
+        },
+        ":count update available.|:count updates available.": {
+            "english": ":count update available.|:count updates available.",
+            "markup": false,
+            "kinds": [
+                "plural"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 195,
+                    "kind": "plural"
+                }
+            ]
+        },
         ":count update|:count updates": {
             "english": ":count update|:count updates",
             "markup": false,
@@ -931,6 +1023,46 @@
                 {
                     "file": "resources/views/livewire/settings-dropdown.blade.php",
                     "line": 175,
+                    "kind": "plural"
+                }
+            ]
+        },
+        ":count variable, imported when you continue.|:count variables, imported when you continue.": {
+            "english": ":count variable, imported when you continue.|:count variables, imported when you continue.",
+            "markup": false,
+            "kinds": [
+                "prop-text",
+                "plural"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/new/partials/smart-scan-summary.blade.php",
+                    "line": 68,
+                    "kind": "prop-text"
+                },
+                {
+                    "file": "resources/views/livewire/project/new/partials/smart-scan-summary.blade.php",
+                    "line": 68,
+                    "kind": "plural"
+                }
+            ]
+        },
+        ":count variable.|:count variables.": {
+            "english": ":count variable.|:count variables.",
+            "markup": false,
+            "kinds": [
+                "plural"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/new/partials/smart-scan-summary.blade.php",
+                    "line": 68,
                     "kind": "plural"
                 }
             ]
@@ -1097,6 +1229,55 @@
                 {
                     "file": "resources/views/livewire/server/cloudflare-tunnel.blade.php",
                     "line": 143,
+                    "kind": "text"
+                }
+            ]
+        },
+        ":image v:version. The latest patch for this branch is :latest. Test the update before applying it to production servers.": {
+            "english": ":image v:version. The latest patch for this branch is :latest. Test the update before applying it to production servers.",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [
+                "image",
+                "version",
+                "latest"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/proxy.blade.php",
+                    "line": 143,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/server/proxy.blade.php",
+                    "line": 143,
+                    "kind": "text"
+                }
+            ]
+        },
+        ":instance started the transfer back at :time. Reload this page in a minute. When the transfer finishes, this instance manages the server again. If it does not, read the transfer log of the server on the other instance.": {
+            "english": ":instance started the transfer back at :time. Reload this page in a minute. When the transfer finishes, this instance manages the server again. If it does not, read the transfer log of the server on the other instance.",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [
+                "instance",
+                "time"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/transfer.blade.php",
+                    "line": 75,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/server/transfer.blade.php",
+                    "line": 75,
                     "kind": "text"
                 }
             ]
@@ -1783,6 +1964,25 @@
                 }
             ]
         },
+        ":value-:value2 of :executions_count": {
+            "english": ":value-:value2 of :executions_count",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [
+                "value",
+                "value2",
+                "executions_count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/database/backup-executions.blade.php",
+                    "line": 178,
+                    "kind": "text"
+                }
+            ]
+        },
         ":zone_count accessible :value": {
             "english": ":zone_count accessible :value",
             "markup": false,
@@ -1815,6 +2015,24 @@
                     "file": "resources/views/livewire/server/security/patches.blade.php",
                     "line": 161,
                     "kind": "text"
+                }
+            ]
+        },
+        "<0/> · :name · :value GB · <1/>": {
+            "english": "<0/> · :name · :value GB · <1/>",
+            "markup": true,
+            "kinds": [
+                "rich"
+            ],
+            "placeholders": [
+                "name",
+                "value"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/server/gpu-list.blade.php",
+                    "line": 14,
+                    "kind": "rich"
                 }
             ]
         },
@@ -5153,6 +5371,23 @@
                     "file": "app/Livewire/Project/Shared/SecretManagerLinks.php",
                     "line": 261,
                     "kind": "toast"
+                }
+            ]
+        },
+        "Added :time": {
+            "english": "Added :time",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [
+                "time"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/profile/passkeys.blade.php",
+                    "line": 71,
+                    "kind": "text"
                 }
             ]
         },
@@ -14487,6 +14722,21 @@
                     "file": "resources/views/livewire/project/service/volume-backup/index.blade.php",
                     "line": 340,
                     "kind": "prop-literal"
+                }
+            ]
+        },
+        "Configured image": {
+            "english": "Configured image",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/proxy.blade.php",
+                    "line": 143,
+                    "kind": "text"
                 }
             ]
         },
@@ -37338,18 +37588,20 @@
                 }
             ]
         },
-        "Import": {
-            "english": "Import",
+        "Import :count variable|Import :count variables": {
+            "english": "Import :count variable|Import :count variables",
             "markup": false,
             "kinds": [
-                "echo-literal"
+                "plural"
             ],
-            "placeholders": [],
+            "placeholders": [
+                "count"
+            ],
             "occurrences": [
                 {
                     "file": "resources/views/livewire/project/new/partials/env-import-modal.blade.php",
                     "line": 28,
-                    "kind": "echo-literal"
+                    "kind": "plural"
                 }
             ]
         },
@@ -40165,6 +40417,23 @@
                 {
                     "file": "resources/views/livewire/security/api-tokens.blade.php",
                     "line": 175,
+                    "kind": "text"
+                }
+            ]
+        },
+        "Last used :time": {
+            "english": "Last used :time",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [
+                "time"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/profile/passkeys.blade.php",
+                    "line": 71,
                     "kind": "text"
                 }
             ]
@@ -51023,6 +51292,21 @@
                 }
             ]
         },
+        "Not used yet": {
+            "english": "Not used yet",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/profile/passkeys.blade.php",
+                    "line": 71,
+                    "kind": "text"
+                }
+            ]
+        },
         "Note": {
             "english": "Note",
             "markup": false,
@@ -51488,6 +51772,40 @@
                     "file": "resources/views/livewire/project/application/server-status-badge.blade.php",
                     "line": 3,
                     "kind": "html-attribute"
+                }
+            ]
+        },
+        "One self-contained HTML file (max :value KB) with inline CSS and images.": {
+            "english": "One self-contained HTML file (max :value KB) with inline CSS and images.",
+            "markup": false,
+            "kinds": [
+                "prop-html"
+            ],
+            "placeholders": [
+                "value"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/shared/maintenance.blade.php",
+                    "line": 17,
+                    "kind": "prop-html"
+                }
+            ]
+        },
+        "One self-contained HTML file (max :value KB) with inline CSS and images. Visitors see it with a 503 status for unknown domains and for stopped, deploying or unhealthy resources. A Redirect URL takes priority over this page.": {
+            "english": "One self-contained HTML file (max :value KB) with inline CSS and images. Visitors see it with a 503 status for unknown domains and for stopped, deploying or unhealthy resources. A Redirect URL takes priority over this page.",
+            "markup": false,
+            "kinds": [
+                "prop-html"
+            ],
+            "placeholders": [
+                "value"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/proxy.blade.php",
+                    "line": 94,
+                    "kind": "prop-html"
                 }
             ]
         },
@@ -53171,6 +53489,27 @@
                     "file": "resources/views/livewire/server/log-drains.blade.php",
                     "line": 103,
                     "kind": "prop-text"
+                }
+            ]
+        },
+        "Passkey": {
+            "english": "Passkey",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/profile/passkeys.blade.php",
+                    "line": 71,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/profile/passkeys.blade.php",
+                    "line": 71,
+                    "kind": "text"
                 }
             ]
         },
@@ -64581,6 +64920,29 @@
                 }
             ]
         },
+        "Running for :duration": {
+            "english": "Running for :duration",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [
+                "duration"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/database/backup-executions.blade.php",
+                    "line": 101,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/project/database/backup-executions.blade.php",
+                    "line": 101,
+                    "kind": "text"
+                }
+            ]
+        },
         "Running image": {
             "english": "Running image",
             "markup": false,
@@ -64632,6 +64994,21 @@
                 {
                     "file": "resources/views/livewire/dashboard/active-deployments.blade.php",
                     "line": 42,
+                    "kind": "text"
+                }
+            ]
+        },
+        "Running version": {
+            "english": "Running version",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/proxy.blade.php",
+                    "line": 143,
                     "kind": "text"
                 }
             ]
@@ -74788,6 +75165,27 @@
                 }
             ]
         },
+        "Switch to Railpack in General settings.": {
+            "english": "Switch to Railpack in General settings.",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/application/heading.blade.php",
+                    "line": 7,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/project/application/heading.blade.php",
+                    "line": 7,
+                    "kind": "text"
+                }
+            ]
+        },
         "Switch user": {
             "english": "Switch user",
             "markup": false,
@@ -79353,6 +79751,23 @@
                 }
             ]
         },
+        "This server was transferred to <0>:target</0>, which manages it now. Use that instance. To undo the transfer, use <1>Transfer back</1>. Keep this archive until you are sure: it is the copy that an undo uses.": {
+            "english": "This server was transferred to <0>:target</0>, which manages it now. Use that instance. To undo the transfer, use <1>Transfer back</1>. Keep this archive until you are sure: it is the copy that an undo uses.",
+            "markup": true,
+            "kinds": [
+                "rich"
+            ],
+            "placeholders": [
+                "target"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/show.blade.php",
+                    "line": 190,
+                    "kind": "rich"
+                }
+            ]
+        },
         "This server was transferred to another Coolify instance. Only the records on this instance are deleted, also the records of its resources. The server, its containers, and its data stay as they are.": {
             "english": "This server was transferred to another Coolify instance. Only the records on this instance are deleted, also the records of its resources. The server, its containers, and its data stay as they are.",
             "markup": false,
@@ -80133,6 +80548,26 @@
                     "file": "resources/views/components/theme-controls.blade.php",
                     "line": 114,
                     "kind": "display"
+                }
+            ]
+        },
+        "Tip: Type <0/> to reference a shared environment variable": {
+            "english": "Tip: Type <0/> to reference a shared environment variable",
+            "markup": true,
+            "kinds": [
+                "rich"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/shared/environment-variable/add.blade.php",
+                    "line": 28,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/project/shared/environment-variable/show.blade.php",
+                    "line": 186,
+                    "kind": "rich"
                 }
             ]
         },
@@ -82292,16 +82727,10 @@
             "english": "Update",
             "markup": false,
             "kinds": [
-                "echo-literal",
                 "text"
             ],
             "placeholders": [],
             "occurrences": [
-                {
-                    "file": "resources/views/livewire/project/new/partials/env-import-modal.blade.php",
-                    "line": 28,
-                    "kind": "echo-literal"
-                },
                 {
                     "file": "resources/views/livewire/project/shared/storages/all.blade.php",
                     "line": 262,
@@ -82311,6 +82740,23 @@
                     "file": "resources/views/livewire/server/security/patches.blade.php",
                     "line": 259,
                     "kind": "text"
+                }
+            ]
+        },
+        "Update :count variable|Update :count variables": {
+            "english": "Update :count variable|Update :count variables",
+            "markup": false,
+            "kinds": [
+                "plural"
+            ],
+            "placeholders": [
+                "count"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/new/partials/env-import-modal.blade.php",
+                    "line": 28,
+                    "kind": "plural"
                 }
             ]
         },
@@ -83976,6 +84422,29 @@
                 }
             ]
         },
+        "Used by: :services.": {
+            "english": "Used by: :services.",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [
+                "services"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/shared/environment-variable/show.blade.php",
+                    "line": 207,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/project/shared/environment-variable/show.blade.php",
+                    "line": 207,
+                    "kind": "text"
+                }
+            ]
+        },
         "Used for backup schedules, cron jobs, and displayed timestamps.": {
             "english": "Used for backup schedules, cron jobs, and displayed timestamps.",
             "markup": false,
@@ -84192,6 +84661,21 @@
                 }
             ]
         },
+        "Uses dnf-automatic with upgrade_type = security. Turning it off removes the Coolify configuration and keeps the operating system default.": {
+            "english": "Uses dnf-automatic with upgrade_type = security. Turning it off removes the Coolify configuration and keeps the operating system default.",
+            "markup": false,
+            "kinds": [
+                "prop-html"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 103,
+                    "kind": "prop-html"
+                }
+            ]
+        },
         "Uses public-key cryptography for secure, password-less server access.": {
             "english": "Uses public-key cryptography for secure, password-less server access.",
             "markup": false,
@@ -84248,6 +84732,21 @@
                 {
                     "file": "resources/views/livewire/project/shared/health-checks.blade.php",
                     "line": 58,
+                    "kind": "prop-html"
+                }
+            ]
+        },
+        "Uses unattended-upgrades for the security origins only. Turning it off removes the Coolify configuration and keeps the operating system default.": {
+            "english": "Uses unattended-upgrades for the security origins only. Turning it off removes the Coolify configuration and keeps the operating system default.",
+            "markup": false,
+            "kinds": [
+                "prop-html"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/security/patches.blade.php",
+                    "line": 103,
                     "kind": "prop-html"
                 }
             ]
@@ -85273,6 +85772,21 @@
                     "file": "resources/views/livewire/server/charts.blade.php",
                     "line": 362,
                     "kind": "text"
+                }
+            ]
+        },
+        "View all": {
+            "english": "View all",
+            "markup": false,
+            "kinds": [
+                "display"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/components/section-heading-link.blade.php",
+                    "line": 4,
+                    "kind": "display"
                 }
             ]
         },
@@ -88466,6 +88980,21 @@
                 }
             ]
         },
+        "another Coolify instance": {
+            "english": "another Coolify instance",
+            "markup": false,
+            "kinds": [
+                "text"
+            ],
+            "placeholders": [],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/server/show.blade.php",
+                    "line": 190,
+                    "kind": "text"
+                }
+            ]
+        },
         "application": {
             "english": "application",
             "markup": false,
@@ -88872,6 +89401,29 @@
             ],
             "placeholders": [],
             "occurrences": []
+        },
+        "checked :time": {
+            "english": "checked :time",
+            "markup": false,
+            "kinds": [
+                "rich",
+                "text"
+            ],
+            "placeholders": [
+                "time"
+            ],
+            "occurrences": [
+                {
+                    "file": "resources/views/livewire/project/application/advanced.blade.php",
+                    "line": 165,
+                    "kind": "rich"
+                },
+                {
+                    "file": "resources/views/livewire/project/application/advanced.blade.php",
+                    "line": 165,
+                    "kind": "text"
+                }
+            ]
         },
         "cloudflare": {
             "english": "cloudflare",

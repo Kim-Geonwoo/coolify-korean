@@ -3,11 +3,11 @@
 | 항목 | 값 |
 |---|---|
 | 대상 템플릿 | 449 |
-| 바뀐 템플릿 | 395 |
-| 바꾼 곳 | 7803 |
-| 고유 키(업스트림 포함) | 4914 |
-| 건너뛴 곳 | 428 |
-| 변환 뒤 남은 영어 텍스트 조각 | 60 |
+| 바뀐 템플릿 | 396 |
+| 바꾼 곳 | 7821 |
+| 고유 키(업스트림 포함) | 4944 |
+| 건너뛴 곳 | 415 |
+| 변환 뒤 남은 영어 텍스트 조각 | 40 |
 
 ## 건너뛴 이유
 
@@ -15,7 +15,7 @@
 |---|---|
 | `brand-only` | 192 |
 | `technical` | 121 |
-| `complex-expression` | 83 |
+| `complex-expression` | 70 |
 | `dynamic-value` | 17 |
 | `unsafe-for-blade` | 5 |
 | `dynamic-tag` | 5 |
@@ -51,7 +51,6 @@
 - `technical` resources/views/components/forms/env-var-input.blade.php:303 — VAR
 - `technical` resources/views/components/forms/repository-paths.blade.php:29 — placeholder="/"
 - `unknown-attribute` resources/views/components/section-heading.blade.php:5 — actionLabel => 'View all'
-- `complex-expression` resources/views/components/server/gpu-list.blade.php:14 — <span class="font-mono font-medium text-neutral-950 dark:text-fg">{{ $gpu['index'] }}</span> · {{ $gpu['name'] }} · GB · <span class="font-mono">{{ $gpu['uui...
 - `brand-only` resources/views/components/server/status-summary.blade.php:93 — Sentinel
 - `complex-expression` resources/views/components/two-factor-badge.blade.php:20 — Two-factor authentication is
 - `brand-only` resources/views/invitation/accept.blade.php:2 — title="Coolify"
@@ -99,12 +98,10 @@
 - `brand-only` resources/views/livewire/profile/index.blade.php:9 — Coolify
 - `complex-expression` resources/views/livewire/profile/index.blade.php:159 — Code sent to .
 - `complex-expression` resources/views/livewire/profile/index.blade.php:177 — The code expires after minutes.
-- `complex-expression` resources/views/livewire/profile/passkeys.blade.php:71 — · Added {{ $passkey->created_at->diffForHumans() }} ·
 - `dynamic-value` resources/views/livewire/project/application/advanced.blade.php:98 — helper="With a consistent name the container is always called {{ $application->uuid }}. <span class='font-bold dark:text-warning'>You will lose the rolling update feature!</span>"
 - `dynamic-value` resources/views/livewire/project/application/advanced.blade.php:115 — helper="Optional prefix for generated container names. Containers are named <span class='font-bold'>prefix-timestamp</span>, for example <span class='font-bold'>shop-api-20260908T141530</span>, instead of starting with <span class='font-bold'>{{ $application->uuid }}</span>.<br><br>The prefix is converted to slug format when saved, can be up to {{ \App\Models\ApplicationSetting::MAX_CONTAINER_NAME_PREFIX_LENGTH }} characters and must be unique on this server. Rolling updates keep working."
 - `complex-expression` resources/views/livewire/project/application/advanced.blade.php:125 — placeholder="{{ DEFAULT_STOP_GRACE_PERIOD_SECONDS }}"
 - `complex-expression` resources/views/livewire/project/application/advanced.blade.php:126 — helper="How long to wait for graceful shutdown during rolling updates, manual stops, and restarts. Applies to all containers for this application. Saved automatically. Default: {{ DEFAULT_STOP_GRACE_PERIOD_SECONDS }} seconds. Range: {{ MIN_STOP_GRACE_PERIOD_SECONDS }}-{{ MAX_STOP_GRACE_PERIOD_SECONDS }} seconds (1 hour)."
-- `complex-expression` resources/views/livewire/project/application/advanced.blade.php:165 — · checked
 - `technical` resources/views/livewire/project/application/advanced.blade.php:194 — placeholder="key=value"
 - `brand-only` resources/views/livewire/project/application/backup/index.blade.php:48 — Coolify
 - `technical` resources/views/livewire/project/application/backup/index.blade.php:175 — S3
@@ -143,7 +140,6 @@
         - 'node.role == worker'"
 - `brand-only` resources/views/livewire/project/clone-me.blade.php:2 — Coolify
 - `complex-expression` resources/views/livewire/project/database/backup-executions.blade.php:100 — Running for
-- `complex-expression` resources/views/livewire/project/database/backup-executions.blade.php:178 — - of {{ $executions_count }}
 - `brand-only` resources/views/livewire/project/database/backup/execution.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/project/database/backup/index.blade.php:3 — Coolify
 - `technical` resources/views/livewire/project/database/clickhouse/general.blade.php:109 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
@@ -182,9 +178,6 @@
 - `brand-only` resources/views/livewire/project/new/github-private-repository.blade.php:6 — GitHub App
 - `brand-only` resources/views/livewire/project/new/github-private-repository.blade.php:145 — label="Dockerfile"
 - `technical` resources/views/livewire/project/new/github-private-repository.blade.php:145 — placeholder="/Dockerfile"
-- `complex-expression` resources/views/livewire/project/new/partials/env-import-modal.blade.php:28 — {{ count($envExampleVars) }} {{ Str::plural('variable', count($envExampleVars)) }}
-- `complex-expression` resources/views/livewire/project/new/partials/smart-scan-summary.blade.php:45 — title="{{ $buildPackLabels[$suggestedBuildPack] }} {{ $build_pack === $suggestedBuildPack ? 'selected' : 'suggested' }}"
-- `complex-expression` resources/views/livewire/project/new/partials/smart-scan-summary.blade.php:68 — description="{{ count($envExampleVars) }} {{ Str::plural('variable', count($envExampleVars)) }}{{ $envImported ? ', imported when you continue' : '' }}."
 - `technical` resources/views/livewire/project/new/public-git-repository.blade.php:15 — placeholder="https://github.com/owner/repository"
 - `brand-only` resources/views/livewire/project/new/public-git-repository.blade.php:94 — label="Dockerfile"
 - `technical` resources/views/livewire/project/new/public-git-repository.blade.php:94 — placeholder="/Dockerfile"
@@ -235,7 +228,6 @@ CMD ["nginx", "-g", "daemon off;"]
 - `technical` resources/views/livewire/project/shared/health-checks.blade.php:69 — placeholder="OK"
 - `brand-only` resources/views/livewire/project/shared/logs.blade.php:3 — Coolify
 - `complex-expression` resources/views/livewire/project/shared/logs.blade.php:64 — description="Could not load containers: {{ collect($serverErrors)->first() }}"
-- `complex-expression` resources/views/livewire/project/shared/maintenance.blade.php:17 — helper="One self-contained HTML file (max {{ \App\Models\Server::PROXY_ERROR_PAGE_MAX_BYTES / 1024 }} KB) with inline CSS and images."
 - `technical` resources/views/livewire/project/shared/resource-details.blade.php:7 — label="UUID"
 - `technical` resources/views/livewire/project/shared/resource-details.blade.php:16 — label="UUID"
 - `technical` resources/views/livewire/project/shared/resource-details.blade.php:26 — label="UUID"
@@ -318,8 +310,6 @@ CMD ["nginx", "-g", "daemon off;"]
 - `technical` resources/views/livewire/server/partials/localhost-general.blade.php:91 — placeholder="https://example.com"
 - `brand-only` resources/views/livewire/server/private-key/show.blade.php:3 — Coolify
 - `technical` resources/views/livewire/server/proxy.blade.php:79 — placeholder="https://app.coolify.io"
-- `complex-expression` resources/views/livewire/server/proxy.blade.php:94 — helper="One self-contained HTML file (max {{ \App\Models\Server::PROXY_ERROR_PAGE_MAX_BYTES / 1024 }} KB) with inline CSS and images. Visitors see it with a 503 status for unknown domains and for stopped, deploying or unhealthy resources. A Redirect URL takes priority over this page."
-- `complex-expression` resources/views/livewire/server/proxy.blade.php:143 — v. The latest patch for this branch is {{ $this->latestTraefikVersion }}. Test the update before applying it to production servers. <a class="font-medium und...
 - `brand-only` resources/views/livewire/server/proxy/certificates-show.blade.php:3 — Coolify
 - `complex-expression` resources/views/livewire/server/proxy/certificates.blade.php:105 — Coolify saves a copy of acme.json before it changes the file and keeps the last copies.
 - `brand-only` resources/views/livewire/server/proxy/dynamic-configurations.blade.php:3 — Coolify
@@ -328,8 +318,6 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/server/registries.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/server/resources.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/server/security/patches.blade.php:3 — Coolify
-- `complex-expression` resources/views/livewire/server/security/patches.blade.php:103 — helper="{{ $packageManager === 'apt' ? 'Uses unattended-upgrades for the security origins only.' : 'Uses dnf-automatic with upgrade_type = security.' }} Turning it off removes the Coolify configuration and keeps the operating system default."
-- `complex-expression` resources/views/livewire/server/security/patches.blade.php:195 — helper="{{ $totalUpdates }} {{ Str::plural('update', $totalUpdates) }} available{{ $securityUpdates !== null ? ', ' . $securityUpdates . ' of them security ' . Str::plural('update', $securityUpdates) : '' }}."
 - `brand-only` resources/views/livewire/server/security/terminal-access.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/server/sentinel.blade.php:24 — title="Sentinel"
 - `brand-only` resources/views/livewire/server/sentinel.blade.php:109 — label="Coolify URL"
@@ -349,7 +337,6 @@ CMD ["nginx", "-g", "daemon off;"]
 - `complex-expression` resources/views/livewire/server/swarm.blade.php:22 — Read the migration guidance.
 - `brand-only` resources/views/livewire/server/transfer.blade.php:3 — Coolify
 - `technical` resources/views/livewire/server/transfer.blade.php:48 — placeholder="https://coolify.example.com"
-- `complex-expression` resources/views/livewire/server/transfer.blade.php:75 — {{ data_get($server->server_metadata, 'transfer.transfer_back.from') }} started the transfer back at . Reload this page in a minute. When the transfer finish...
 - `technical` resources/views/livewire/server/transfer.blade.php:93 — placeholder="https://coolify.example.com"
 - `brand-only` resources/views/livewire/settings-backup.blade.php:3 — Coolify
 - `technical` resources/views/livewire/settings-backup.blade.php:19 — label="UUID"
@@ -468,29 +455,18 @@ CMD ["nginx", "-g", "daemon off;"]
 ## 남은 영어 텍스트 조각
 
 - resources/views/components/configuration-warning.blade.php:25 — unapplied.
-- resources/views/components/server/gpu-list.blade.php:15 — GB ·
 - resources/views/components/two-factor-badge.blade.php:20 — Two-factor authentication is
 - resources/views/livewire/admin/index.blade.php:31 — You are viewing Coolify as
 - resources/views/livewire/profile/index.blade.php:159 — Code sent to
 - resources/views/livewire/profile/index.blade.php:177 — The code expires after
 - resources/views/livewire/profile/index.blade.php:179 — minutes.
-- resources/views/livewire/profile/passkeys.blade.php:71 — · Added
-- resources/views/livewire/project/application/advanced.blade.php:165 — · checked
-- resources/views/livewire/project/application/heading.blade.php:6 — Switch to Railpack in General settings.
 - resources/views/livewire/project/application/partials/domain-row.blade.php:113 — Port
 - resources/views/livewire/project/application/preview-domains.blade.php:164 — Port
-- resources/views/livewire/project/database/backup-executions.blade.php:100 — Running for
-- resources/views/livewire/project/database/backup-executions.blade.php:178 — of
 - resources/views/livewire/project/service/database-backups.blade.php:26 — backup
 - resources/views/livewire/project/service/database-backups.blade.php:51 — Automate backups for
 - resources/views/livewire/project/service/partials/domain-table.blade.php:146 — Port
 - resources/views/livewire/project/shared/configuration-checker.blade.php:19 — must be set before this service can be deployed.
 - resources/views/livewire/project/shared/configuration-checker.blade.php:21 — Open environment variables
-- resources/views/livewire/project/shared/environment-variable/add.blade.php:27 — Tip: Type
-- resources/views/livewire/project/shared/environment-variable/add.blade.php:28 — to reference a shared environment variable
-- resources/views/livewire/project/shared/environment-variable/show.blade.php:185 — Tip: Type
-- resources/views/livewire/project/shared/environment-variable/show.blade.php:187 — to reference a shared environment variable
-- resources/views/livewire/project/shared/environment-variable/show.blade.php:203 — Used by:
 - resources/views/livewire/project/shared/scheduled-task/executions.blade.php:50 — · finished
 - resources/views/livewire/project/shared/secret-manager-links.blade.php:115 — Key names only — values stay in the secret manager. "Add as variable" creates
 - resources/views/livewire/project/shared/secret-manager-links.blade.php:117 — ; you can also paste a reference into any variable value, including inside a longer string.
@@ -501,19 +477,10 @@ CMD ["nginx", "-g", "daemon off;"]
 - resources/views/livewire/server/docker-cleanup.blade.php:35 — The last cleanup ran
 - resources/views/livewire/server/github-runners.blade.php:174 — Isolated Docker needs the Sysbox runtime. Coolify installs Sysbox
 - resources/views/livewire/server/github-runners.blade.php:176 — from the official package (Debian and Ubuntu, kernel 5.12 or newer). Docker reloads its configuration, and running co...
-- resources/views/livewire/server/proxy.blade.php:140 — v
-- resources/views/livewire/server/proxy.blade.php:141 — . The latest patch for this branch is
-- resources/views/livewire/server/proxy.blade.php:142 — . Test the update before applying it to production servers.
-- resources/views/livewire/server/proxy.blade.php:146 — Learn how to update Traefik.
+- resources/views/livewire/server/proxy.blade.php:143 — Learn how to update Traefik.
 - resources/views/livewire/server/proxy/certificates.blade.php:105 — Coolify saves a copy of acme.json before it changes the file and keeps the last
 - resources/views/livewire/server/proxy/certificates.blade.php:107 — copies.
-- resources/views/livewire/server/show.blade.php:189 — This server was transferred to
-- resources/views/livewire/server/show.blade.php:191 — , which manages it now. Use that instance. To undo the transfer, use
-- resources/views/livewire/server/show.blade.php:194 — Transfer back
-- resources/views/livewire/server/show.blade.php:194 — . Keep this archive until you are sure: it is the copy that an undo uses.
 - resources/views/livewire/server/swarm.blade.php:22 — Read the migration guidance.
-- resources/views/livewire/server/transfer.blade.php:73 — started the transfer back at
-- resources/views/livewire/server/transfer.blade.php:74 — . Reload this page in a minute. When the transfer finishes, this instance manages the server again. If it does not, r...
 - resources/views/livewire/source/gitea/change.blade.php:205 — Set
 - resources/views/livewire/source/gitea/change.blade.php:206 — Redirect URI
 - resources/views/livewire/source/gitea/change.blade.php:206 — to:

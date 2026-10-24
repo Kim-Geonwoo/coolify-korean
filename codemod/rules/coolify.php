@@ -125,6 +125,9 @@ return [
             ],
         ],
         'components.shared-variables.editor' => ['str($type)->headline()' => ['Team', 'Project', 'Environment', 'Server']],
+        // 4.5.0 x-section-heading의 링크 조각. @props 기본값 'View all'이 @include로 넘어와 기본값 자리에서는 표시 여부를 모른다(대시보드 "View all").
+        // 호출부가 넘긴 라벨은 그쪽에서 이미 번역되어 오고, 번역문을 다시 감싸도 그대로 나온다
+        'components.section-heading-link' => ['$actionLabel' => ['View all']],
     ],
 
     'htmlAttributes' => ['title', 'aria-label', 'alt', 'placeholder', 'data-tooltip'],
@@ -139,4 +142,7 @@ return [
 
     // 사람이 읽는 화면이 아닌 곳(메일·패키지 뷰)은 1차 범위 밖이다.
     'excludedViewDirectories' => ['emails', 'vendor', 'components/emails'],
+
+    // 수동 치환(4.5.0 패스키·보안 패치·Traefik·서버 이전 …). 원본에서 잘라 만든 규칙 파일
+    'rewrites' => require __DIR__ . '/rewrites.php',
 ];

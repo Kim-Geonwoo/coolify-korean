@@ -361,8 +361,11 @@ $allowed = coolify_ko_allowlist($allowPath);
 $translator = app('translator');
 $pseudo = [];
 foreach ($edits as $edit) {
-    if ($edit['key'] !== '') {
-        $pseudo[$edit['key']] = '⟦' . $edit['key'] . '⟧';
+    // 수동 치환은 바꾼 꼴이 여러 키를 쓴다(edit.keys). 가짜 언어가 그 키도 모두 번역해야 번역문이 나오는지 볼 수 있다
+    foreach ([$edit['key'], ...($edit['keys'] ?? [])] as $key) {
+        if (is_string($key) && $key !== '') {
+            $pseudo[$key] = '⟦' . $key . '⟧';
+        }
     }
 }
 

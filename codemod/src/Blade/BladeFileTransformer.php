@@ -24,6 +24,8 @@ final class BladeFileTransformer
 
     private readonly ScriptCallRewriter $scriptCalls;
 
+    private readonly RuleRewriter $ruleRewrites;
+
     /** @param array<string, string> $upstreamLines 업스트림 lang/en.json(키 → 영어) */
     public function __construct(RuleSet $rules, ?ComponentProps $props = null, array $upstreamLines = [])
     {
@@ -35,6 +37,7 @@ final class BladeFileTransformer
         $this->attributes = new AttributeRewriter($rules, $props, $classifier, $expressions, $upstreamLines);
         $this->displaySites = new DisplaySiteRewriter($rules, $classifier, $expressions, $props);
         $this->scriptCalls = new ScriptCallRewriter($rules, $classifier);
+        $this->ruleRewrites = new RuleRewriter($rules);
     }
 
     public function transform(string $source, string $path): TransformResult
@@ -66,14 +69,19 @@ final class BladeFileTransformer
                 array_push($outcomes, ...$this->scriptCalls->rewrite($segment));
             }
         }
-        $taken = [];
+        // 규칙 파일의 수동 치환 구간은 다른 규칙의 결과를 버리고 치환만 쓴다
+        [$ruleOutcomes, $ruleRanges] = $this->ruleRewrites->rewrite($source, $path);
+        $outcomes = array_values(array_filter($outcomes, static fn (SentenceOutcome $outcome): bool => !self::overlapsAny($outcome, $ruleRanges)));
+        $taken = $ruleRanges;
         foreach ($outcomes as $outcome) {
             if ($outcome->edit !== null) {
                 $taken[] = [$outcome->edit->start, $outcome->edit->end];
             }
         }
         array_push($outcomes, ...$this->displaySites->rewrite($segments, $path, $taken, $standaloneEchoes));
+        $outcomes = array_values(array_filter($outcomes, static fn (SentenceOutcome $outcome): bool => !self::overlapsAny($outcome, $ruleRanges)));
         $outcomes = $this->displaySites->wrapPlaceholders($segments, $outcomes, $path);
+        array_push($outcomes, ...$ruleOutcomes);
         usort($outcomes, static fn (SentenceOutcome $a, SentenceOutcome $b): int => $a->start <=> $b->start);
 
         /** @var list<Edit> $edits */
@@ -92,6 +100,7 @@ final class BladeFileTransformer
                     substr($source, $outcome->edit->start, $outcome->edit->end - $outcome->edit->start),
                     $outcome->edit->replacement,
                     $outcome->counts,
+                    $outcome->alsoKeys,
                 );
             } elseif ($outcome->skip !== null) {
                 $skips[] = new Skip($path, self::line($source, $outcome->start), $outcome->skip, $outcome->excerpt);
@@ -130,6 +139,25 @@ final class BladeFileTransformer
     {
         foreach ($ranges as [$start, $end]) {
             if ($segment->start >= $start && $segment->end <= $end) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * 결과가 수동 치환 구간과 겹치는지(편집은 구간이 겹치면, 편집 없는 기록은 시작 위치가 안에 있으면).
+     *
+     * @param list<array{int, int}> $ranges
+     */
+    private static function overlapsAny(SentenceOutcome $outcome, array $ranges): bool
+    {
+        foreach ($ranges as [$start, $end]) {
+            $overlaps = $outcome->edit !== null
+                ? $outcome->edit->start < $end && $outcome->edit->end > $start
+                : $outcome->start >= $start && $outcome->start < $end;
+            if ($overlaps) {
                 return true;
             }
         }
