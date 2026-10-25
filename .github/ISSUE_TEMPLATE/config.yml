@@ -1,8 +1,6 @@
 blank_issues_enabled: true
+# 보안 제보 안내는 SECURITY.md가 있으면 GitHub이 "Report a security vulnerability"로 자동으로 붙인다
 contact_links:
-  - name: 보안 취약점 제보
-    url: https://github.com/Kim-Geonwoo/coolify-korean/blob/main/SECURITY.md
-    about: 공개 이슈에 올리지 말고 보안 정책의 메일로 알려 주세요.
   - name: Coolify 자체 문제
     url: https://github.com/coollabsio/coolify/issues
     about: 영어 공식판에서도 똑같이 생기는 문제는 Coolify에 알려 주세요.
