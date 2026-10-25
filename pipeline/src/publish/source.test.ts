@@ -75,6 +75,17 @@ describe('exportSource', () => {
     expect(readFileSync(join(to, 'pipeline', 'a.ts'), 'utf8')).toBe('export {};\n');
   });
 
+  // 2026-10-25 공개 소개 준비: 이슈 양식은 공개 레포에 있어야 하고, CI(.github/workflows)는 여전히 내보내지 않는다
+  it('exports the issue forms and the security policy but not the CI workflows', () => {
+    const { dir, commit } = repo({ 'SECURITY.md': '# 보안\n', '.github/ISSUE_TEMPLATE/translation.yml': 'name: 번역\n', '.github/workflows/ci.yml': 'on: push\n' });
+    const to = temp();
+    exportSource({ repo: dir, commit, to, internalNames: FAKE_NAMES });
+
+    expect(readFileSync(join(to, '.github', 'ISSUE_TEMPLATE', 'translation.yml'), 'utf8')).toBe('name: 번역\n');
+    expect(existsSync(join(to, 'SECURITY.md'))).toBe(true);
+    expect(existsSync(join(to, '.github', 'workflows'))).toBe(false);
+  });
+
   it('refuses an export that still carries an internal name and leaves the working copy alone', () => {
     const { dir, commit } = repo({ 'README.md': 'server acmebox-2\n' });
     const to = temp();

@@ -12,7 +12,12 @@ export interface UntranslatedGap {
 
 const BASELINE = 'untranslated.json';
 
-const norm = (text: string): string => text.replace(/\s+/g, ' ').trim();
+// 숫자만 다른 글("3 minutes ago"·"15 minutes ago")은 같은 글로 본다
+const shape = (text: string): string => text.replace(/\s+/g, ' ').trim().replace(/\d+/g, '#');
+
+// 날짜·시각(요일·달 이름·AM/PM과 숫자·구분 기호)만으로 된 글은 찍을 때마다 바뀌는 값이라 비교하지 않는다(2026-10-25 감사 로그 기록 시각)
+const DATE_WORDS = /\b(?:Mon|Tues?|Wed(?:nes)?|Thu(?:rs)?|Fri|Sat(?:ur)?|Sun)(?:day)?\b|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\b|\b[AP]M\b|\bUTC\b/g;
+const onlyDate = (text: string): boolean => /\d/.test(text) && text.replace(DATE_WORDS, '').replace(/[\d\s,.:/+-]/g, '') === '';
 
 function parseGaps(value: unknown): UntranslatedGap[] | undefined {
   if (!Array.isArray(value)) {
@@ -43,9 +48,9 @@ export function newGaps(current: readonly UntranslatedGap[], previous: readonly 
   if (previous === undefined) {
     return [];
   }
-  const seen = new Set(previous.map((gap) => norm(gap.text)));
+  const seen = new Set(previous.map((gap) => shape(gap.text)));
 
-  return current.filter((gap) => !seen.has(norm(gap.text))).sort((a, b) => b.paths.length - a.paths.length || (a.text < b.text ? -1 : a.text > b.text ? 1 : 0));
+  return current.filter((gap) => !onlyDate(gap.text) && !seen.has(shape(gap.text))).sort((a, b) => b.paths.length - a.paths.length || (a.text < b.text ? -1 : a.text > b.text ? 1 : 0));
 }
 
 /**

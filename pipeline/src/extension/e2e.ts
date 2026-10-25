@@ -8,6 +8,7 @@ import { looksUntranslated } from '../screenshots/gaps.ts';
 import { DEMO_SEED_PHP } from '../screenshots/seed.ts';
 import { START_PATHS } from '../smoke.ts';
 import { buildTestEnv } from '../testInstance.ts';
+import { imageRef, loadState } from '../sync/state.ts';
 import { pack } from './pack.ts';
 
 /**
@@ -21,7 +22,8 @@ const instanceDir = join(work, 'test-instance');
 const PROJECT = 'coolify-ko-ext';
 const PORT = 18090;
 export const ORIGIN = `http://127.0.0.1:${String(PORT)}`;
-const IMAGE = 'coollabsio/coolify:4.4.6';
+// 확장 사전이 따르는 상류 판(i18n/state.json, 다이제스트 고정). 4.4.6에 박아 둬 4.5.0 스토어 사진도 옛 화면이었다(2026-10-25)
+const IMAGE = imageRef(loadState(join(root, 'i18n', 'state.json')));
 const EMAIL = 'e2e@coolify-ko.invalid';
 const POLL_WAIT_MS = 12_000;
 const HANGUL = /[가-힣]/;

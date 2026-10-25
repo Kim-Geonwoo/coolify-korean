@@ -1,0 +1,51 @@
+name: 설치·동작 문제
+description: 설치, 되돌리기, 업데이트, 브라우저 확장이 기대와 다르게 동작할 때 알려 주세요.
+title: "[문제] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        영어 공식판에서도 똑같이 생기는 문제라면 [Coolify 이슈](https://github.com/coollabsio/coolify/issues)에 올려 주세요. 보안 문제는 이 양식 대신 [보안 정책](https://github.com/Kim-Geonwoo/coolify-korean/blob/main/SECURITY.md)대로 알려 주세요.
+  - type: dropdown
+    id: method
+    attributes:
+      label: 적용 방식
+      options:
+        - "방법 A: 지금 서버에 얹기(install)"
+        - "방법 B: 새로 설치(preinstall)"
+        - 브라우저 확장(Chrome)
+        - 브라우저 확장(Firefox)
+        - 되돌리기(uninstall)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 판
+      description: Coolify 판과, 확장이면 확장 판도 적어 주세요.
+      placeholder: Coolify v4.5.0 / 확장 0.1.5
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 무엇을 했고 무슨 일이 일어났나요
+      description: 실행한 명령이나 누른 곳, 그때 보인 결과를 차례로 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 결과
+  - type: textarea
+    id: logs
+    attributes:
+      label: 출력·로그
+      description: 붙여 넣기 전에 비밀번호·토큰·서버 주소를 지워 주세요.
+      render: shell
+  - type: input
+    id: environment
+    attributes:
+      label: 환경
+      placeholder: Ubuntu 24.04 amd64 / Chrome 141

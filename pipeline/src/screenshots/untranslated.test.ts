@@ -18,6 +18,14 @@ describe('newGaps', () => {
 
     expect(newGaps(current, previous)).toEqual([gap('Monitoring', '/', '/servers', '/projects'), gap('Integrations', '/')]);
   });
+
+  // 2026-10-25: 감사 로그의 기록 시각(예시 리소스를 만든 때)이 찍을 때마다 바뀌어 새 영어로 알렸다
+  it('skips texts made only of a date or time, and treats texts that differ only in numbers as the same', () => {
+    const previous = [gap('3 minutes ago', '/'), gap('Deployed 2 apps', '/')];
+    const current = [gap('Sat, Oct 24, 2026 7:07 PM', '/team/audit-log'), gap('Monday, December 7, 2026', '/'), gap('2026-10-24 19:07:31', '/'), gap('15 minutes ago', '/'), gap('Deployed 2 servers', '/')];
+
+    expect(newGaps(current, previous)).toEqual([gap('Deployed 2 servers', '/')]);
+  });
 });
 
 describe('recordGaps', () => {

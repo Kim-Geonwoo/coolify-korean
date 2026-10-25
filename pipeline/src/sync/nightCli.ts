@@ -254,7 +254,7 @@ async function screenshotsStage(tokenDir: string): Promise<void> {
   const report = readJson(reportPath) as { newUntranslated?: unknown; untranslatedSince?: unknown };
   const fresh = Array.isArray(report.newUntranslated) ? report.newUntranslated.flatMap((gap: unknown) => (typeof (gap as { text?: unknown } | null)?.text === 'string' ? [(gap as { text: string }).text] : [])) : [];
   if (fresh.length > 0) {
-    console.log(`스크린샷: 지난 찍기에 없던 표식 없는 영어 ${String(fresh.length)}개`);
+    console.log(`스크린샷: 지난 찍기에 없던 표식 없는 영어 ${String(fresh.length)}개: ${fresh.slice(0, 5).join(' · ')}`);
     await postDiscord(credential('discord-webhook'), discordMessage({ type: 'untranslated', version, ...(typeof report.untranslatedSince === 'string' ? { previousVersion: report.untranslatedSince } : {}), count: fresh.length, examples: fresh }));
   }
 }

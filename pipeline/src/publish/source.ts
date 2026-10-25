@@ -7,9 +7,10 @@ import { findForbiddenTrackedPaths, hasInternalName } from '../../../scripts/rep
 /**
  * 공개 소스 레포(Kim-Geonwoo/coolify-korean, 새 히스토리) 내보내기(5단계 공개 계획 P4, 사용자 결정 "공개용 레포를 새로 만들자").
  * 비공개 작업 레포의 한 커밋에서 정해 둔 경로만 꺼낸다(기본 거부). 집 서버 운영(ops)과 CI 설정(.github, 11-03 전 Actions 금지)은 내보내지 않는다.
+ * .github 안에서는 이슈 양식(ISSUE_TEMPLATE)만 내보낸다(2026-10-25 공개 소개 준비).
  * 임시 폴더에 먼저 풀어 내부 이름·금지 경로를 검사하고, 통과해야 공개 레포 작업 사본(.git은 남김)을 바꾼다
  */
-export const EXPORT_PATHS: readonly string[] = ['.dockerignore', '.gitattributes', '.gitignore', 'Dockerfile', 'LICENSE', 'NOTICE', 'README.md', 'codemod', 'docs', 'eslint.config.js', 'extension', 'i18n', 'overlay', 'package.json', 'pipeline', 'pnpm-lock.yaml', 'releases', 'reports', 'scripts', 'tools', 'tsconfig.json', 'vitest.config.ts'];
+export const EXPORT_PATHS: readonly string[] = ['.dockerignore', '.gitattributes', '.github/ISSUE_TEMPLATE', '.gitignore', 'Dockerfile', 'LICENSE', 'NOTICE', 'README.md', 'SECURITY.md', 'codemod', 'docs', 'eslint.config.js', 'extension', 'i18n', 'overlay', 'package.json', 'pipeline', 'pnpm-lock.yaml', 'releases', 'reports', 'scripts', 'tools', 'tsconfig.json', 'vitest.config.ts'];
 export const PRIVATE_PATHS: readonly string[] = ['.github', 'ops'];
 
 /** 내보낼지 정하지 않은 최상위 경로(새 경로가 생기면 시험이 결정을 요구한다) */

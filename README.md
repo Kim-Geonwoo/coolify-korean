@@ -7,6 +7,7 @@
 **자체 호스팅 Coolify를 한국어로.**<br>
 공식 이미지 위에 번역만 더한 비공식 한국어 지원 프로젝트입니다.
 
+[![따라가는 Coolify 판](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcoolify-ko.geonwoo.dev%2Fversions.json&query=%24.coolify.v4.version&label=Coolify&prefix=v&color=6B16ED)](https://github.com/coollabsio/coolify/releases)
 [![Chrome 웹 스토어](https://img.shields.io/chrome-web-store/v/hjfmiecbkiimkbnhoedjicaccmdaihni?label=Chrome&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/coolify-%ED%95%9C%EA%B5%AD%EC%96%B4-%EB%B9%84%EA%B3%B5%EC%8B%9D/hjfmiecbkiimkbnhoedjicaccmdaihni)
 [![Firefox](https://img.shields.io/badge/Firefox-.xpi-FF7139?logo=firefoxbrowser&logoColor=white)](https://coolify-ko.geonwoo.dev)
 [![Image](https://img.shields.io/badge/ghcr.io-coolify--ko-2496ED?logo=docker&logoColor=white)](https://coolify-ko.geonwoo.dev)
@@ -98,6 +99,8 @@ sudo bash coolify-ko.sh preinstall
 ## 문의
 
 개발자 문의: kgw@geonwoo.dev
+
+번역이 어색한 곳은 [번역 제보](https://github.com/Kim-Geonwoo/coolify-korean/issues/new?template=translation.yml)로, 보안 문제는 공개 이슈 대신 [보안 정책](SECURITY.md)대로 알려 주세요.
 
 Developer contact: kgw@geonwoo.dev
 

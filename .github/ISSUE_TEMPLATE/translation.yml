@@ -1,0 +1,57 @@
+name: 번역 제보
+description: 어색한 번역, 틀린 번역, 영어로 남은 문구를 알려 주세요.
+title: "[번역] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        번역은 대부분 AI 초안이라 어색한 곳이 있을 수 있습니다. 한 이슈에 여러 곳을 적어 주셔도 됩니다.
+  - type: input
+    id: path
+    attributes:
+      label: 화면 주소
+      description: 도메인은 빼고 경로만 적어 주세요.
+      placeholder: /project/…/application/…
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 지금 보이는 문구
+      description: 화면에 보이는 그대로 적어 주세요. 영어로 남은 곳이면 영어 그대로 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 제안하는 번역
+      description: 떠오르는 표현이 있으면 적어 주세요. 없으면 비워 두셔도 됩니다.
+  - type: dropdown
+    id: method
+    attributes:
+      label: 적용 방식
+      options:
+        - 서버 설치(한국어판 이미지)
+        - 브라우저 확장(Chrome)
+        - 브라우저 확장(Firefox)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Coolify 판
+      description: 대시보드 왼쪽 위에 보이는 판입니다.
+      placeholder: v4.5.0
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 스크린샷
+      description: 있으면 끌어다 놓아 주세요.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 개인정보 확인
+      options:
+        - label: 서버 주소·도메인·토큰·이메일이 글과 스크린샷에 없는지 확인했습니다.
+          required: true
