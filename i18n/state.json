@@ -1,7 +1,7 @@
 {
   "upstream": {
-    "digest": "sha256:d96931bef961ab5c173edfca190e03d4b77e93dee622da780ddfa22cfa2b77cf",
+    "digest": "sha256:e4e662978b1ea86b9711149caa2e46497bf8f2c03f578c45324d33e42914ff61",
     "image": "docker.io/coollabsio/coolify",
-    "version": "4.5.0"
+    "version": "4.5.3"
   }
 }

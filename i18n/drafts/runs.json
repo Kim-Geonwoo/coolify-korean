@@ -88,5 +88,19 @@
       "seed": 20261017,
       "temperature": 0
     }
+  },
+  "2026-10-30-index-9b-cpu": {
+    "build": "b11700-23f7aabc1",
+    "engine": "index-9b-cpu",
+    "glossary": "0960f9d36d058017",
+    "model": "Index-Translate-9B.Q5_K_M.gguf",
+    "prompt": "feedb69e7012b573",
+    "promptVersion": 1,
+    "revision": "IndexTeam/Index-Translate-9B-GGUF@645939fbab839a656f1bc39975a872bc8ad749f8",
+    "sampling": {
+      "max_tokens": 1024,
+      "seed": 20261017,
+      "temperature": 0
+    }
   }
 }

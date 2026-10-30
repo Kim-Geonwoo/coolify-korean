@@ -63,7 +63,7 @@ function fake(options: { decision?: UpstreamDecision; resources?: { memFreeGiB: 
     review: () => {
       calls.push('review');
 
-      return Promise.resolve({ reviewed: 25, queueEmpty: options.queueEmpty ?? false });
+      return options.fail === 'review' ? Promise.reject(new Error('503 high demand')) : Promise.resolve({ reviewed: 25, queueEmpty: options.queueEmpty ?? false });
     },
     ...(options.weblate === undefined
       ? {}
@@ -173,6 +173,16 @@ describe('runNight', () => {
     expect(deps.calls).toEqual(['reset', 'upstream', 'state 4.4.7', 'extract', 'drafts', 'review', 'weblate', 'verify', 'push i18n: 4.4.7 초안']);
     expect(deps.events[0]).toEqual({ type: 'failure', stage: 'weblate', code: 'error', count: 1, disabled: false });
     expect(deps.savedStatus.failures.weblate?.count).toBe(1);
+  });
+
+  // 2026-10-30: Gemini가 나흘째 503·시간 초과를 내다 검토 단계가 실패해, 그날 만든 4.5.3 초안까지 올리지 못했다
+  it('keeps pushing the drafts of the night when the reviewer fails, and reports the failure', async () => {
+    const deps = fake({ decision: { action: 'new', version: '4.4.7', digest: D }, fail: 'review', weblate: { changed: false, rejected: [] } });
+
+    expect(await runNight(deps)).toBe('pushed');
+    expect(deps.calls).toEqual(['reset', 'upstream', 'state 4.4.7', 'extract', 'drafts', 'review', 'weblate', 'verify', 'push i18n: 4.4.7 초안']);
+    expect(deps.events[0]).toEqual({ type: 'failure', stage: 'review', code: 'error', count: 1, disabled: false });
+    expect(deps.savedStatus.failures.review?.count).toBe(1);
   });
 
   it('pushes reviewed translations the same night, and reports approved strings it had to leave out', async () => {

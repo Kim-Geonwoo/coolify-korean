@@ -59,6 +59,11 @@
     "sourceHash": "b9e14c13bfd563bc",
     "via": "mt"
   },
+  "+ New": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "af6aa8e6e24597ab",
+    "via": "mt"
+  },
   "+:additional_domain_count more :value": {
     "review": {
       "fix": "+:additional_domain_count개의 추가 :value",
@@ -99,6 +104,11 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "1f602da1c9d4a686",
+    "via": "mt"
+  },
+  "/ page": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "d56d2c770edfe960",
     "via": "mt"
   },
   "0 0 * * * or daily": {
@@ -829,6 +839,16 @@
     "sourceHash": "ba65a47470fed4a2",
     "via": "mt"
   },
+  ":label color": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "b6a38352acc7ec18",
+    "via": "mt"
+  },
+  ":label hex color": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "20958c876dfb9905",
+    "via": "mt"
+  },
   ":label topic ID": {
     "review": {
       "fix": ":label 토픽 ID",
@@ -841,6 +861,7 @@
     "via": "mt"
   },
   ":latency_p95 ms": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "수치와 단위를 정확하게 표기했습니다.",
       "run": "2026-10-17-flash",
@@ -938,6 +959,7 @@
   },
   ":p95 ms": {
     "from": ":latency_p95 ms",
+    "removedIn": "4.5.3",
     "review": {
       "reason": "정확합니다.",
       "run": "2026-10-24-flash",
@@ -1093,6 +1115,11 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "8aece085e8686574",
+    "via": "mt"
+  },
+  ":s_no_metrics no metrics": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "63593026ebb4a705",
     "via": "mt"
   },
   ":s_offline offline": {
@@ -1678,6 +1705,16 @@
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "ad57f364529168d1",
+    "via": "mt"
+  },
+  "A running resource is stopped while its volume data is copied.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "5f6c294cdb65a2a3",
+    "via": "mt"
+  },
+  "A running resource is unavailable while its volume data is copied.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "acd2b05ab8145566",
     "via": "mt"
   },
   "A running workflow job fails.": {
@@ -3577,6 +3614,18 @@
     "sourceHash": "78f133afd3ec55cd",
     "via": "mt"
   },
+  "All secrets of this server and its resources are sent to the target instance: private keys, credentials, and every environment variable value, also locked ones. Continue only if you trust that instance.": {
+    "edits": [
+      {
+        "after": "세요",
+        "before": "십시오",
+        "rule": "imperative"
+      }
+    ],
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "7bce9d049cb881c3",
+    "via": "mt"
+  },
   "All servers": {
     "review": {
       "reason": "",
@@ -3812,6 +3861,11 @@
     "sourceHash": "965776202c3c1de9",
     "via": "mt"
   },
+  "Also show the UTC time. Use it to compare with server logs.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "2fd1d48b3231f0bf",
+    "via": "mt"
+  },
   "Alternative names": {
     "review": {
       "reason": "적절한 번역입니다.",
@@ -3923,6 +3977,11 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "9ee92479a228aef9",
+    "via": "mt"
+  },
+  "Another instance may claim this server": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8aa1d3a48e5aa6a8",
     "via": "mt"
   },
   "Any SSH-accessible server, including cloud VPS, bare metal, and self-hosted infrastructure.": {
@@ -4334,6 +4393,11 @@
     "sourceHash": "ee45a1c9ce028221",
     "via": "mt"
   },
+  "Applies to all domains of this application.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "70a67c6224c246f4",
+    "via": "mt"
+  },
   "Applies to the HTTP to HTTPS and www redirects. Permanent (301/308) is better for SEO, but browsers cache it. Use Temporary (302/307) while you test a redirect.": {
     "review": {
       "reason": "",
@@ -4556,7 +4620,20 @@
     "sourceHash": "e4d36f9a4e22d3a2",
     "via": "mt"
   },
+  "Authenticate with a bearer token from <0>Keys & Tokens → API Tokens</0>.": {
+    "edits": [
+      {
+        "after": "세요",
+        "before": "십시오",
+        "rule": "imperative"
+      }
+    ],
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8460a1ed4d1f8d46",
+    "via": "mt"
+  },
   "Authenticate with a bearer token from <0>Security → API Tokens</0>.": {
+    "removedIn": "4.5.3",
     "review": {
       "fix": "<0>보안 → API 토큰</0>에서 베어러 토큰으로 인증하세요.",
       "reason": "사용자에게 지시하는 문장이므로 '…하세요' 형태의 요청문이어야 합니다.",
@@ -4960,6 +5037,11 @@
     "sourceHash": "ca8e826d9c2ec401",
     "via": "mt"
   },
+  "Average usage of all CPU cores on this server. 100% means that all cores are fully busy. For example, on a server with 8 cores, one fully busy core shows as 12.5%.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "71b84b43fadf5304",
+    "via": "mt"
+  },
   "Averaged across servers; not core-weighted": {
     "review": {
       "reason": "",
@@ -5052,6 +5134,7 @@
     "via": "mt"
   },
   "Back to the :nav_context_name menu": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "",
       "run": "2026-10-24-flash",
@@ -5515,6 +5598,11 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "f8b91c53b4e8c4d6",
+    "via": "mt"
+  },
+  "Base domain of the edge deployment of your Axiom organization.<0/><1/>US: <2/><3/>EU: <4/>": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "c845005e8cdf5aa2",
     "via": "mt"
   },
   "Base price": {
@@ -6006,6 +6094,7 @@
     "via": "mt"
   },
   "Busiest containers across the fleet, ranked by the selected metric.": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "글로서리 규칙에 맞게 올바르게 번역되었습니다.",
       "run": "2026-10-24-flash",
@@ -6015,7 +6104,13 @@
     "sourceHash": "978a4bb3b60b5e33",
     "via": "mt"
   },
+  "Busiest containers across the fleet, sortable by resource usage.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "149e66bf78e4f70a",
+    "via": "mt"
+  },
   "Busiest containers on this server, ranked by the selected metric.": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "글로서리 규칙에 맞게 올바르게 번역되었습니다.",
       "run": "2026-10-24-flash",
@@ -6023,6 +6118,16 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "9a54f918774aefdf",
+    "via": "mt"
+  },
+  "Busiest containers on this server, sortable by resource usage.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "37391eeca880e1a3",
+    "via": "mt"
+  },
+  "Buttons and sidebar icons sit on a raised edge that lifts on hover.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "e64b567e30e96e28",
     "via": "mt"
   },
   "Buy and create": {
@@ -6176,6 +6281,11 @@
     "sourceHash": "a10efc436db2cc6d",
     "via": "mt"
   },
+  "CPU usage of the container, as in docker stats. 100% means one CPU core is fully busy, so a container that uses more than one core can go above 100%. The maximum is the number of cores × 100%.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "88f72938619d52d8",
+    "via": "mt"
+  },
   "CPU weight": {
     "review": {
       "reason": "",
@@ -6184,6 +6294,11 @@
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "5bb3bb880d40b215",
+    "via": "mt"
+  },
+  "CPU: <0>4.3%</0>": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "06481ea77db41330",
     "via": "mt"
   },
   "CREATE DATABASE test;": {
@@ -6706,6 +6821,11 @@
     "sourceHash": "94a793fc16e2d321",
     "via": "mt"
   },
+  "Chart times": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "be56d4d342b2f073",
+    "via": "mt"
+  },
   "Chat ID": {
     "review": {
       "reason": "",
@@ -7101,6 +7221,11 @@
     "sourceHash": "5310f1e5747fee5a",
     "via": "mt"
   },
+  "Choose how buttons and sidebar items look.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "ca488df59d9bfcb1",
+    "via": "mt"
+  },
   "Choose how content uses the available browser width.": {
     "review": {
       "fix": "콘텐츠가 사용 가능한 브라우저 너비를 활용하는 방식을 선택하세요.",
@@ -7113,6 +7238,7 @@
     "via": "mt"
   },
   "Choose how the main sidebar shows its items.": {
+    "removedIn": "4.5.3",
     "review": {
       "fix": "주 사이드바에서 항목을 표시하는 방식을 선택하세요.",
       "reason": "'사이바' 오타를 '사이드바'로 수정합니다.",
@@ -7436,6 +7562,11 @@
     "sourceHash": "91918b22e8d0d649",
     "via": "mt"
   },
+  "Choose which times chart tooltips show.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "6cb6f37f1103b034",
+    "via": "mt"
+  },
   "Clean deleted entries": {
     "review": {
       "reason": "",
@@ -7722,6 +7853,11 @@
     "sourceHash": "74f1b956280b4028",
     "via": "mt"
   },
+  "Clone this resource with its volume data?": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "26bcf3e6ef955379",
+    "via": "mt"
+  },
   "Clone to another destination": {
     "removedIn": "4.5.0",
     "review": {
@@ -7765,7 +7901,23 @@
     "sourceHash": "95ee467f38e58f5d",
     "via": "mt"
   },
+  "Clone volume data": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "c52e2027f552ed1d",
+    "via": "mt"
+  },
+  "Clone with volume data?": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "207dc1f7d2e21028",
+    "via": "mt"
+  },
+  "Cloning copies settings, environment variables, and resource configuration. Stored files, database records, and other persistent data are copied only when you select Clone volume data.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "329abd0793d67b8f",
+    "via": "mt"
+  },
   "Cloning copies settings, environment variables, and resource configuration. Stored files, database records, and other persistent data are not copied.": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "",
       "run": "2026-10-21-flash",
@@ -7957,6 +8109,7 @@
     "via": "mt"
   },
   "Cloudflare Tunnel Configuration": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "",
       "run": "2026-10-22-flash",
@@ -7966,7 +8119,13 @@
     "sourceHash": "19163dddbc63d7f7",
     "via": "mt"
   },
+  "Cloudflare Tunnel Configuration Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "1c087a7b769e8010",
+    "via": "mt"
+  },
   "Cloudflare Tunnel Update": {
+    "removedIn": "4.5.3",
     "review": {
       "reason": "",
       "run": "2026-10-22-flash",
@@ -7974,6 +8133,11 @@
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "1b4d1a3b41963950",
+    "via": "mt"
+  },
+  "Cloudflare Tunnel Update Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "923e187d99caea62",
     "via": "mt"
   },
   "Cloudflare Tunnel disabled. Action required: Update the server IP address to its real IP address in the Advanced settings.": {
@@ -8099,6 +8263,16 @@
     },
     "run": "2026-10-17-index-9b",
     "sourceHash": "475074224fc2432b",
+    "via": "mt"
+  },
+  "Colors": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "88c45d9e526c08dd",
+    "via": "mt"
+  },
+  "Colors of Coolify in this browser. Text stays readable on every color.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "342306b2b8aa54e9",
     "via": "mt"
   },
   "Combined 4xx and 5xx response rate": {
@@ -8513,6 +8687,7 @@
     "via": "mt"
   },
   "Configuration only": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a8f8ee61a595c86c",
     "via": "mt"
@@ -9631,6 +9806,21 @@
     "sourceHash": "c646ed9605395d1b",
     "via": "mt"
   },
+  "Coolify can reach these servers, but Sentinel did not return current metrics.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "0283e0956fea3ab7",
+    "via": "mt"
+  },
+  "Coolify can reach this server, but Sentinel did not return current metrics.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "580d1aa262aefd96",
+    "via": "mt"
+  },
+  "Coolify cannot open the files of this container. :helper_error": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "61f3a7908c613da7",
+    "via": "mt"
+  },
   "Coolify cannot stop or remove Docker resources on this server. Deleting removes this :resource_label from Coolify only. Its containers, volumes, networks, and configuration files remain on the server and can start again when the server is back.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "477cf6024b8f4a12",
@@ -9776,6 +9966,7 @@
     "via": "mt"
   },
   "Coolify will no longer track or manage the Docker resources for this service. Use this only when normal cleanup cannot complete.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "dda6de1e7b7b8ee1",
     "via": "mt"
@@ -9809,6 +10000,16 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "d8e480317a2c5cd6",
+    "via": "mt"
+  },
+  "Copies the data of the persistent volumes to the clone. A running source resource is stopped while the data is copied and started again afterwards.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "790111cb3278eba0",
+    "via": "mt"
+  },
+  "Copies the data of the persistent volumes to the clones. Running source resources are stopped while the data is copied and started again afterwards.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "dfd37f957929f3e0",
     "via": "mt"
   },
   "Copy Logs": {
@@ -9909,6 +10110,11 @@
     "sourceHash": "5f2f454845d52e8b",
     "via": "mt"
   },
+  "Copy share code": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "14a5e0bcac6b14ab",
+    "via": "mt"
+  },
   "Copy the public key above and add it to your server's <0/> file.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "527d8ab0fd9f66e3",
@@ -9962,6 +10168,11 @@
   "Could not check for updates": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "fd8b665430830b2e",
+    "via": "mt"
+  },
+  "Could not check for updates. Try again later.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "bf1dd0e03b2c5473",
     "via": "mt"
   },
   "Could not collect GPUs from :implode. Check the application logs for the remote command output.": {
@@ -10633,6 +10844,7 @@
     "via": "mt"
   },
   "Custom color": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a5f69a181be08410",
     "via": "mt"
@@ -10658,6 +10870,7 @@
     "via": "mt"
   },
   "Custom healthcheck detected": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "e6c27e43998fffa1",
     "via": "mt"
@@ -10727,12 +10940,19 @@
     "sourceHash": "bd784e30738bff94",
     "via": "mt"
   },
+  "Custom theme": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "70a67d05f9bcdd1e",
+    "via": "mt"
+  },
   "Custom theme color": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a33f052fea73b453",
     "via": "mt"
   },
   "Custom theme mode": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "f1c2e22ff27afcd8",
     "via": "mt"
@@ -10747,12 +10967,18 @@
     "sourceHash": "8883afa81c857077",
     "via": "mt"
   },
+  "DNS checks and records for this server": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "03eb89fb2af25709",
+    "via": "mt"
+  },
   "DNS entries": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "6fa8e7fd85df6be8",
     "via": "mt"
   },
   "DNS entries for this server": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "ec5bb33ac95ef4ec",
     "via": "mt"
@@ -10904,8 +11130,14 @@
     "via": "mt"
   },
   "Database Startup": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "afafa40b0f0f6f2d",
+    "via": "mt"
+  },
+  "Database Startup Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "519f9bfd5b91893e",
     "via": "mt"
   },
   "Database URL": {
@@ -11118,6 +11350,11 @@
     },
     "run": "2026-10-23-index-9b",
     "sourceHash": "48700dd5a5ad6f98",
+    "via": "mt"
+  },
+  "Decrease": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "991e5ab396c965a1",
     "via": "mt"
   },
   "Dedicated servers are not used for application builds while runners are enabled.": {
@@ -11895,6 +12132,11 @@
     "sourceHash": "9a16431e9cce7254",
     "via": "mt"
   },
+  "Destination not found.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "5793d680454d2c42",
+    "via": "mt"
+  },
   "Destination saved.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "573ab289dca02c78",
@@ -12594,6 +12836,16 @@
     "sourceHash": "eee239ef4744120f",
     "via": "mt"
   },
+  "Dockerfile HEALTHCHECK in use": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "faab78a9e416c001",
+    "via": "mt"
+  },
+  "Dockerfile HEALTHCHECK replaced": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "bdc064d906e650da",
+    "via": "mt"
+  },
   "Dockerfile location": {
     "removedIn": "4.5.0",
     "run": "2026-10-17-index-9b",
@@ -12960,6 +13212,7 @@
     "via": "mt"
   },
   "Each icon sits in a raised tile that lifts on hover.": {
+    "removedIn": "4.5.3",
     "review": {
       "fix": "각 아이콘은 마우스를 올리면 떠오르는 돌출된 타일에 위치합니다.",
       "reason": "'lifts on hover'에 대한 번역을 더 자연스럽게 수정합니다.",
@@ -12983,6 +13236,11 @@
   "Each workflow job runs in a new container that is deleted after the job.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "efd887ddf116733c",
+    "via": "mt"
+  },
+  "Edge domain": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8b1cdaba51ddfccc",
     "via": "mt"
   },
   "Edit": {
@@ -13499,6 +13757,11 @@
     "sourceHash": "f86ab5a7c64fb070",
     "via": "mt"
   },
+  "Enable two-factor authentication on your profile before you require it for the team.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "882e8ab97ce4c2aa",
+    "via": "mt"
+  },
   "Enable weekly Hostinger backups (extra cost)": {
     "review": {
       "fix": "주간 Hostinger 백업 활성화(추가 비용)",
@@ -13526,6 +13789,7 @@
     "via": "mt"
   },
   "Enabling this configuration replaces the custom healthcheck currently defined by the application.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "3da4182416cb4005",
     "via": "mt"
@@ -13568,6 +13832,11 @@
   "Enter a tag (e.g., 'latest', 'v1.2.3') or SHA256 hash (e.g., 'sha256-59e02939b1bf39f16c93138a28727aec520bb916da021180ae502c61626b3cf0')": {
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "707c4c111fd3f4e2",
+    "via": "mt"
+  },
+  "Enter four hex colors, separated by commas.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "a0655c56c819fc34",
     "via": "mt"
   },
   "Enter one of the recovery codes you saved when setting up two-factor authentication.": {
@@ -13672,6 +13941,7 @@
     "via": "mt"
   },
   "Enter the resource name to confirm metadata-only deletion": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "be37697a99c0d69c",
     "via": "mt"
@@ -14216,6 +14486,11 @@
     "sourceHash": "972172582cb22f29",
     "via": "mt"
   },
+  "Failed to stop the application.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "2480e981b00cbe52",
+    "via": "mt"
+  },
   "Failed to test connection.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "edcabdca27c65c1c",
@@ -14289,6 +14564,11 @@
   "File already exists": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "ae71a9aa62b31248",
+    "via": "mt"
+  },
+  "File browser is not available": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "0af7f87c1b7535f2",
     "via": "mt"
   },
   "File created.": {
@@ -14599,6 +14879,7 @@
     "via": "mt"
   },
   "Five and ten minute ranges refresh automatically every five seconds.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a25d7b4815b6a62c",
     "via": "mt"
@@ -14964,8 +15245,14 @@
     "via": "mt"
   },
   "Full restore overwrites administrator passwords": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "88b7fbd93cf1a468",
+    "via": "mt"
+  },
+  "Full restore runs as a superuser": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "97437afcf9e20e31",
     "via": "mt"
   },
   "Full system upgrade only": {
@@ -15524,6 +15811,16 @@
     "sourceHash": "7f1e323b6272c620",
     "via": "mt"
   },
+  "Held": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "85cd61f8c3c8a01e",
+    "via": "mt"
+  },
+  "Held back updates": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "89fa664b2355f43d",
+    "via": "mt"
+  },
   "Hetzner Cloud": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "f4b707e6d01f7b42",
@@ -15616,6 +15913,7 @@
     "via": "mt"
   },
   "Historical range": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "198d33d3a7acc46e",
     "via": "mt"
@@ -15928,6 +16226,11 @@
     "sourceHash": "7a24cabd014a28e8",
     "via": "mt"
   },
+  "If the resource is running, it is stopped while its volume data is copied.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "5b8113f61b20b954",
+    "via": "mt"
+  },
   "If you can still access Coolify via <0/>, log in there first to configure your FQDN.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "9f49dcf812391e26",
@@ -16188,6 +16491,11 @@
     "sourceHash": "14bbd54ceaf0d5c7",
     "via": "mt"
   },
+  "Increase": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "0c2d3b8713b00333",
+    "via": "mt"
+  },
   "Indexable": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "1ee00520a46b7272",
@@ -16271,15 +16579,29 @@
     "sourceHash": "bd18ddc7383ed31f",
     "via": "mt"
   },
+  "Initialization scripts can contain credentials.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "16379d7f3f7d50a2",
+    "via": "mt"
+  },
   "Inject build args automatically": {
     "run": "2026-10-18-index-9b",
     "sourceHash": "903f4de959f64e2a",
     "via": "mt"
   },
   "Inline comments with space before # (e.g., <0/>) are stripped.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "9b9b3e046fe8e9a8",
     "via": "mt"
+  },
+  "Inline comments with space before # (e.g., <0/>) are stripped. To set flags, put <1/> directly above a variable line. Without this line, the flags of a variable do not change.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "aa29ef8e51b30df0",
+    "via": "mt",
+    "warnings": [
+      "void-tag-particle"
+    ]
   },
   "Inspect CPU and memory usage for this application.": {
     "run": "2026-10-17-index-9b",
@@ -16983,7 +17305,13 @@
     "sourceHash": "a7f355459325664b",
     "via": "mt"
   },
+  "Last 10 minutes": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "9bf0485a230d68b4",
+    "via": "mt"
+  },
   "Last 10 minutes · live": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "03aa81029f309faf",
     "via": "mt"
@@ -17003,7 +17331,13 @@
     "sourceHash": "afc151e792f8a99c",
     "via": "mt"
   },
+  "Last 5 minutes": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "ca6a7a4c781e3310",
+    "via": "mt"
+  },
   "Last 5 minutes · live": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "f6d355101bfaf0cb",
     "via": "mt"
@@ -17070,6 +17404,7 @@
     "via": "mt"
   },
   "Leave all containers, volumes, networks, and configuration files on the server.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "bef6bc93a736044c",
     "via": "mt"
@@ -17236,12 +17571,19 @@
     "sourceHash": "30c2b462f9335c68",
     "via": "mt"
   },
+  "Live": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "b64ac05f17e64d03",
+    "via": "mt"
+  },
   "Live Refresh": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "8b5d9ab12539de40",
     "via": "mt"
   },
   "Live updates": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "56bf4f9913500179",
     "via": "mt"
@@ -17252,6 +17594,7 @@
     "via": "mt"
   },
   "Load a Compose file to deploy.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "e505a6551b9f8cd9",
     "via": "mt"
@@ -17299,6 +17642,11 @@
   "Load repository": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "d2c81e02152fdade",
+    "via": "mt"
+  },
+  "Load the Compose file before you deploy.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "d7fd530bcc4adb49",
     "via": "mt"
   },
   "Loading DigitalOcean": {
@@ -18754,6 +19102,11 @@
     "sourceHash": "a10d76fcdab989c6",
     "via": "mt"
   },
+  "My first project": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "80e12eb4fd205b10",
+    "via": "mt"
+  },
   "NVIDIA Container Toolkit not found. Containers cannot use these GPUs until you <0>install it</0> and restart Docker.": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "a2cf91cae5e1509b",
@@ -18841,6 +19194,7 @@
     "via": "mt"
   },
   "Navigation items": {
+    "removedIn": "4.5.3",
     "run": "2026-10-23-index-9b",
     "sourceHash": "8bed1bed0e352288",
     "via": "mt"
@@ -19871,6 +20225,11 @@
     "sourceHash": "e0764b6fd437c928",
     "via": "mt"
   },
+  "No metrics": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "fd195330a497c859",
+    "via": "mt"
+  },
   "No network destinations are available on this server.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "506e4d2db9d159c9",
@@ -20045,6 +20404,11 @@
   "No public domain configured": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "a8788c7e4bd644ba",
+    "via": "mt"
+  },
+  "No raised edges. Sidebar items are plain rows with a highlight for the current page.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "e5650c6f2eb268de",
     "via": "mt"
   },
   "No reachable server to log in to": {
@@ -20431,6 +20795,11 @@
   "Not logged in to any registry, and no resource on this server uses a private registry host.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "5e60b29796c160d3",
+    "via": "mt"
+  },
+  "Not now?": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "1fd1803640025747",
     "via": "mt"
   },
   "Not ready": {
@@ -20946,6 +21315,11 @@
     "sourceHash": "3c53a125932f1280",
     "via": "mt"
   },
+  "Optional for members": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "34ddb616292e009f",
+    "via": "mt"
+  },
   "Optional note": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "970c43c080218f8b",
@@ -21059,6 +21433,11 @@
   "Or skip the boarding process and manually add a new private key to Coolify and the server": {
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "e3d5331d76d77930",
+    "via": "mt"
+  },
+  "Or switch to a team that does not require 2FA:": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8c0be1bae6b2e126",
     "via": "mt"
   },
   "Or use existing": {
@@ -21246,6 +21625,11 @@
     "sourceHash": "59de121db1b8145e",
     "via": "mt"
   },
+  "Package Update Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "1fc7041f844fd608",
+    "via": "mt"
+  },
   "Package discovery can take several minutes.": {
     "removedIn": "4.5.0",
     "run": "2026-10-17-index-9b",
@@ -21369,6 +21753,11 @@
     "sourceHash": "21b007455b0b8f00",
     "via": "mt"
   },
+  "Paste a code that someone shared, or copy yours.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "fe9aafeaadea15fa",
+    "via": "mt"
+  },
   "Paste a complete image reference, or enter a name and use one of the optional fields below.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "2da7789b4eb16a6e",
@@ -21464,6 +21853,11 @@
     "sourceHash": "99842fe66a3eb60c",
     "via": "mt"
   },
+  "Paused": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "e159b06187d369a0",
+    "via": "mt"
+  },
   "Pay as you go": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "0ee0cdef83e013b7",
@@ -21505,11 +21899,13 @@
     "via": "mt"
   },
   "Percentage of available CPU capacity used by the application container.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "f83671e07e72f9bb",
     "via": "mt"
   },
   "Percentage of available CPU capacity used by this server.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "fdf624f7d1f7038f",
     "via": "mt"
@@ -21622,6 +22018,7 @@
     "via": "mt"
   },
   "Permanently remove this service from Coolify.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-18-index-9b",
     "sourceHash": "f9b61e984660663e",
     "via": "mt"
@@ -21672,11 +22069,18 @@
     "via": "mt"
   },
   "Pick a color": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a03f110d2b8df5d5",
     "via": "mt"
   },
+  "Pick a preset or your own colors.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "1719370f9b52c1cd",
+    "via": "mt"
+  },
   "Plain rows with a highlight for the current page.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-23-index-9b",
     "sourceHash": "ac0d638972603654",
     "via": "mt"
@@ -22041,6 +22445,11 @@
   "Preserve repository during deployment": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "386132c346429aa9",
+    "via": "mt"
+  },
+  "Presets": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "954f93fe1c66ae44",
     "via": "mt"
   },
   "Press <0>Tab</0> to search everything.": {
@@ -22838,9 +23247,19 @@
     "sourceHash": "a14349003cc63d1c",
     "via": "mt"
   },
+  "REDIS_PASSWORD is locked. Its value is never shown again.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "0721b1e08386a32d",
+    "via": "mt"
+  },
   "REST API requests are rejected. Tokens still authenticate the MCP endpoint when the MCP server is enabled.": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "d180036074ba488d",
+    "via": "mt"
+  },
+  "Ranges up to one hour refresh live every five seconds. Longer ranges load once; turn on live refresh to update them every minute.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "fc4aad07a192c884",
     "via": "mt"
   },
   "Rate limit window (seconds)": {
@@ -22911,6 +23330,11 @@
   "Realtime events configured!": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "7bb74f0f9ff17466",
+    "via": "mt"
+  },
+  "Reason": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "f81ab834de5f8491",
     "via": "mt"
   },
   "Reboot required": {
@@ -23113,6 +23537,11 @@
   "Redirect updated.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "49e4f1cd5b7c0c12",
+    "via": "mt"
+  },
+  "Redirects": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "4340f2850559b250",
     "via": "mt"
   },
   "Reducing below your active server count will deactivate excess servers.": {
@@ -23368,6 +23797,7 @@
     "via": "mt"
   },
   "Remove from Coolify only": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "2b284e8c13a08a4e",
     "via": "mt"
@@ -23423,6 +23853,7 @@
     "via": "mt"
   },
   "Remove service from Coolify only?": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-sonnet5.5-recheck",
     "sourceHash": "5734ba1eb61e4ba7",
     "via": "mt"
@@ -23690,6 +24121,11 @@
     "sourceHash": "6006af2c876635c7",
     "via": "mt"
   },
+  "Required for all members": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "e7fabf2bf1b1441a",
+    "via": "mt"
+  },
   "Resend code": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "b97457409ab5b375",
@@ -23954,6 +24390,7 @@
     "via": "tm-near"
   },
   "Restarting Sentinel and proxy...": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "2a5ea5068ed32802",
     "via": "mt"
@@ -24066,6 +24503,23 @@
   "Restoring a backup changes database data": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "fe9f09fa40d98d07",
+    "via": "mt"
+  },
+  "Restoring all databases needs a PostgreSQL superuser (it recreates databases and roles), so Coolify cannot restrict it. Only use a backup you trust. <0>The backup also replaces PostgreSQL administrator role passwords, including the destination administrator password. If the administrator password changes, update it in Coolify's database configuration after the restore.</0>": {
+    "edits": [
+      {
+        "after": "세요",
+        "before": "십시오",
+        "rule": "imperative"
+      },
+      {
+        "after": "세요",
+        "before": "십시오",
+        "rule": "imperative"
+      }
+    ],
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "bce9a4804c813901",
     "via": "mt"
   },
   "Restoring database from S3. Progress will be shown in the activity monitor...": {
@@ -24289,6 +24743,16 @@
     "sourceHash": "8d912575839b42b5",
     "via": "mt"
   },
+  "Rolling update drain time (seconds)": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "caf6e796d3978070",
+    "via": "mt"
+  },
+  "Rolling update drain time updated.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "84d8d70232fa8d29",
+    "via": "mt"
+  },
   "Root": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "44cb005ee2e65d9c",
@@ -24447,6 +24911,16 @@
   "Running or queued right now": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "1c2e6bb22bc53871",
+    "via": "mt"
+  },
+  "Running source resources are stopped while their volume data is copied.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "ce0892172bdb6667",
+    "via": "mt"
+  },
+  "Running source resources are unavailable while their volume data is copied.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "a533432282a4a55b",
     "via": "mt"
   },
   "Running version": {
@@ -24783,6 +25257,11 @@
     "sourceHash": "55257affac425a43",
     "via": "mt"
   },
+  "Save theme": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "a8dd5d1095b9b29b",
+    "via": "mt"
+  },
   "Save this script for later": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "95deb09359bd2e66",
@@ -25077,6 +25556,11 @@
   "Search categories": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "d03ec37c5f391830",
+    "via": "mt"
+  },
+  "Search containers": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "db131ca5b0db6fb9",
     "via": "mt"
   },
   "Search deployments": {
@@ -26116,6 +26600,11 @@
     "sourceHash": "cceda3f59346649f",
     "via": "mt"
   },
+  "Server validated.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "1b73c4978f660898",
+    "via": "mt"
+  },
   "Server validation": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "ffae9386dea0fdff",
@@ -26140,6 +26629,11 @@
   "Servers": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "68d7beb6df59ee85",
+    "via": "mt"
+  },
+  "Servers <0>3</0>": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "0272f0cdf8b9e70c",
     "via": "mt"
   },
   "Servers > Canvas": {
@@ -26178,8 +26672,14 @@
     "via": "mt"
   },
   "Service Startup": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "1796740802b49999",
+    "via": "mt"
+  },
+  "Service Startup Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "28b7e05851fcac1a",
     "via": "mt"
   },
   "Service account JSON key": {
@@ -26419,6 +26919,11 @@
     "sourceHash": "1a367c79441e13b7",
     "via": "mt"
   },
+  "Setup window closed": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "fde9493ef59bf48b",
+    "via": "mt"
+  },
   "Shallow clone (latest commit only)": {
     "run": "2026-10-18-index-9b",
     "sourceHash": "2c5fe4a2e9cb31ea",
@@ -26432,6 +26937,11 @@
   "Share a problem, question, or idea. Include enough context for us to understand what happened.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "79435ccceabf3f77",
+    "via": "mt"
+  },
+  "Share code": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "4c79ea56216c7e21",
     "via": "mt"
   },
   "Share of requests by client device class for the selected range.": {
@@ -26510,6 +27020,18 @@
     "sourceHash": "3ca4408c32fff71a",
     "via": "mt"
   },
+  "Show :count container tooling agent (Docker, BuildKit, …)|Show :count container tooling agents (Docker, BuildKit, …)": {
+    "edits": [
+      {
+        "after": ":count개의 컨테이너 툴링 에이전트(Docker, BuildKit, …) 표시",
+        "before": ":count개의 컨테이너 툴링 에이전트(Docker, BuildKit, …) 표시|:count개의 컨테이너 툴링 에이전트(Docker, BuildKit, …) 표시",
+        "rule": "plural-single"
+      }
+    ],
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "09ed9af004f73217",
+    "via": "mt"
+  },
   "Show Debug Logs": {
     "removedIn": "4.5.0",
     "run": "2026-10-18-index-9b",
@@ -26554,6 +27076,11 @@
   "Show the monthly project sponsorship reminder.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "bc0d9b0cc8c05a14",
+    "via": "mt"
+  },
+  "Show the time in the time zone of this browser.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "956bbb2dfe6dd49b",
     "via": "mt"
   },
   "Show/hide Server-Timing history": {
@@ -27103,6 +27630,11 @@
     "sourceHash": "8fde08e4c0870d72",
     "via": "mt"
   },
+  "Style": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "7e744141b40ea550",
+    "via": "mt"
+  },
   "Subject": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "68971283841aecdf",
@@ -27280,6 +27812,11 @@
     "sourceHash": "4f8991295b3c1f6a",
     "via": "mt"
   },
+  "Symlinks cannot be opened in a container without a shell. Open the target path instead.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "38135236203f3101",
+    "via": "mt"
+  },
   "Sync": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "8d261a372fde1461",
@@ -27293,6 +27830,11 @@
   "Sync name": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "5ca9595239377a0a",
+    "via": "mt"
+  },
+  "Sysbox Installation Logs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "4a075564f49750e5",
     "via": "mt"
   },
   "Sysbox is installed": {
@@ -27785,7 +28327,13 @@
     "sourceHash": "c40d84c0bfcf35aa",
     "via": "mt"
   },
+  "The URL at which the other instance reaches this instance. This instance gives it a token that expires in 1 hour.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "eb209ae9acfdd0ae",
+    "via": "mt"
+  },
   "The URL at which the other instance reaches this instance. This instance gives it a token that expires in 3 hours.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-23-index-9b",
     "sourceHash": "c81ba6e5ed47d4ee",
     "via": "mt"
@@ -27805,7 +28353,13 @@
     "sourceHash": "fc047fb0c83429a4",
     "via": "mt"
   },
+  "The application uses the HEALTHCHECK from its Dockerfile. Enabling this healthcheck replaces it.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8e582f8b1722ee85",
+    "via": "mt"
+  },
   "The backup replaces PostgreSQL administrator role passwords, including the destination administrator password. <0>If the administrator password changes, update it in Coolify's database configuration after the restore.</0>": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-sonnet5.5-r2",
     "sourceHash": "b064fa826e80d782",
     "via": "mt"
@@ -28027,6 +28581,16 @@
     "sourceHash": "26b28852eebacb76",
     "via": "mt"
   },
+  "The package manager does not install these updates. Phased rollout: Ubuntu releases the update to a part of all servers at a time, and this server gets it in a later phase. Held: a package hold (apt-mark hold) or a version pin (/etc/apk/world) on the server blocks the update.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "22848691371e1363",
+    "via": "mt"
+  },
+  "The password variable is locked, so the URL that contains it is not shown.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "7b65c40ad0afc98d",
+    "via": "mt"
+  },
   "The period in which Coolify counts failed validations. From 60 to 86400 seconds.": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "0f234447e16e0c10",
@@ -28035,6 +28599,11 @@
   "The previous data volume stays on the server and is not used anymore.": {
     "run": "2026-10-18-index-9b",
     "sourceHash": "808467d9462a496a",
+    "via": "mt"
+  },
+  "The private key of a transferred server cannot be changed.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "938dad06d7e35a4f",
     "via": "mt"
   },
   "The prorated amount will be invoiced and charged now.": {
@@ -28080,6 +28649,11 @@
   "The request could not be understood by the server due to malformed syntax.": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "f9e523747fbb93ef",
+    "via": "mt"
+  },
+  "The resource is started again after the copy, also when the copy fails.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "56883a44130c6852",
     "via": "mt"
   },
   "The resource keeps the same UUID and configuration. Only the hosting server and network destination change.": {
@@ -28355,6 +28929,11 @@
     "sourceHash": "eb1aa8ade1a1bde6",
     "via": "mt"
   },
+  "They are started again after the copy, also when the copy fails.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "178ad9120bed82ac",
+    "via": "mt"
+  },
   "This API token will be permanently revoked.": {
     "run": "2026-10-18-index-9b",
     "sourceHash": "8dce135858d6bceb",
@@ -28535,6 +29114,7 @@
     "via": "mt"
   },
   "This first account becomes the root user.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "30a4bf5f89cd8afb",
     "via": "mt"
@@ -28542,6 +29122,11 @@
   "This folder is empty": {
     "run": "2026-10-23-index-9b",
     "sourceHash": "3043f9fa4d316295",
+    "via": "mt"
+  },
+  "This healthcheck replaces the HEALTHCHECK from the Dockerfile. Disable it to use the Dockerfile HEALTHCHECK again.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "df59edaa60c7bca8",
     "via": "mt"
   },
   "This host file mount is bind-only. Coolify will not create, edit, load, chmod, or delete the source file.": {
@@ -28991,6 +29576,7 @@
     "via": "mt"
   },
   "Tint light or dark surfaces with any color.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "2238903d82451489",
     "via": "mt"
@@ -28998,6 +29584,14 @@
   "Tip: Type <0/> to reference a shared environment variable": {
     "run": "2026-10-24-index-9b-cpu",
     "sourceHash": "ac650305183565a8",
+    "via": "mt",
+    "warnings": [
+      "void-tag-particle"
+    ]
+  },
+  "To make a variable literal, put <0/> directly above its line. Without this line, the flag does not change.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "dc1a6365e45a423c",
     "via": "mt",
     "warnings": [
       "void-tag-particle"
@@ -29031,6 +29625,7 @@
     "via": "mt"
   },
   "Toggle realtime refresh (updates every 60s)": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "7554a4979fae46f4",
     "via": "mt"
@@ -29473,6 +30068,18 @@
     "sourceHash": "1efeca926d573991",
     "via": "mt"
   },
+  "Turn this off for providers that only accept virtual-hosted-style URLs (bucket.endpoint). Coolify turns it off for Alibaba Cloud OSS, Tencent Cloud COS, and Volcengine TOS, and when the provider rejects path-style URLs.": {
+    "edits": [
+      {
+        "after": "세요",
+        "before": "십시오",
+        "rule": "imperative"
+      }
+    ],
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "e8f32d163c8c96bd",
+    "via": "mt"
+  },
   "Two-factor authentication": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "b6824cc8a91e3b51",
@@ -29491,6 +30098,16 @@
   "Two-factor authentication is off": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "5220d9f128aa8dd7",
+    "via": "mt"
+  },
+  "Two-factor authentication is on. Save these recovery codes in a safe place.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "dc25643084fea3b5",
+    "via": "mt"
+  },
+  "Two-factor authentication required": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "3ebccb861f292b90",
     "via": "mt"
   },
   "Type": {
@@ -29844,6 +30461,7 @@
     "via": "mt"
   },
   "Updating packages": {
+    "removedIn": "4.5.3",
     "run": "2026-10-17-index-9b",
     "sourceHash": "a04fea2ba85207f2",
     "via": "mt"
@@ -29929,6 +30547,11 @@
   "Uploading…": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "5ce44dd77dae789f",
+    "via": "mt"
+  },
+  "Usage": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "8d59829c1e15afe1",
     "via": "mt"
   },
   "Use": {
@@ -30086,6 +30709,11 @@
     "sourceHash": "a0361a81dba8bbdd",
     "via": "mt"
   },
+  "Use every_minute, hourly, daily, weekly, monthly, yearly, or a cron expression. Runs in the server timezone (:server_timezone). Change it in the server settings.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "440f0365fa16782f",
+    "via": "mt"
+  },
   "Use existing key": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "4393e5c93733b26a",
@@ -30099,6 +30727,11 @@
   "Use only for trusted repositories": {
     "run": "2026-10-17-index-9b",
     "sourceHash": "d3f00eb19d4fbc74",
+    "via": "mt"
+  },
+  "Use path-style URLs": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "2a46441c748a6af3",
     "via": "mt"
   },
   "Use plain-text editor": {
@@ -30948,6 +31581,11 @@
     "sourceHash": "4a6c3050cdcaabff",
     "via": "mt"
   },
+  "What is copied": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "abce93d9d157f4e1",
+    "via": "mt"
+  },
   "What were you trying to do, what happened, and what would you like to see instead?": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "f22f155f151bdec2",
@@ -30995,8 +31633,19 @@
     "via": "mt"
   },
   "When public, anyone can trigger PR deployments. Otherwise only PRs from branches in the same repository are deployed and fork PRs are blocked.": {
+    "removedIn": "4.5.3",
     "run": "2026-10-23-index-9b",
     "sourceHash": "41bf2c3ae0dc840f",
+    "via": "mt"
+  },
+  "When public, anyone can trigger PR deployments. Otherwise only PRs from branches in the same repository are deployed and fork PRs are blocked.<0/><1/><2>Secrets:</2> the code of a fork PR can read all environment variables of its preview. When public, previews do not get preview variables that still have the production value, and shared variables are resolved only in preview variables, not in the compose file of the PR. This is not full isolation: the preview runs on the same server as production, and with the Docker Compose build pack Coolify deploys the compose file of the PR, which can, for example, mount host paths. Give previews their own values, and do not use production secrets in them.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "6ff4867e0ca13349",
+    "via": "mt"
+  },
+  "When required, members without two-factor authentication must configure it before they can use this team.": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "b2faec15562b3c0d",
     "via": "mt"
   },
   "When you select an S3 storage, Coolify adds a lifecycle rule that deletes objects under <0/> after 1 day, as a safety net. The selected storage must be reachable from your servers, and the S3 provider must support lifecycle rules.": {
@@ -31522,6 +32171,16 @@
   "Your team is over its server limit. Upgrade your subscription or remove a server first.": {
     "run": "2026-10-17-sonnet5.5",
     "sourceHash": "04eed4f62a571b48",
+    "via": "mt"
+  },
+  "Your time": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "c0d48ee0837942bd",
+    "via": "mt"
+  },
+  "Your time and UTC": {
+    "run": "2026-10-30-index-9b-cpu",
+    "sourceHash": "b87b04519069ccde",
     "via": "mt"
   },
   "Zone - DNS - Edit": {

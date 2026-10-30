@@ -8,36 +8,12 @@
     "reason": "조각만 평가하면 파일 맨 위 @php use App\\Models\\Server; 가 없어 양쪽 다 실패한다. 변환 뒤에도 use 문은 그대로이고, 문장·태그·식(e($image), e(Server::RECOMMENDED_CADDY_PROXY_IMAGE))을 사람이 대조했다(4.4.6)."
   },
   {
-    "file": "resources/views/livewire/analytics.blade.php",
-    "kind": "text",
-    "originalSha256": "ebe235e41b63fc429cc9597330650841c0422be4909f4aaf9de560e4c649500e",
-    "line": 214,
-    "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
-    "reason": "number_format에 대역 객체가 들어가 양쪽 다 실패한다. {{ number_format(...) }} ms → {{ __(':latency_p95 ms', ['latency_p95' => number_format(...)]) }}로 같은 식을 같은 이스케이프로 출력함을 사람이 대조했다(4.4.6)."
-  },
-  {
-    "file": "resources/views/livewire/project/application/analytics.blade.php",
-    "kind": "text",
-    "originalSha256": "ebe235e41b63fc429cc9597330650841c0422be4909f4aaf9de560e4c649500e",
-    "line": 131,
-    "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
-    "reason": "위와 같은 number_format 조각이다. 사람이 대조했다(4.4.6)."
-  },
-  {
     "file": "resources/views/livewire/server/cloudflare-tunnel.blade.php",
     "kind": "rich",
     "originalSha256": "3446148e9bd33b94089a687c4b362195150dec45a855770a6ac4424c42105dc9",
     "line": 51,
     "error": "ERROR:TypeError: App\\Services\\CloudflareTunnelService::tunnelName(): Argument #1 ($server) must be of type App\\Models\\Server, Sentinel given",
     "reason": "tunnelName에 대역 객체가 들어가 양쪽 다 실패한다. <code>{{ …tunnelName($server) }}</code> → __h(…, ['<code>' . e(…tunnelName($server)) . '</code>'])로 같은 식을 같은 이스케이프로 같은 태그에 넣고, 바뀐 것은 tunnel 뒤 줄바꿈·들여쓰기가 공백 하나로 준 것뿐(HTML에서 같게 보임)임을 사람이 대조했다(4.5.0)."
-  },
-  {
-    "file": "resources/views/livewire/traffic/_paths-list.blade.php",
-    "kind": "text",
-    "originalSha256": "3a9f14f5cfa6c991cb60700d42c24b091fc089b0727a6d256c6b2d856d9a7b11",
-    "line": 84,
-    "error": "ERROR:TypeError: number_format(): Argument #1 ($num) must be of type int|float, Sentinel given",
-    "reason": "analytics의 number_format 조각과 같은 꼴이다. {{ number_format($p95, 1) }} ms → {{ __(':p95 ms', ['p95' => number_format($p95, 1)]) }}로 같은 식을 같은 이스케이프로 출력함을 사람이 대조했다(4.5.0)."
   },
   {
     "file": "resources/views/components/server/gpu-list.blade.php",

@@ -1,25 +1,26 @@
-# 변환 커버리지 (4.5.0)
+# 변환 커버리지 (4.5.3)
 
 | 항목 | 값 |
 |---|---|
-| 대상 템플릿 | 449 |
+| 대상 템플릿 | 450 |
 | 바뀐 템플릿 | 396 |
-| 바꾼 곳 | 7821 |
-| 고유 키(업스트림 포함) | 4944 |
-| 건너뛴 곳 | 415 |
-| 변환 뒤 남은 영어 텍스트 조각 | 40 |
+| 바꾼 곳 | 7911 |
+| 고유 키(업스트림 포함) | 5010 |
+| 건너뛴 곳 | 424 |
+| 변환 뒤 남은 영어 텍스트 조각 | 46 |
 
 ## 건너뛴 이유
 
 | 이유 | 수 |
 |---|---|
-| `brand-only` | 192 |
-| `technical` | 121 |
-| `complex-expression` | 70 |
+| `brand-only` | 193 |
+| `technical` | 123 |
+| `complex-expression` | 75 |
 | `dynamic-value` | 17 |
 | `unsafe-for-blade` | 5 |
 | `dynamic-tag` | 5 |
 | `logic-prop` | 4 |
+| `attribute-like` | 1 |
 | `unknown-attribute` | 1 |
 
 ## 건너뛴 곳
@@ -34,10 +35,12 @@
 - `complex-expression` resources/views/auth/login.blade.php:33 — label="{{ __('input.email') }}"
 - `complex-expression` resources/views/auth/login.blade.php:35 — label="{{ __('input.password') }}"
 - `brand-only` resources/views/auth/register.blade.php:14 — title="Coolify"
-- `complex-expression` resources/views/auth/register.blade.php:37 — label="{{ __('input.name') }}"
-- `complex-expression` resources/views/auth/register.blade.php:39 — label="{{ __('input.email') }}"
-- `complex-expression` resources/views/auth/register.blade.php:41 — label="{{ __('input.password') }}"
-- `complex-expression` resources/views/auth/register.blade.php:43 — label="{{ __('input.password.again') }}"
+- `complex-expression` resources/views/auth/register.blade.php:20 — You can create the root account only in the first minutes after Coolify starts. To open the window again, run this command on the server, then reload this page:
+- `complex-expression` resources/views/auth/register.blade.php:28 — This first account becomes the root user. Create it within minutes after Coolify starts.
+- `complex-expression` resources/views/auth/register.blade.php:48 — label="{{ __('input.name') }}"
+- `complex-expression` resources/views/auth/register.blade.php:50 — label="{{ __('input.email') }}"
+- `complex-expression` resources/views/auth/register.blade.php:52 — label="{{ __('input.password') }}"
+- `complex-expression` resources/views/auth/register.blade.php:54 — label="{{ __('input.password.again') }}"
 - `complex-expression` resources/views/auth/reset-password.blade.php:2 — title="{{ __('auth.reset_password') }}"
 - `complex-expression` resources/views/auth/reset-password.blade.php:24 — label="{{ __('input.password') }}"
 - `complex-expression` resources/views/auth/reset-password.blade.php:26 — label="{{ __('input.password.again') }}"
@@ -45,13 +48,15 @@
 - `complex-expression` resources/views/auth/two-factor-challenge.blade.php:59 — label="{{ __('input.recovery_code') }}"
 - `brand-only` resources/views/auth/verify-email.blade.php:2 — title="Coolify"
 - `complex-expression` resources/views/components/configuration-warning.blade.php:24 — {{ data_get($diff, 'count') }} {{ data_get($diff, 'count') === 1 ? 'change' : 'changes' }} unapplied.
-- `technical` resources/views/components/database-status-info.blade.php:68 — label="SSL"
+- `technical` resources/views/components/database-status-info.blade.php:72 — label="SSL"
 - `technical` resources/views/components/forms/domain-input.blade.php:66 — placeholder="/api/v3"
 - `technical` resources/views/components/forms/env-var-input.blade.php:298 — SCOPE
 - `technical` resources/views/components/forms/env-var-input.blade.php:303 — VAR
 - `technical` resources/views/components/forms/repository-paths.blade.php:29 — placeholder="/"
+- `attribute-like` resources/views/components/live-toggle.blade.php:27 — ! $active]) aria-hidden="true">
 - `unknown-attribute` resources/views/components/section-heading.blade.php:5 — actionLabel => 'View all'
 - `brand-only` resources/views/components/server/status-summary.blade.php:93 — Sentinel
+- `brand-only` resources/views/components/theme-controls.blade.php:302 — Coolify
 - `complex-expression` resources/views/components/two-factor-badge.blade.php:20 — Two-factor authentication is
 - `brand-only` resources/views/invitation/accept.blade.php:2 — title="Coolify"
 - `brand-only` resources/views/layouts/app.blade.php:51 — title="Coolify"
@@ -62,7 +67,7 @@
 - `brand-only` resources/views/layouts/app.blade.php:143 — alt="Coolify"
 - `brand-only` resources/views/livewire/admin/index.blade.php:2 — Coolify
 - `complex-expression` resources/views/livewire/admin/index.blade.php:31 — You are viewing Coolify as .
-- `brand-only` resources/views/livewire/analytics.blade.php:26 — Coolify
+- `brand-only` resources/views/livewire/analytics.blade.php:28 — Coolify
 - `brand-only` resources/views/livewire/boarding/index.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/boarding/index.blade.php:162 — alt="Hetzner"
 - `brand-only` resources/views/livewire/boarding/index.blade.php:180 — alt="Vultr"
@@ -76,8 +81,8 @@
 - `brand-only` resources/views/livewire/destination/index.blade.php:85 — label="Docker Swarm"
 - `brand-only` resources/views/livewire/destination/resources.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/destination/show.blade.php:3 — Coolify
-- `brand-only` resources/views/livewire/fleet/metrics.blade.php:16 — Coolify
-- `complex-expression` resources/views/livewire/fleet/metrics.blade.php:186 — /s
+- `brand-only` resources/views/livewire/fleet/metrics.blade.php:26 — Coolify
+- `complex-expression` resources/views/livewire/fleet/metrics.blade.php:177 — /s
 - `brand-only` resources/views/livewire/notifications/discord.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/notifications/discord.blade.php:10 — title="Discord"
 - `unsafe-for-blade` resources/views/livewire/notifications/discord.blade.php:20 — helper="Mention @here when a critical event occurs."
@@ -102,7 +107,8 @@
 - `dynamic-value` resources/views/livewire/project/application/advanced.blade.php:115 — helper="Optional prefix for generated container names. Containers are named <span class='font-bold'>prefix-timestamp</span>, for example <span class='font-bold'>shop-api-20260908T141530</span>, instead of starting with <span class='font-bold'>{{ $application->uuid }}</span>.<br><br>The prefix is converted to slug format when saved, can be up to {{ \App\Models\ApplicationSetting::MAX_CONTAINER_NAME_PREFIX_LENGTH }} characters and must be unique on this server. Rolling updates keep working."
 - `complex-expression` resources/views/livewire/project/application/advanced.blade.php:125 — placeholder="{{ DEFAULT_STOP_GRACE_PERIOD_SECONDS }}"
 - `complex-expression` resources/views/livewire/project/application/advanced.blade.php:126 — helper="How long to wait for graceful shutdown during rolling updates, manual stops, and restarts. Applies to all containers for this application. Saved automatically. Default: {{ DEFAULT_STOP_GRACE_PERIOD_SECONDS }} seconds. Range: {{ MIN_STOP_GRACE_PERIOD_SECONDS }}-{{ MAX_STOP_GRACE_PERIOD_SECONDS }} seconds (1 hour)."
-- `technical` resources/views/livewire/project/application/advanced.blade.php:194 — placeholder="key=value"
+- `complex-expression` resources/views/livewire/project/application/advanced.blade.php:133 — helper="How long to wait after the new container is healthy before the old containers stop during a rolling update. The proxy needs this time to send traffic to the new container. Saved automatically. Default: {{ DEFAULT_ROLLING_UPDATE_DRAIN_SECONDS }} seconds. Range: 0-{{ MAX_ROLLING_UPDATE_DRAIN_SECONDS }} seconds. Set to 0 to turn off the wait."
+- `technical` resources/views/livewire/project/application/advanced.blade.php:201 — placeholder="key=value"
 - `brand-only` resources/views/livewire/project/application/backup/index.blade.php:48 — Coolify
 - `technical` resources/views/livewire/project/application/backup/index.blade.php:175 — S3
 - `brand-only` resources/views/livewire/project/application/backup/show.blade.php:3 — Coolify
@@ -127,7 +133,7 @@
 - `technical` resources/views/livewire/project/application/general.blade.php:452 — placeholder="php artisan migrate"
 - `technical` resources/views/livewire/project/application/general.blade.php:462 — placeholder="php artisan migrate"
 - `technical` resources/views/livewire/project/application/general.blade.php:595 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse --security-opt apparmor:unconfined --ulimit nofile=1024:1024 --tmpfs /run:rw,noexec,nosuid,size=65536k --hostname=myapp"
-- `complex-expression` resources/views/livewire/project/application/heading.blade.php:6 — Switch to Railpack in General settings.
+- `complex-expression` resources/views/livewire/project/application/heading.blade.php:7 — Switch to Railpack in General settings.
 - `brand-only` resources/views/livewire/project/application/partials/domain-row.blade.php:106 — HTTP → HTTPS
 - `complex-expression` resources/views/livewire/project/application/partials/domain-row.blade.php:113 — Port
 - `brand-only` resources/views/livewire/project/application/preview-domains.blade.php:157 — HTTP → HTTPS
@@ -142,24 +148,24 @@
 - `complex-expression` resources/views/livewire/project/database/backup-executions.blade.php:100 — Running for
 - `brand-only` resources/views/livewire/project/database/backup/execution.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/project/database/backup/index.blade.php:3 — Coolify
-- `technical` resources/views/livewire/project/database/clickhouse/general.blade.php:109 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/clickhouse/general.blade.php:112 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
 - `brand-only` resources/views/livewire/project/database/configuration.blade.php:3 — Coolify
-- `technical` resources/views/livewire/project/database/dragonfly/general.blade.php:87 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/dragonfly/general.blade.php:90 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
 - `technical` resources/views/livewire/project/database/import-form.blade.php:167 — placeholder="/home/user/backup.sql.gz"
 - `technical` resources/views/livewire/project/database/import-form.blade.php:237 — placeholder="/backups/database-backup.gz"
-- `technical` resources/views/livewire/project/database/keydb/general.blade.php:88 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/mariadb/general.blade.php:93 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/mongodb/general.blade.php:90 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/mysql/general.blade.php:93 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/postgresql/general.blade.php:95 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/postgresql/general.blade.php:118 — placeholder="create_test_db.sql"
-- `technical` resources/views/livewire/project/database/redis/general.blade.php:92 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
-- `technical` resources/views/livewire/project/database/redis/general.blade.php:96 — placeholder="# maxmemory 256mb
+- `technical` resources/views/livewire/project/database/keydb/general.blade.php:91 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/mariadb/general.blade.php:96 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/mongodb/general.blade.php:93 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/mysql/general.blade.php:96 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/postgresql/general.blade.php:98 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/postgresql/general.blade.php:126 — placeholder="create_test_db.sql"
+- `technical` resources/views/livewire/project/database/redis/general.blade.php:98 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/redis/general.blade.php:106 — placeholder="# maxmemory 256mb
     # maxmemory-policy allkeys-lru
     # timeout 300"
 - `technical` resources/views/livewire/project/database/sqlite/connect-application.blade.php:45 — placeholder="/var/lib/sqlite"
 - `technical` resources/views/livewire/project/database/sqlite/general.blade.php:23 — placeholder="database.sqlite"
-- `technical` resources/views/livewire/project/database/sqlite/general.blade.php:36 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
+- `technical` resources/views/livewire/project/database/sqlite/general.blade.php:39 — placeholder="--cap-add SYS_ADMIN --device=/dev/fuse"
 - `brand-only` resources/views/livewire/project/edit.blade.php:2 — Coolify
 - `brand-only` resources/views/livewire/project/environment-canvas.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/project/environment-edit.blade.php:2 — Coolify
@@ -200,8 +206,8 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/project/service/import-backup.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/project/service/index.blade.php:35 — Coolify
 - `brand-only` resources/views/livewire/project/service/index.blade.php:175 — Coolify
-- `brand-only` resources/views/livewire/project/service/partials/domain-table.blade.php:139 — HTTP → HTTPS
-- `complex-expression` resources/views/livewire/project/service/partials/domain-table.blade.php:146 — Port
+- `brand-only` resources/views/livewire/project/service/partials/domain-table.blade.php:140 — HTTP → HTTPS
+- `complex-expression` resources/views/livewire/project/service/partials/domain-table.blade.php:147 — Port
 - `brand-only` resources/views/livewire/project/service/stack-form.blade.php:12 — title="Docker Compose"
 - `technical` resources/views/livewire/project/service/storage.blade.php:129 — placeholder="/tmp/root"
 - `technical` resources/views/livewire/project/service/storage.blade.php:206 — placeholder="/etc/nginx/nginx.conf"
@@ -213,7 +219,8 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/project/service/volume-backup/index.blade.php:54 — Coolify
 - `technical` resources/views/livewire/project/service/volume-backup/index.blade.php:248 — S3
 - `brand-only` resources/views/livewire/project/service/volume-backup/show.blade.php:3 — Coolify
-- `brand-only` resources/views/livewire/project/shared/cloudflare-autoconfigure.blade.php:25 — Cloudflare
+- `technical` resources/views/livewire/project/shared/cloudflare-autoconfigure.blade.php:11 — DNS
+- `brand-only` resources/views/livewire/project/shared/cloudflare-autoconfigure.blade.php:33 — Cloudflare
 - `complex-expression` resources/views/livewire/project/shared/configuration-checker.blade.php:19 — must be set before this service can be deployed. <a href="{{ $environmentVariablesUrl }}" {{ wireNavigate() }} class="ml-0.5 inline-flex items-center gap-0.5...
 - `technical` resources/views/livewire/project/shared/environment-variable/add.blade.php:4 — placeholder="NODE_ENV"
 - `dynamic-tag` resources/views/livewire/project/shared/environment-variable/add.blade.php:27 — Tip: Type <span class="font-mono text-coollabs dark:text-brand-light">{{ '{{' }}</span> to reference a shared environment variable
@@ -223,9 +230,9 @@ CMD ["nginx", "-g", "daemon off;"]
 - `technical` resources/views/livewire/project/shared/environment-variable/show.blade.php:237 — helper="Literal means $VARIABLES in the value is kept as the actual characters '$VARIABLES' instead of being resolved from another variable. Useful when your value contains a $ sign."
 - `brand-only` resources/views/livewire/project/shared/execute-container-command.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/project/shared/file-browser.blade.php:6 — Coolify
-- `technical` resources/views/livewire/project/shared/file-browser.blade.php:89 — placeholder="config.yml"
-- `technical` resources/views/livewire/project/shared/health-checks.blade.php:63 — placeholder="/health"
-- `technical` resources/views/livewire/project/shared/health-checks.blade.php:69 — placeholder="OK"
+- `technical` resources/views/livewire/project/shared/file-browser.blade.php:99 — placeholder="config.yml"
+- `technical` resources/views/livewire/project/shared/health-checks.blade.php:70 — placeholder="/health"
+- `technical` resources/views/livewire/project/shared/health-checks.blade.php:76 — placeholder="OK"
 - `brand-only` resources/views/livewire/project/shared/logs.blade.php:3 — Coolify
 - `complex-expression` resources/views/livewire/project/shared/logs.blade.php:64 — description="Could not load containers: {{ collect($serverErrors)->first() }}"
 - `technical` resources/views/livewire/project/shared/resource-details.blade.php:7 — label="UUID"
@@ -298,11 +305,12 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/server/index.blade.php:3 — Coolify
 - `brand-only` resources/views/livewire/server/log-drains.blade.php:3 — Coolify
 - `technical` resources/views/livewire/server/log-drains.blade.php:43 — placeholder="https://log-api.eu.newrelic.com/log/v1"
-- `technical` resources/views/livewire/server/log-drains.blade.php:77 — placeholder="/coolify/production"
-- `technical` resources/views/livewire/server/log-drains.blade.php:80 — placeholder="docker/"
-- `unsafe-for-blade` resources/views/livewire/server/log-drains.blade.php:81 — helper="Optional. Log streams are named after the container, prefixed with this value (e.g. docker/&lt;container name&gt;)."
-- `technical` resources/views/livewire/server/log-drains.blade.php:84 — placeholder="us-east-1"
-- `brand-only` resources/views/livewire/server/navbar.blade.php:172 — Traefik
+- `technical` resources/views/livewire/server/log-drains.blade.php:67 — placeholder="us-east-1.aws.edge.axiom.co"
+- `technical` resources/views/livewire/server/log-drains.blade.php:84 — placeholder="/coolify/production"
+- `technical` resources/views/livewire/server/log-drains.blade.php:87 — placeholder="docker/"
+- `unsafe-for-blade` resources/views/livewire/server/log-drains.blade.php:88 — helper="Optional. Log streams are named after the container, prefixed with this value (e.g. docker/&lt;container name&gt;)."
+- `technical` resources/views/livewire/server/log-drains.blade.php:91 — placeholder="us-east-1"
+- `brand-only` resources/views/livewire/server/navbar.blade.php:175 — Traefik
 - `logic-prop` resources/views/livewire/server/new/by-digital-ocean.blade.php:6 — providerLabel="DigitalOcean"
 - `logic-prop` resources/views/livewire/server/new/by-hetzner.blade.php:6 — providerLabel="Hetzner"
 - `logic-prop` resources/views/livewire/server/new/by-hostinger.blade.php:6 — providerLabel="Hostinger"
@@ -336,8 +344,9 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/server/swarm.blade.php:13 — title="Docker Swarm"
 - `complex-expression` resources/views/livewire/server/swarm.blade.php:22 — Read the migration guidance.
 - `brand-only` resources/views/livewire/server/transfer.blade.php:3 — Coolify
-- `technical` resources/views/livewire/server/transfer.blade.php:48 — placeholder="https://coolify.example.com"
-- `technical` resources/views/livewire/server/transfer.blade.php:93 — placeholder="https://coolify.example.com"
+- `complex-expression` resources/views/livewire/server/transfer.blade.php:38 — The owner file on the server names a claim of , but it is older than the claim of this instance or its URL is not valid, so this instance keeps managing the ...
+- `technical` resources/views/livewire/server/transfer.blade.php:56 — placeholder="https://coolify.example.com"
+- `technical` resources/views/livewire/server/transfer.blade.php:108 — placeholder="https://coolify.example.com"
 - `brand-only` resources/views/livewire/settings-backup.blade.php:3 — Coolify
 - `technical` resources/views/livewire/settings-backup.blade.php:19 — label="UUID"
 - `brand-only` resources/views/livewire/settings-email.blade.php:3 — Coolify
@@ -423,25 +432,26 @@ CMD ["nginx", "-g", "daemon off;"]
 - `brand-only` resources/views/livewire/team/member/index.blade.php:56 — Coolify
 - `technical` resources/views/livewire/team/member/index.blade.php:118 — 2FA
 - `brand-only` resources/views/livewire/terminal/index.blade.php:51 — Coolify
+- `complex-expression` resources/views/livewire/two-factor-required.blade.php:2 — description="{{ $teamName ?? 'Your team' }} requires two-factor authentication. Configure it to continue."
 - `brand-only` resources/views/source/all.blade.php:3 — Coolify
 - `brand-only` resources/views/source/all.blade.php:32 — GitHub App
-- `complex-expression` app/Livewire/Fleet/Metrics.php:166 — 'Could not enable metrics on '.implode(', ', $failed).'. Check the server settings and try again.'
-- `dynamic-value` app/Livewire/Project/Application/Domains.php:1925 — "Redirect requires both www and non-www domains, but the {$missing} host could not be added automatically (e.g. only IP/sslip hosts).<br><br>Please add the {$mi
-- `dynamic-value` app/Livewire/Project/Application/General.php:796 — "You want to redirect to www, but you do not have a www domain set.<br><br>Please add www to your domain list ({$dnsHint})."
+- `complex-expression` app/Livewire/Fleet/Metrics.php:168 — 'Could not enable metrics on '.implode(', ', $failed).'. Check the server settings and try again.'
+- `dynamic-value` app/Livewire/Project/Application/Domains.php:1919 — "Redirect requires both www and non-www domains, but the {$missing} host could not be added automatically (e.g. only IP/sslip hosts).<br><br>Please add the {$mi
+- `dynamic-value` app/Livewire/Project/Application/General.php:828 — "You want to redirect to www, but you do not have a www domain set.<br><br>Please add www to your domain list ({$dnsHint})."
 - `complex-expression` app/Livewire/Project/Database/Health.php:90 — 'Healthcheck '.($this->healthCheckEnabled ? 'enabled' : 'disabled').'. Restart the database to apply the changes.'
 - `complex-expression` app/Livewire/Project/Database/ImportForm.php:666 — 'File found in S3. Size: '.formatBytes($this->s3FileSize)
 - `dynamic-value` app/Livewire/Project/DeleteEnvironment.php:44 — "<strong>Environment {$environment->name}</strong> has defined resources, please delete them first."
 - `dynamic-value` app/Livewire/Project/DeleteProject.php:42 — "<strong>Project {$project->name}</strong> has resources defined, please delete them first."
 - `dynamic-value` app/Livewire/Project/Service/Domains.php:918 — "Redirect requires both www and non-www domains, but the {$missing} host could not be added automatically (e.g. only IP/sslip hosts).<br><br>Please add the {$mi
-- `dynamic-value` app/Livewire/Project/Shared/EnvironmentVariable/All.php:1164 — "Cannot delete environment variable '{$envVar->key}' <br><br>Please remove it from the Docker Compose file first."
-- `dynamic-value` app/Livewire/Project/Shared/EnvironmentVariable/Show.php:570 — "Cannot delete environment variable '{$this->env->key}' <br><br>Please remove it from the Docker Compose file first."
-- `complex-expression` app/Livewire/Project/Shared/FileBrowser.php:286 — ($target['isDir'] ? 'This folder' : 'This file').' is larger than '.formatBytes($maxSize).' and cannot be downloaded here. Use the terminal or a volume backup i
-- `complex-expression` app/Livewire/Project/Shared/HealthChecks.php:224 — 'Healthcheck '.($this->healthCheckEnabled ? 'enabled' : 'disabled').'.'
-- `dynamic-value` app/Livewire/Server/PrivateKey/Show.php:111 — 'Server is not reachable.<br><br>Check this <a target="_blank" class="underline" href="https://coolify.io/docs/knowledge-base/server/openssh">documentation</a>
-- `complex-expression` app/Livewire/Server/Show.php:620 — 'Server status refreshed: '.ucfirst($this->hetznerServerStatus ?? 'unknown')
-- `complex-expression` app/Livewire/Server/Show.php:658 — 'Instance status refreshed: '.ucfirst($this->vultrInstanceStatus ?? 'unknown')
-- `complex-expression` app/Livewire/Server/Show.php:680 — 'Droplet status refreshed: '.ucfirst($this->digitalOceanDropletStatus ?? 'unknown')
-- `complex-expression` app/Livewire/Server/Show.php:702 — 'VPS status refreshed: '.ucfirst($this->hostingerVirtualMachineStatus ?? 'unknown')
+- `dynamic-value` app/Livewire/Project/Shared/EnvironmentVariable/All.php:1183 — "Cannot delete environment variable '{$envVar->key}' <br><br>Please remove it from the Docker Compose file first."
+- `dynamic-value` app/Livewire/Project/Shared/EnvironmentVariable/Show.php:578 — "Cannot delete environment variable '{$this->env->key}' <br><br>Please remove it from the Docker Compose file first."
+- `complex-expression` app/Livewire/Project/Shared/FileBrowser.php:310 — ($target['isDir'] ? 'This folder' : 'This file').' is larger than '.formatBytes($maxSize).' and cannot be downloaded here. Use the terminal or a volume backup i
+- `complex-expression` app/Livewire/Project/Shared/HealthChecks.php:225 — 'Healthcheck '.($this->healthCheckEnabled ? 'enabled' : 'disabled').'.'
+- `dynamic-value` app/Livewire/Server/PrivateKey/Show.php:117 — 'Server is not reachable.<br><br>Check this <a target="_blank" class="underline" href="https://coolify.io/docs/knowledge-base/server/openssh">documentation</a>
+- `complex-expression` app/Livewire/Server/Show.php:632 — 'Server status refreshed: '.ucfirst($this->hetznerServerStatus ?? 'unknown')
+- `complex-expression` app/Livewire/Server/Show.php:673 — 'Instance status refreshed: '.ucfirst($this->vultrInstanceStatus ?? 'unknown')
+- `complex-expression` app/Livewire/Server/Show.php:698 — 'Droplet status refreshed: '.ucfirst($this->digitalOceanDropletStatus ?? 'unknown')
+- `complex-expression` app/Livewire/Server/Show.php:723 — 'VPS status refreshed: '.ucfirst($this->hostingerVirtualMachineStatus ?? 'unknown')
 - `complex-expression` app/Livewire/Settings/Advanced.php:194 — 'Invalid IP addresses or subnets: '.implode(', ', $invalidEntries)
 - `dynamic-value` app/Livewire/Settings/Index.php:171 — "Validating DNS failed.<br><br>{$guidance}<br><br>Check this <a target='_blank' class='underline dark:text-white' href='https://coolify.io/docs/knowledge-base/d
 - `complex-expression` app/Livewire/Settings/Index.php:223 — 'Detected '.implode(' and ', $detected).'.'
@@ -454,6 +464,10 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## 남은 영어 텍스트 조각
 
+- resources/views/auth/register.blade.php:20 — You can create the root account only in the first
+- resources/views/auth/register.blade.php:21 — minutes after Coolify starts. To open the window again, run this command on the server, then reload this page:
+- resources/views/auth/register.blade.php:28 — This first account becomes the root user. Create it within
+- resources/views/auth/register.blade.php:29 — minutes after Coolify starts.
 - resources/views/components/configuration-warning.blade.php:25 — unapplied.
 - resources/views/components/two-factor-badge.blade.php:20 — Two-factor authentication is
 - resources/views/livewire/admin/index.blade.php:31 — You are viewing Coolify as
@@ -464,7 +478,7 @@ CMD ["nginx", "-g", "daemon off;"]
 - resources/views/livewire/project/application/preview-domains.blade.php:164 — Port
 - resources/views/livewire/project/service/database-backups.blade.php:26 — backup
 - resources/views/livewire/project/service/database-backups.blade.php:51 — Automate backups for
-- resources/views/livewire/project/service/partials/domain-table.blade.php:146 — Port
+- resources/views/livewire/project/service/partials/domain-table.blade.php:147 — Port
 - resources/views/livewire/project/shared/configuration-checker.blade.php:19 — must be set before this service can be deployed.
 - resources/views/livewire/project/shared/configuration-checker.blade.php:21 — Open environment variables
 - resources/views/livewire/project/shared/scheduled-task/executions.blade.php:50 — · finished
@@ -481,6 +495,8 @@ CMD ["nginx", "-g", "daemon off;"]
 - resources/views/livewire/server/proxy/certificates.blade.php:105 — Coolify saves a copy of acme.json before it changes the file and keeps the last
 - resources/views/livewire/server/proxy/certificates.blade.php:107 — copies.
 - resources/views/livewire/server/swarm.blade.php:22 — Read the migration guidance.
+- resources/views/livewire/server/transfer.blade.php:38 — The owner file on the server names a claim of
+- resources/views/livewire/server/transfer.blade.php:40 — , but it is older than the claim of this instance or its URL is not valid, so this instance keeps managing the server...
 - resources/views/livewire/source/gitea/change.blade.php:205 — Set
 - resources/views/livewire/source/gitea/change.blade.php:206 — Redirect URI
 - resources/views/livewire/source/gitea/change.blade.php:206 — to:

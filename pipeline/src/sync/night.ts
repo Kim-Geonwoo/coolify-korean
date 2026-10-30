@@ -156,10 +156,17 @@ export async function runNight(deps: NightDeps): Promise<NightOutcome> {
     let queueEmpty = false;
     let reviewed = 0;
     if (enabled('review')) {
-      const result = await guard('review', deps.review);
-      queueEmpty = result.queueEmpty;
-      reviewed = result.reviewed;
-      status = recordSuccess(status, 'review', at());
+      try {
+        const result = await deps.review();
+        queueEmpty = result.queueEmpty;
+        reviewed = result.reviewed;
+        status = recordSuccess(status, 'review', at());
+      } catch (error: unknown) {
+        // 비치명 단계: 검토는 제안일 뿐이라, 검토자가 내려가 있어도 그날 초안은 올린다(2026-10-30 Gemini 503으로 4.5.3 초안이 막혔다)
+        const code = codeOf(error);
+        status = recordFailure(status, 'review', code, at());
+        await deps.notify({ type: 'failure', stage: 'review', code, count: status.failures.review?.count ?? 1, disabled: status.disabled.includes('review') });
+      }
     }
 
     let reviewedChanged = false;
